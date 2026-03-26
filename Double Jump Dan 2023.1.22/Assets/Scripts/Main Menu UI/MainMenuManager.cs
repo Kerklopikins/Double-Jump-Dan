@@ -1,27 +1,34 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public static MainMenuManager Instance;
+
     [SerializeField] Slider[] volumeSliders;
     [SerializeField] GameObject resettedGameImage;
     public ConfirmPurchase confirmPurchase;
 	[SerializeField] Slider screenResolutionSlider;
 	[SerializeField] Text screenResolutionText;
 	[SerializeField] Toggle fullscreenToggle;
-    //[Header("Preloading")]
-    //public GameObject[] menuPanels;
+	[SerializeField] Text gemsText;
+    [SerializeField] AudioClip tooExpensiveSound;
 
     public ItemManager itemManager;
 
+    public event Action OnShopItemsChanged;
     GameManager gameManager;
 	List<Vector2> screenResolutions = new List<Vector2>();
     float startDelay = 1;
-    //bool preloaded;
-    ///Animator mainMenuAnimator;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -55,23 +62,11 @@ public class MainMenuManager : MonoBehaviour
 
 		gameManager.SaveData();
 
-        //mainMenuAnimator = menuPanels[0].GetComponent<Animator>();
-        //StartCoroutine(Preload());
+        if(gameManager.gems != 1)
+            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
+		else
+            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGem");
     }
-
-    //IEnumerator Preload()
-    //{
-        //for(int i = 0; i < menuPanels.Length; i++)
-        //{
-            //menuPanels[i].SetActive(true);
-            //yield return new WaitForEndOfFrame();
-            //yield return new WaitForEndOfFrame();
-            //menuPanels[i].SetActive(false);
-        //}
-
-        //menuPanels[0].SetActive(true);
-        //mainMenuAnimator.SetBool("Open", true);
-    //}
 
     void Update()
     {
@@ -94,6 +89,12 @@ public class MainMenuManager : MonoBehaviour
     public void EquipItem(ShopItem shopItem)
 	{
         itemManager.EquipItem(shopItem);
+        OnShopItemsChanged?.Invoke();
+    }
+
+    public void Refresh()
+    {
+        OnShopItemsChanged?.Invoke();
     }
 
     public void LoadScene(string sceneToLoad)
@@ -138,4 +139,44 @@ public class MainMenuManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void RefreshGemsText(string text)
+    {
+        gemsText.text = text;
+    }
+
+    public void GetOneThousandGems()
+    {
+        gameManager.gems += 1000;
+        RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
+        gameManager.SaveUserData();
+
+		Refresh();
+    }
+
+	public void FlashGemsText()
+	{
+		AudioManager.Instance.PlaySound2D(tooExpensiveSound);
+		StartCoroutine(FlashGemsTextCo());
+	}
+
+	IEnumerator FlashGemsTextCo()
+	{
+		for(int i = 0; i < 3; i++)
+		{
+			if(gameManager.gems != 1)
+				RefreshGemsText("<color=red>" + gameManager.gems.ToString() + "</color>" + "<color=red>\nGems</color>");
+			else
+				RefreshGemsText("<color=red>" + gameManager.gems.ToString() + "</color>" + "<color=red>\nGem</color>");
+
+			yield return new WaitForSeconds(0.07f);
+
+			if(gameManager.gems != 1)
+				RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "<color=white>\nGems</color>");
+			else
+				RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "<color=white>\nGem</color>");
+
+			yield return new WaitForSeconds(0.07f);
+		}
+	}
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -9,10 +9,12 @@ public class ShopItem : MonoBehaviour
 	[SerializeField] Sprite premiumItemBackground;
     [SerializeField] MainMenuManager mainMenuManager;
 	[SerializeField] Sprite[] fireRateSprites;
-	
-	public bool initialized { get; set; }
-	public Toggle toggle { get; set; }
-	public GameManager gameManager { get; set; }
+	[SerializeField] AudioClip equippedSound;
+
+	bool initialized;
+	Button equipButton;
+	Text equipButtonText;
+	GameManager gameManager;
 	Image itemPicture;
 	Text descriptionText;
     Image fireRateImage;
@@ -22,20 +24,35 @@ public class ShopItem : MonoBehaviour
 	RectTransform rectTransform;
 	Image image;
 	ItemManager itemManager;
+	Button buyButton;
 
-	void OnEnable()
-	{
-		StartCoroutine(InitializedCo());
-	}
+	ConfirmPurchase confirmPurchase;
+    Text priceText;
+    Animator confirmPurchaseAnimator;
 
 	void Awake()
 	{
 		gameManager = GameManager.Instance;
 		itemManager = mainMenuManager.itemManager;
-		toggle = GetComponentInChildren<Toggle>();
+		equipButton = GetComponentInChildren<Button>();
+		equipButtonText = equipButton.GetComponentInChildren<Text>();
 		rectTransform = GetComponent<RectTransform>();
 		image = GetComponent<Image>();
 
+		equipButton.onClick.AddListener(OnEquipButtonClicked);
+		MainMenuManager.Instance.OnShopItemsChanged += Refresh;
+
+		if(item.itemID != 1111)
+		{
+			buyButton = equipButton.transform.Find("Buy Button").GetComponent<Button>();
+
+			confirmPurchase = mainMenuManager.confirmPurchase;
+			priceText = buyButton.GetComponentInChildren<Text>();
+			confirmPurchaseAnimator = confirmPurchase.GetComponent<Animator>();
+
+			buyButton.onClick.AddListener(BuyButtonClicked);
+		}
+		
 		if(gameObject.name != "None")
 		{
 			if(item == null)
@@ -47,23 +64,6 @@ public class ShopItem : MonoBehaviour
 
 			itemPicture = transform.Find("Item Image").GetComponent<Image>();
 			descriptionText = transform.Find("Description Text").GetComponent<Text>();
-		}
-
-		if(item.itemType == Item.ItemType.Hat)
-		{
-            if(transform.GetSiblingIndex() == 0)
-            {
-                if(gameManager.ownedHats.Count == 0)
-                {
-                    toggle.isOn = true;
-                    return;
-                }
-            }
-
-            if(gameManager.hatID == item.itemID)
-				toggle.isOn = true;
-            else if(gameManager.hatID != item.itemID)
-				toggle.isOn = false;
 		}
 
 		if(item.itemType == Item.ItemType.Gun)
@@ -116,37 +116,6 @@ public class ShopItem : MonoBehaviour
                         fireModeText.text = "Fire Mode - Burst";
                 }
             }
-
-            if(transform.GetSiblingIndex() == 0)
-            {
-                if(gameManager.ownedGuns.Count == 0)
-                {
-                    toggle.isOn = true;
-                    return;
-                }
-            }
-
-            if(gameManager.gunID == item.itemID)
-				toggle.isOn = true;
-            else if(gameManager.gunID != item.itemID)
-				toggle.isOn = false;
-		}
-
-		if(item.itemType == Item.ItemType.Skin)
-		{
-			if(transform.GetSiblingIndex() == 0)
-			{
-				if(gameManager.ownedSkins.Count == 0)
-				{
-					toggle.isOn = true;
-					return;
-				}
-			}
-
-			if(gameManager.skinID == item.itemID)
-				toggle.isOn = true;
-			else if(gameManager.skinID != item.itemID)
-				toggle.isOn = false;
 		}
 
 		transform.Find("Title Text").GetComponent<Text>().text = transform.name;
@@ -156,14 +125,149 @@ public class ShopItem : MonoBehaviour
 
 		if(descriptionText != null)
 			descriptionText.text = item.description;
-	}
 
-	IEnumerator InitializedCo()
+		MainMenuManager.Instance.OnShopItemsChanged += Refresh;
+		Refresh();
+
+		Refresh();
+	}
+	///////////////////////////////
+	/// MAKE BUY BUTTON HERE
+
+	public void Refresh()
 	{
-		yield return new WaitForEndOfFrame();
+		if(item.itemType == Item.ItemType.Hat)
+		{
+            if(transform.GetSiblingIndex() == 0)
+            {
+                if(gameManager.ownedHats.Count == 0)
+                {
+                    equipButton.interactable = false;
+                    return;
+                }
+            }
 
-		initialized = true;
+            if(gameManager.hatID == item.itemID)
+				equipButton.interactable = false;
+            else if(gameManager.hatID != item.itemID)
+				equipButton.interactable = true;
+
+			if(buyButton != null)
+			{
+				if(gameManager.ownedHats.Contains(item.itemID))
+					buyButton.gameObject.SetActive(false);
+				else
+                	buyButton.gameObject.SetActive(true);
+			}
+		}
+
+		if(item.itemType == Item.ItemType.Gun)
+		{
+            if(transform.GetSiblingIndex() == 0)
+            {
+                if(gameManager.ownedGuns.Count == 0)
+                {
+                    equipButton.interactable = false;
+                    return;
+                }
+            }
+
+            if(gameManager.gunID == item.itemID)
+				equipButton.interactable = false;
+            else if(gameManager.gunID != item.itemID)
+				equipButton.interactable = true;
+
+			if(buyButton != null)
+			{
+				if(gameManager.ownedGuns.Contains(item.itemID))
+					buyButton.gameObject.SetActive(false);
+				else
+					buyButton.gameObject.SetActive(true);
+			}
+		}
+
+		if(item.itemType == Item.ItemType.Skin)
+		{
+			if(transform.GetSiblingIndex() == 0)
+			{
+				if(gameManager.ownedSkins.Count == 0)
+				{
+					equipButton.interactable = false;
+					return;
+				}
+			}
+
+			if(gameManager.skinID == item.itemID)
+				equipButton.interactable = false;
+			else if(gameManager.skinID != item.itemID)
+				equipButton.interactable = true;
+
+			if(buyButton != null)
+			{
+				if(gameManager.ownedSkins.Contains(item.itemID))
+					buyButton.gameObject.SetActive(false);
+				else
+                	buyButton.gameObject.SetActive(true);
+			}
+		}
+
+		if(equipButton.interactable)
+		{
+			equipButtonText.text = "Equip";
+			equipButtonText.color = Color.black;
+		}
+		else
+		{
+			equipButtonText.text = "Equipped";
+			equipButtonText.color = Color.white;
+		}
+		
+		if(item.itemID == 1111)
+			return;
+
+		if(gameManager.gems >= item.price)
+		{
+			if(item.price > 0)
+			{
+				priceText.text = "<color=yellow>" + item.price.ToString() + "</color>" + "\nGems";
+				buyButton.interactable = true;
+			}
+			else
+			{
+				priceText.text = "Free";
+				buyButton.interactable = true;
+			}
+		}
+		else
+		{
+			if(item.price > 0)
+			{
+				priceText.text = "<color=red>" + item.price.ToString() + "</color>" + "\nGems";
+				buyButton.interactable = false;
+			}
+		}
 	}
+	public void OnEquipButtonClicked()
+	{
+		MainMenuManager.Instance.EquipItem(this);
+		AudioManager.Instance.PlaySound2D(equippedSound);
+	}
+
+	public void BuyButtonClicked()
+	{
+        if(gameManager.gems >= item.price)
+        {
+            confirmPurchase.transform.SetAsLastSibling();
+            confirmPurchase.gameObject.SetActive(true);
+            confirmPurchaseAnimator.SetBool("Open", true);
+            confirmPurchase.shopItem = this;
+
+			if(item.price > 0)
+				confirmPurchase.Open(itemPicture, "Confirm purchase for " + item.gameObject.name + " for <color=yellow> " + item.price + " </color> gems?", item.premiumItem);
+			else
+				confirmPurchase.Open(itemPicture, "Confirm purchase for " + item.gameObject.name + " for free?", item.premiumItem);
+        }
+    }
 
 	void Update()
 	{

@@ -18,11 +18,13 @@ public class Grenade : MonoBehaviour, IPoolable
     bool initiated;
     float lifeTimeAfterCollision = 2.25f;
     Collider2D grenadeCollider;
+    int collisionMask;
 
     void Awake()
     {
         rb2D = GetComponentInParent<Rigidbody2D>();
         grenadeCollider = GetComponent<Collider2D>();
+        collisionMask = (1 << LayerMask.NameToLayer("Collisions")) | (1 << LayerMask.NameToLayer("Enemies"));
     }
 
     public void OnObjectReuse(object data)
@@ -83,23 +85,26 @@ public class Grenade : MonoBehaviour, IPoolable
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-        lifeTime = 5;
-        initiated = true;
-        rb2D.velocity = Vector2.zero;
-		AudioManager.Instance.PlaySound2D(blownUpSound);
-        spriteRenderer.enabled = false;
-        grenadeCollider.enabled = false;
-        StartCoroutine(Explode());
+        if(((1 << other.gameObject.layer) & collisionMask) != 0)
+        {
+            lifeTime = 5;
+            initiated = true;
+            rb2D.velocity = Vector2.zero;
+            AudioManager.Instance.PlaySound2D(blownUpSound);
+            spriteRenderer.enabled = false;
+            grenadeCollider.enabled = false;
+            StartCoroutine(Explode());
 
-		TransformProperties transformProperties = new TransformProperties();
-        transformProperties.position = transform.position;
-        transformProperties.scale = Vector3.one;
-        transformProperties.rotation = Quaternion.identity;
+            TransformProperties transformProperties = new TransformProperties();
+            transformProperties.position = transform.position;
+            transformProperties.scale = Vector3.one;
+            transformProperties.rotation = Quaternion.identity;
 
-        PoolManager.instance.ReuseObject(destroyedEffectPool, transformProperties);
+            PoolManager.instance.ReuseObject(destroyedEffectPool, transformProperties);
 
-		if(properties.strength > 0)
-            CameraManager.Instance.Shake(properties);
+            if(properties.strength > 0)
+                CameraManager.Instance.Shake(properties);
+        }
 	}
 
     IEnumerator Explode()

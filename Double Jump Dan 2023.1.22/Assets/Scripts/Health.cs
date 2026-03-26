@@ -36,12 +36,23 @@ public class Health : MonoBehaviour
     float hurtTimer = 0.125f;
     float _hurtTimer;
     int startingHealth;
+    ObjectOpitimizer objectOpitimizer;
+    bool dead;
 
     void Start()
     {
         startingHealth = health;
 
         StartCoroutine(DelayStartCo());
+
+        if(GetComponentInParent<ObjectOpitimizer>() != null)
+        {
+            objectOpitimizer = GetComponentInParent<ObjectOpitimizer>();
+            return;
+        }
+
+        if(GetComponent<ObjectOpitimizer>() != null)
+            objectOpitimizer = GetComponent<ObjectOpitimizer>();
     }
     
     void Update()
@@ -116,8 +127,11 @@ public class Health : MonoBehaviour
         if(I == 0)
             StartCoroutine(Flash());
 
-        if(health <= 0)
+        if(health <= 0 && !dead)
+        {
             Kill();
+            dead = true;
+        }
     }
 
     public void Kill()
@@ -126,7 +140,10 @@ public class Health : MonoBehaviour
         AudioManager.Instance.PlaySound2D(destroyedSound);
         
         if(properties.strength > 0)
-        CameraManager.Instance.Shake(properties);
+            CameraManager.Instance.Shake(properties);
+
+        if(objectOpitimizer != null)
+            objectOpitimizer.enabled = false;
 
         ScreenEffectsManager.Instance.HitStop(0.125f, 0.25f);
         ExplodeGems(transform.position);
@@ -136,7 +153,7 @@ public class Health : MonoBehaviour
 
         if(healthBar != null)
             healthBar.SetActive(false);
-
+        
         StartCoroutine(FlingAnimation(gameObject));
     }
 
