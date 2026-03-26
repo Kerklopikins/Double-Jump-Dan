@@ -1,0 +1,6155 @@
+fileFormatVersion: 2
+guid: a84efda117f28ec47ace744a727c2bed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Dan Idle
+  - first:
+      213: 21300002
+    second: Dan Jump
+  - first:
+      213: 21300004
+    second: Player Idle 2
+  - first:
+      213: 21300006
+    second: Player Idle 3
+  - first:
+      213: 21300008
+    second: Dan Walk 1
+  - first:
+      213: 21300010
+    second: Dan Walk 1
+  - first:
+      213: 21300012
+    second: Player Walk 3
+  - first:
+      213: 21300014
+    second: Dan Walk 2
+  - first:
+      213: 21300016
+    second: Ravenous Rabbit Logo
+  - first:
+      213: 21300018
+    second: Player Fire 2
+  - first:
+      213: 21300020
+    second: Player Fire 3
+  - first:
+      213: 21300022
+    second: Player Fire 4
+  - first:
+      213: 21300024
+    second: Cannon 1
+  - first:
+      213: 21300026
+    second: Cannon 2
+  - first:
+      213: 21300028
+    second: Cannon 3
+  - first:
+      213: 21300030
+    second: Bad Fish 1
+  - first:
+      213: 21300032
+    second: Bad Fish 2
+  - first:
+      213: 21300034
+    second: Bad Fish 3
+  - first:
+      213: 21300036
+    second: Jump Pad
+  - first:
+      213: 21300038
+    second: Chicken Gun 2
+  - first:
+      213: 21300040
+    second: Buzz Saw 2
+  - first:
+      213: 21300042
+    second: Green Flag Pole 1
+  - first:
+      213: 21300044
+    second: Green Flag Pole 2
+  - first:
+      213: 21300046
+    second: Green Flag Pole 3
+  - first:
+      213: 21300048
+    second: Yellow Flag Pole 1
+  - first:
+      213: 21300050
+    second: Yellow Flag Pole 2
+  - first:
+      213: 21300052
+    second: Yellow Flag Pole 3
+  - first:
+      213: 21300054
+    second: Grenade
+  - first:
+      213: 21300056
+    second: Coin 2
+  - first:
+      213: 21300058
+    second: Coin 3
+  - first:
+      213: 21300060
+    second: Coin 4
+  - first:
+      213: 21300062
+    second: Coin 5
+  - first:
+      213: 21300064
+    second: Coin 6
+  - first:
+      213: 21300066
+    second: Health Pack
+  - first:
+      213: 21300068
+    second: Moving Platform
+  - first:
+      213: 21300070
+    second: Cannon Ball
+  - first:
+      213: 21300072
+    second: Blue Fireball
+  - first:
+      213: 21300074
+    second: Bullet
+  - first:
+      213: 21300076
+    second: Blue Fireball 2
+  - first:
+      213: 21300078
+    second: Blue Fireball 3
+  - first:
+      213: 21300080
+    second: Blue Fireball 4
+  - first:
+      213: 21300082
+    second: Red Fireball 1
+  - first:
+      213: 21300084
+    second: Red Fireball 2
+  - first:
+      213: 21300086
+    second: Red Fireball 3
+  - first:
+      213: 21300088
+    second: Red Fireball 4
+  - first:
+      213: 21300090
+    second: Moving Platform 1
+  - first:
+      213: 21300092
+    second: Heart 2
+  - first:
+      213: 21300094
+    second: Heart 3
+  - first:
+      213: 21300096
+    second: Moving Platform 2
+  - first:
+      213: 21300098
+    second: Moving Platform 3
+  - first:
+      213: 21300100
+    second: Rock
+  - first:
+      213: 21300102
+    second: Jump Pad 1
+  - first:
+      213: 21300104
+    second: Jump Pad 2
+  - first:
+      213: 21300106
+    second: Jump Pad 3
+  - first:
+      213: 21300108
+    second: Muzzle Flash
+  - first:
+      213: 21300110
+    second: Bridge Piece
+  - first:
+      213: 21300112
+    second: 50 Caliber Hand Gun
+  - first:
+      213: 21300114
+    second: 50 Caliber Handgun
+  - first:
+      213: 21300116
+    second: Rock 1
+  - first:
+      213: 21300118
+    second: Pistol
+  - first:
+      213: 21300120
+    second: Crystle 1
+  - first:
+      213: 21300122
+    second: Crystle 2
+  - first:
+      213: 21300124
+    second: Crystle 3
+  - first:
+      213: 21300126
+    second: Crystle 4
+  - first:
+      213: 21300128
+    second: Crystle 5
+  - first:
+      213: 21300130
+    second: Snail 1
+  - first:
+      213: 21300132
+    second: Snail 2
+  - first:
+      213: 21300134
+    second: Snail 4
+  - first:
+      213: 21300136
+    second: Snail 5
+  - first:
+      213: 21300138
+    second: Snail
+  - first:
+      213: 21300140
+    second: Snail 8
+  - first:
+      213: 21300142
+    second: Snail 7
+  - first:
+      213: 21300144
+    second: Snail 3
+  - first:
+      213: 21300146
+    second: Snail 6
+  - first:
+      213: 21300148
+    second: Spikes 1
+  - first:
+      213: 21300150
+    second: Spikes 2
+  - first:
+      213: 21300152
+    second: Dirt 1
+  - first:
+      213: 21300154
+    second: Dirt 2
+  - first:
+      213: 21300156
+    second: Dirt 3
+  - first:
+      213: 21300158
+    second: Dirt 4
+  - first:
+      213: 21300160
+    second: Wood 1
+  - first:
+      213: 21300162
+    second: Dirt 5
+  - first:
+      213: 21300164
+    second: Dirt 6
+  - first:
+      213: 21300166
+    second: Dirt 7
+  - first:
+      213: 21300168
+    second: Dirt 8
+  - first:
+      213: 21300170
+    second: Dirt 9
+  - first:
+      213: 21300172
+    second: Dirt 10
+  - first:
+      213: 21300174
+    second: Dirt 11
+  - first:
+      213: 21300176
+    second: Dirt 12
+  - first:
+      213: 21300178
+    second: Dirt Grass 1
+  - first:
+      213: 21300180
+    second: Dirt Grass 2
+  - first:
+      213: 21300182
+    second: Dirt Grass 3
+  - first:
+      213: 21300184
+    second: Dirt Grass 4
+  - first:
+      213: 21300186
+    second: Wood 2
+  - first:
+      213: 21300188
+    second: Wood 3
+  - first:
+      213: 21300190
+    second: Single Dirt 4
+  - first:
+      213: 21300192
+    second: Wood 4
+  - first:
+      213: 21300194
+    second: Stone 5
+  - first:
+      213: 21300196
+    second: Stone 6
+  - first:
+      213: 21300198
+    second: Stone 7
+  - first:
+      213: 21300200
+    second: Bullet 2
+  - first:
+      213: 21300202
+    second: Shot Gun
+  - first:
+      213: 21300204
+    second: Bullet Shell
+  - first:
+      213: 21300206
+    second: Laser Beam
+  - first:
+      213: 21300208
+    second: Laser Beam Flash
+  - first:
+      213: 21300210
+    second: Arm 1
+  - first:
+      213: 21300212
+    second: Arm 2
+  - first:
+      213: 21300214
+    second: Muzzle Flash
+  - first:
+      213: 21300216
+    second: Muzzle Flash 2
+  - first:
+      213: 21300218
+    second: Muzzle Flash 3
+  - first:
+      213: 21300220
+    second: Bullet Destroyed Effect 5
+  - first:
+      213: 21300222
+    second: Sniper Rifle
+  - first:
+      213: 21300224
+    second: Gatling Gun 1
+  - first:
+      213: 21300226
+    second: Gatling Gun 2
+  - first:
+      213: 21300228
+    second: 3 Shooter
+  - first:
+      213: 21300230
+    second: Acid Bubble
+  - first:
+      213: 21300232
+    second: Level 1 Machine Gun
+  - first:
+      213: 21300234
+    second: Level 1 Machine Gun
+  - first:
+      213: 21300236
+    second: Acid Bubble 2
+  - first:
+      213: 21300238
+    second: Acid Bubble 2
+  - first:
+      213: 21300240
+    second: 50 Caliber Handgun
+  - first:
+      213: 21300242
+    second: Bullet Destroyed Effect 6
+  - first:
+      213: 21300244
+    second: Pistle With Laser Sight
+  - first:
+      213: 21300246
+    second: 44 Magnum
+  - first:
+      213: 21300248
+    second: Uzi
+  - first:
+      213: 21300250
+    second: AK-47
+  - first:
+      213: 21300252
+    second: Level 1 Machine Gun
+  - first:
+      213: 21300254
+    second: Level 3 Machine Gun
+  - first:
+      213: 21300256
+    second: Shotgun
+  - first:
+      213: 21300258
+    second: Arm And Leg
+  - first:
+      213: 21300260
+    second: Water
+  - first:
+      213: 21300262
+    second: Bullet Destroyed Effect 1
+  - first:
+      213: 21300264
+    second: Bullet Destroyed Effect 2
+  - first:
+      213: 21300266
+    second: Bullet Destroyed Effect 3
+  - first:
+      213: 21300268
+    second: Bullet Destroyed Effect 4
+  - first:
+      213: 21300270
+    second: Bullet 1
+  - first:
+      213: 21300272
+    second: Bullet 3
+  - first:
+      213: 21300274
+    second: Bullet 4
+  - first:
+      213: 21300276
+    second: Gold Coin 2
+  - first:
+      213: 21300278
+    second: Gold Coin 3
+  - first:
+      213: 21300280
+    second: Small Spider Robot 7
+  - first:
+      213: 21300282
+    second: Big Spider Robot 3
+  - first:
+      213: 21300284
+    second: Gold Coin 4
+  - first:
+      213: 21300286
+    second: Silver Coin 1
+  - first:
+      213: 21300288
+    second: Silver Coin 2
+  - first:
+      213: 21300290
+    second: Silver Coin 3
+  - first:
+      213: 21300292
+    second: Silver Coin 4
+  - first:
+      213: 21300294
+    second: Cactus 1
+  - first:
+      213: 21300296
+    second: Cactus 2
+  - first:
+      213: 21300298
+    second: Small Spider Robot
+  - first:
+      213: 21300300
+    second: Small Spider Robot 2
+  - first:
+      213: 21300302
+    second: Small Spider Robot 1
+  - first:
+      213: 21300304
+    second: Small Spider Robot 3
+  - first:
+      213: 21300306
+    second: Small Spider Robot 4
+  - first:
+      213: 21300308
+    second: Small Spider Robot 5
+  - first:
+      213: 21300310
+    second: Small Spider Robot 6
+  - first:
+      213: 21300312
+    second: Laser
+  - first:
+      213: 21300314
+    second: Big Spider Robot 1
+  - first:
+      213: 21300316
+    second: Big Spider Robot 4
+  - first:
+      213: 21300318
+    second: Big Spider Robot 2
+  - first:
+      213: 21300320
+    second: Big Spider Robot 5
+  - first:
+      213: 21300322
+    second: Big Spider Robot 6
+  - first:
+      213: 21300324
+    second: Big Spider Robot 7
+  - first:
+      213: 21300326
+    second: Dirt 13
+  - first:
+      213: 21300328
+    second: Dirt 14
+  - first:
+      213: 21300330
+    second: Dirt 15
+  - first:
+      213: 21300332
+    second: Dirt 16
+  - first:
+      213: 21300334
+    second: Spring Board 1
+  - first:
+      213: 21300336
+    second: Spring Board 2
+  - first:
+      213: 21300338
+    second: Spring Board 3
+  - first:
+      213: 21300340
+    second: Spring Board 4
+  - first:
+      213: 21300342
+    second: Spring Board 5
+  - first:
+      213: 21300344
+    second: Spring Board 6
+  - first:
+      213: 21300346
+    second: Portal
+  - first:
+      213: 21300348
+    second: Minigun 1
+  - first:
+      213: 21300350
+    second: Minigun 2
+  - first:
+      213: 21300352
+    second: Dirt Corner 3
+  - first:
+      213: 21300354
+    second: Dirt Corner 1
+  - first:
+      213: 21300356
+    second: Dirt Corner 2
+  - first:
+      213: 21300358
+    second: Dirt Corner 4
+  - first:
+      213: 21300360
+    second: Dirt Corner Grass 1
+  - first:
+      213: 21300362
+    second: Dirt Corner Grass 2
+  - first:
+      213: 21300364
+    second: Dirt Corner Grass 3
+  - first:
+      213: 21300366
+    second: Dirt Corner Grass 2
+  - first:
+      213: 21300368
+    second: Dirt Corner 5
+  - first:
+      213: 21300370
+    second: Dirt 17
+  - first:
+      213: 21300372
+    second: Dirt 18
+  - first:
+      213: 21300374
+    second: Lamp
+  - first:
+      213: 21300376
+    second: Cave Dirt 1
+  - first:
+      213: 21300378
+    second: Cave Dirt 2
+  - first:
+      213: 21300380
+    second: Cave Dirt 3
+  - first:
+      213: 21300382
+    second: Cave Dirt 4
+  - first:
+      213: 21300384
+    second: Cave Dirt 5
+  - first:
+      213: 21300386
+    second: Cave Dirt 6
+  - first:
+      213: 21300388
+    second: Cave Dirt 7
+  - first:
+      213: 21300390
+    second: Cave Dirt 8
+  - first:
+      213: 21300392
+    second: Cave Dirt 9
+  - first:
+      213: 21300394
+    second: Cave Dirt 10
+  - first:
+      213: 21300396
+    second: Cave Dirt 11
+  - first:
+      213: 21300398
+    second: Cave Dirt 12
+  - first:
+      213: 21300400
+    second: Cave Dirt Corner 1
+  - first:
+      213: 21300402
+    second: Cave Dirt Corner 2
+  - first:
+      213: 21300404
+    second: Cave Dirt Corner Rock 1
+  - first:
+      213: 21300406
+    second: Cave Dirt Corner Rock 2
+  - first:
+      213: 21300408
+    second: Cave Dirt Rock 1
+  - first:
+      213: 21300410
+    second: Cave Dirt Rock 2
+  - first:
+      213: 21300412
+    second: Cave Dirt Rock 3
+  - first:
+      213: 21300414
+    second: Cave Dirt Rock 4
+  - first:
+      213: 21300416
+    second: Cannon Barrel
+  - first:
+      213: 21300418
+    second: Cannon Base
+  - first:
+      213: 21300420
+    second: Wing 1
+  - first:
+      213: 21300422
+    second: Wing 2
+  - first:
+      213: 21300424
+    second: Wing 3
+  - first:
+      213: 21300426
+    second: Wing 4
+  - first:
+      213: 21300428
+    second: Sticker
+  - first:
+      213: 21300430
+    second: Sticker Cannon
+  - first:
+      213: 21300432
+    second: Homing Missile 1
+  - first:
+      213: 21300434
+    second: Player Shadow
+  - first:
+      213: 21300436
+    second: Falling Robo Spike 1
+  - first:
+      213: 21300438
+    second: Spider 3
+  - first:
+      213: 21300440
+    second: Spider 3
+  - first:
+      213: 21300442
+    second: Spider 4
+  - first:
+      213: 21300444
+    second: Falling Robo Spike 2
+  - first:
+      213: 21300446
+    second: Acid Bubble 1
+  - first:
+      213: 21300448
+    second: Homing Missile 2
+  - first:
+      213: 21300450
+    second: Silver Coin 4
+  - first:
+      213: 21300452
+    second: Homing Missile 3
+  - first:
+      213: 21300454
+    second: 5
+  - first:
+      213: 21300456
+    second: 6
+  - first:
+      213: 21300458
+    second: Cyclops Arm 2
+  - first:
+      213: 21300460
+    second: Double Jump Dan Sprite Sheet_6
+  - first:
+      213: 21300462
+    second: Gem 1
+  - first:
+      213: 21300464
+    second: Rocket Guide
+  - first:
+      213: 21300466
+    second: Homing Missile Launcher
+  - first:
+      213: 21300468
+    second: Homing Missile Launcher Pivot
+  - first:
+      213: 21300470
+    second: Portal 1
+  - first:
+      213: 21300472
+    second: Portal 2
+  - first:
+      213: 21300474
+    second: Gem 1
+  - first:
+      213: 21300476
+    second: Power Cube 2
+  - first:
+      213: 21300478
+    second: Power Cube 3
+  - first:
+      213: 21300480
+    second: Power Cube 4
+  - first:
+      213: 21300482
+    second: 1
+  - first:
+      213: 21300484
+    second: 3
+  - first:
+      213: 21300486
+    second: Boulder
+  - first:
+      213: 21300488
+    second: 2
+  - first:
+      213: 21300490
+    second: 4
+  - first:
+      213: 21300492
+    second: UFO 1
+  - first:
+      213: 21300494
+    second: 8
+  - first:
+      213: 21300496
+    second: 9
+  - first:
+      213: 21300498
+    second: 10
+  - first:
+      213: 21300500
+    second: 11
+  - first:
+      213: 21300502
+    second: Water Top Layer 1
+  - first:
+      213: 21300504
+    second: Water Top Layer 2
+  - first:
+      213: 21300506
+    second: Water Top Layer 3
+  - first:
+      213: 21300508
+    second: Water Bottom Layer 1
+  - first:
+      213: 21300510
+    second: Water Bottom Layer 2
+  - first:
+      213: 21300512
+    second: Water Bottom Layer 3
+  - first:
+      213: 21300514
+    second: Water 1
+  - first:
+      213: 21300516
+    second: Water 2
+  - first:
+      213: 21300518
+    second: Water 3
+  - first:
+      213: 21300520
+    second: Dirt 19
+  - first:
+      213: 21300522
+    second: Dirt 20
+  - first:
+      213: 21300524
+    second: Grenade Launcher
+  - first:
+      213: 21300526
+    second: 22 Magnum
+  - first:
+      213: 21300528
+    second: Cloud
+  - first:
+      213: 21300530
+    second: Background Dirt 1
+  - first:
+      213: 21300532
+    second: Background Dirt 2
+  - first:
+      213: 21300534
+    second: Background Dirt 3
+  - first:
+      213: 21300536
+    second: Background Dirt 4
+  - first:
+      213: 21300538
+    second: Flamethrower
+  - first:
+      213: 21300540
+    second: Bullet Destroyed Effect 7
+  - first:
+      213: 21300542
+    second: Bunny Idle
+  - first:
+      213: 21300544
+    second: Bunny Hopping 1
+  - first:
+      213: 21300546
+    second: Bunny Hopping 2
+  - first:
+      213: 21300548
+    second: Bunny Hopping 3
+  - first:
+      213: 21300550
+    second: Bunny Hopping 4
+  - first:
+      213: 21300552
+    second: Bunny Hopping 5
+  - first:
+      213: 21300554
+    second: Gem 2
+  - first:
+      213: 21300556
+    second: Gem 3
+  - first:
+      213: 21300558
+    second: Gem 4
+  - first:
+      213: 21300560
+    second: Gem 5
+  - first:
+      213: 21300562
+    second: Gem 6
+  - first:
+      213: 21300564
+    second: Gem 7
+  - first:
+      213: 21300566
+    second: Gem 8
+  - first:
+      213: 21300568
+    second: Arm And Leg
+  - first:
+      213: 21300570
+    second: Speech Bubble Left
+  - first:
+      213: 21300572
+    second: Speech Bubble Right
+  - first:
+      213: 21300574
+    second: Laser Red
+  - first:
+      213: 21300576
+    second: Laser Gun 1
+  - first:
+      213: 21300578
+    second: Laser Gun 2
+  - first:
+      213: 21300580
+    second: Laser Green
+  - first:
+      213: 21300582
+    second: Finish Sign
+  - first:
+      213: 21300584
+    second: Bunny
+  - first:
+      213: 21300586
+    second: Finish Sign Left
+  - first:
+      213: 21300588
+    second: Finish Sign Right
+  - first:
+      213: 21300590
+    second: Muzzle Flash Cannon
+  - first:
+      213: 21300592
+    second: Muzzle Flash Gun
+  - first:
+      213: 21300594
+    second: Tacodon Idle
+  - first:
+      213: 21300596
+    second: Tacodon Walk 1
+  - first:
+      213: 21300598
+    second: Tacodon Walk 2
+  - first:
+      213: 21300600
+    second: Tacodon Walk 3
+  - first:
+      213: 21300602
+    second: Tacodon Walk 4
+  - first:
+      213: 21300604
+    second: Tacodon Walk 5
+  - first:
+      213: 21300606
+    second: Tacodon Walk 6
+  - first:
+      213: 21300608
+    second: Tacodon Walk 7
+  - first:
+      213: 21300610
+    second: Tacodon Walk 8
+  - first:
+      213: 21300612
+    second: Old Dirt 1
+  - first:
+      213: 21300614
+    second: Old Dirt 2
+  - first:
+      213: 21300616
+    second: Old Dirt 3
+  - first:
+      213: 21300618
+    second: Old Spike 2
+  - first:
+      213: 21300620
+    second: Old Spike 1
+  - first:
+      213: 21300622
+    second: Enemy Idle
+  - first:
+      213: 21300624
+    second: Enemy Walk 1
+  - first:
+      213: 21300626
+    second: Enemy Walk 2
+  - first:
+      213: 21300628
+    second: Enemy Walk 3
+  - first:
+      213: 21300630
+    second: Santa Hat
+  - first:
+      213: 21300632
+    second: Cap
+  - first:
+      213: 21300634
+    second: Lava Gun
+  - first:
+      213: 21300636
+    second: Dan Idle
+  - first:
+      213: 21300638
+    second: Dan Jump
+  - first:
+      213: 21300640
+    second: Dan Walk 1
+  - first:
+      213: 21300642
+    second: Dan Walk 2
+  - first:
+      213: 21300644
+    second: Arm
+  - first:
+      213: 21300646
+    second: Arm P2
+  - first:
+      213: 21300648
+    second: Player Idle P2
+  - first:
+      213: 21300650
+    second: Player Jump P2
+  - first:
+      213: 21300652
+    second: Player Walk 1 P2
+  - first:
+      213: 21300654
+    second: Player Walk 2 P2
+  - first:
+      213: 21300656
+    second: Eyes
+  - first:
+      213: 21300658
+    second: Verkron 1
+  - first:
+      213: 21300660
+    second: Verkron Lower Arm
+  - first:
+      213: 21300662
+    second: Verkron Upper Arm
+  - first:
+      213: 21300664
+    second: Desert Trail Dust
+  - first:
+      213: 21300666
+    second: Leg
+  - first:
+      213: 21300668
+    second: Player Body
+  - first:
+      213: 21300670
+    second: Player Eyes
+  - first:
+      213: 21300672
+    second: Player Arm 1
+  - first:
+      213: 21300674
+    second: Health Pack 1
+  - first:
+      213: 21300676
+    second: Health Pack 2
+  - first:
+      213: 21300678
+    second: Health Pack 3
+  - first:
+      213: 21300680
+    second: Health Pack 4
+  - first:
+      213: 21300682
+    second: Health Pack 5
+  - first:
+      213: 21300684
+    second: Health Pack 6
+  - first:
+      213: 21300686
+    second: Health Pack 7
+  - first:
+      213: 21300688
+    second: Health Pack 8
+  - first:
+      213: 21300690
+    second: Health Pack 9
+  - first:
+      213: 21300692
+    second: Health Pack 10
+  - first:
+      213: 21300694
+    second: Health Pack 11
+  - first:
+      213: 21300696
+    second: Unicorn Horn Gun
+  - first:
+      213: 21300698
+    second: Unicorn Gun
+  - first:
+      213: 21300700
+    second: Rainbow
+  - first:
+      213: 21300702
+    second: Rainbow Gun
+  - first:
+      213: 21300704
+    second: Enemy Health Bar Background
+  - first:
+      213: 21300706
+    second: Enemy Health Bar Fill
+  - first:
+      213: 21300708
+    second: Terrible Flame Thrower
+  - first:
+      213: 21300710
+    second: Player Eyes Up
+  - first:
+      213: 21300712
+    second: Player Squish
+  - first:
+      213: 21300714
+    second: Player Arm 2
+  - first:
+      213: 21300716
+    second: Killer Wheel
+  - first:
+      213: 21300718
+    second: Spark
+  - first:
+      213: 21300720
+    second: Shadow Dan Idle
+  - first:
+      213: 21300722
+    second: Lighning Gun
+  - first:
+      213: 21300724
+    second: Lightning Gun
+  - first:
+      213: 21300726
+    second: Chicken Gun 1
+  - first:
+      213: 21300728
+    second: Egg
+  - first:
+      213: 21300730
+    second: Angry Stan Idle
+  - first:
+      213: 21300732
+    second: Wisky Gun
+  - first:
+      213: 21300734
+    second: Wisky Bottle
+  - first:
+      213: 21300736
+    second: GL Shot Force Background
+  - first:
+      213: 21300738
+    second: GL Shot Force Fill
+  - first:
+      213: 21300740
+    second: D-207
+  - first:
+      213: 21300742
+    second: D-207 Shot Light
+  - first:
+      213: 21300744
+    second: Portal Spiral
+  - first:
+      213: 21300746
+    second: Portal Glow
+  - first:
+      213: 21300748
+    second: Portal White
+  - first:
+      213: 21300750
+    second: Beer Bottle
+  - first:
+      213: 21300752
+    second: Angry Stan Jump
+  - first:
+      213: 21300754
+    second: Angry Stan Walk 1
+  - first:
+      213: 21300756
+    second: Angry Stan Walk 2
+  - first:
+      213: 21300758
+    second: Angry Stan Arm 1
+  - first:
+      213: 21300760
+    second: Angry Stan Arm 2
+  - first:
+      213: 21300762
+    second: Cyclops Idle
+  - first:
+      213: 21300764
+    second: Cyclops Jump
+  - first:
+      213: 21300766
+    second: Cyclops Walk 1
+  - first:
+      213: 21300768
+    second: Cyclops Walk 2
+  - first:
+      213: 21300770
+    second: Cyclops Arm 1
+  - first:
+      213: 21300772
+    second: Danielle Idle
+  - first:
+      213: 21300774
+    second: Danielle Jump
+  - first:
+      213: 21300776
+    second: Danielle Walk 1
+  - first:
+      213: 21300778
+    second: Danielle Walk 2
+  - first:
+      213: 21300780
+    second: Danielle Arm 1
+  - first:
+      213: 21300782
+    second: Danielle Arm 2
+  - first:
+      213: 21300784
+    second: Smiley Man Idle
+  - first:
+      213: 21300786
+    second: Smiley Man Jump
+  - first:
+      213: 21300788
+    second: Smiley Man Walk 1
+  - first:
+      213: 21300790
+    second: Smiley Man Walk 2
+  - first:
+      213: 21300792
+    second: Robo Dan Idle
+  - first:
+      213: 21300794
+    second: Robo Dan Jump
+  - first:
+      213: 21300796
+    second: Robo Dan Walk 1
+  - first:
+      213: 21300798
+    second: Robo Dan Walk 2
+  - first:
+      213: 21300800
+    second: Robo Dan Arm 1
+  - first:
+      213: 21300802
+    second: Robo Dan Arm 2
+  - first:
+      213: 21300804
+    second: Smartphone Zombie Dan Idle
+  - first:
+      213: 21300806
+    second: Smartphone Zombie Dan Jump
+  - first:
+      213: 21300808
+    second: Smartphone Zombie Dan Walk 1
+  - first:
+      213: 21300810
+    second: Smartphone Zombie Dan Walk 2
+  - first:
+      213: 21300812
+    second: Smartphone Zombie Dan Arm 2
+  - first:
+      213: 21300814
+    second: Smartphone Zombie Dan Arm 1
+  - first:
+      213: 21300816
+    second: Smartphone
+  - first:
+      213: 21300818
+    second: Double Jump Dan Sprite Sheet_1
+  - first:
+      213: 21300820
+    second: Double Jump Dan Sprite Sheet_2
+  - first:
+      213: 21300822
+    second: Double Jump Dan Sprite Sheet_3
+  - first:
+      213: 21300824
+    second: Black Dan Jump
+  - first:
+      213: 21300826
+    second: Black Dan Walk 1
+  - first:
+      213: 21300828
+    second: Black Dan Walk 2
+  - first:
+      213: 21300830
+    second: Black Dan Arm 2
+  - first:
+      213: 21300832
+    second: Black Dan Arm 1
+  - first:
+      213: 21300834
+    second: Shadow Dan Jump
+  - first:
+      213: 21300836
+    second: Shadow Dan Walk 1
+  - first:
+      213: 21300838
+    second: Shadow Dan Walk 2
+  - first:
+      213: 21300840
+    second: Shadow Dan Arm 2
+  - first:
+      213: 21300842
+    second: Shadow Dan Arm 1
+  - first:
+      213: 21300844
+    second: Double Jump Dan Sprite Sheet_0
+  - first:
+      213: 21300846
+    second: Tommy Gun
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 4
+  maxTextureSize: 512
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 16
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dan Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dan Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 287
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Gun 2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 486
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grenade
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 508
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50 Caliber Handgun
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 361
+        width: 21
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29305410000000000800000000000000
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 295
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69305410000000000800000000000000
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Shell
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 508
+        width: 4
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce305410000000000800000000000000
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 44 Magnum
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 295
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61405410000000000800000000000000
+      internalID: 21300246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Uzi
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 306
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81405410000000000800000000000000
+      internalID: 21300248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AK-47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 56
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1405410000000000800000000000000
+      internalID: 21300250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 50
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02405410000000000800000000000000
+      internalID: 21300256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Red
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 509
+        width: 16
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5505410000000000800000000000000
+      internalID: 21300574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigun 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 422
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7405410000000000800000000000000
+      internalID: 21300348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigun 2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 404
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7405410000000000800000000000000
+      internalID: 21300350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grenade Launcher
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 387
+        width: 56
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2505410000000000800000000000000
+      internalID: 21300524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 22 Magnum
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 297
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2505410000000000800000000000000
+      internalID: 21300526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 375
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06505410000000000800000000000000
+      internalID: 21300576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Green
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 509
+        width: 16
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46505410000000000800000000000000
+      internalID: 21300580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Idle
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 365
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27505410000000000800000000000000
+      internalID: 21300594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 365
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47505410000000000800000000000000
+      internalID: 21300596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 365
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67505410000000000800000000000000
+      internalID: 21300598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 365
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87505410000000000800000000000000
+      internalID: 21300600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 342
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7505410000000000800000000000000
+      internalID: 21300602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 342
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7505410000000000800000000000000
+      internalID: 21300604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 342
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7505410000000000800000000000000
+      internalID: 21300606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 319
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08505410000000000800000000000000
+      internalID: 21300608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tacodon Walk 8
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 319
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28505410000000000800000000000000
+      internalID: 21300610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Arm
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 284
+        width: 2
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c505410000000000800000000000000
+      internalID: 21300672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rainbow Gun
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 346
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed505410000000000800000000000000
+      internalID: 21300702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Health Bar Background
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 509
+        width: 17
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e505410000000000800000000000000
+      internalID: 21300704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy Health Bar Fill
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 507
+        width: 15
+        height: 1
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e505410000000000800000000000000
+      internalID: 21300706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning Gun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 345
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f505410000000000800000000000000
+      internalID: 21300724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken Gun 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 486
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f505410000000000800000000000000
+      internalID: 21300726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Egg
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 507
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f505410000000000800000000000000
+      internalID: 21300728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lava Gun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9505410000000000800000000000000
+      internalID: 21300634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wisky Gun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 322
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf505410000000000800000000000000
+      internalID: 21300732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Beer Bottle
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 507
+        width: 13
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0605410000000000800000000000000
+      internalID: 21300750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GL Shot Force Background
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 508
+        width: 26
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00605410000000000800000000000000
+      internalID: 21300736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GL Shot Force Fill
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 505
+        width: 24
+        height: 2
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20605410000000000800000000000000
+      internalID: 21300738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D-207
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 331
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40605410000000000800000000000000
+      internalID: 21300740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D-207 Shot Light
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 320
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60605410000000000800000000000000
+      internalID: 21300742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal Glow
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 468
+        width: 22
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0605410000000000800000000000000
+      internalID: 21300746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 464
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7405410000000000800000000000000
+      internalID: 21300346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal White
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 476
+        width: 14
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0605410000000000800000000000000
+      internalID: 21300748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Stan Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 275
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af505410000000000800000000000000
+      internalID: 21300730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Stan Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 276
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01605410000000000800000000000000
+      internalID: 21300752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Stan Arm
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 273
+        width: 2
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61605410000000000800000000000000
+      internalID: 21300758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1605410000000000800000000000000
+      internalID: 21300762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 265
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1605410000000000800000000000000
+      internalID: 21300764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops Arm
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 262
+        width: 2
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22605410000000000800000000000000
+      internalID: 21300770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Danielle Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 253
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42605410000000000800000000000000
+      internalID: 21300772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Danielle Arm 1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 251
+        width: 2
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2605410000000000800000000000000
+      internalID: 21300780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo Dan Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 242
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83605410000000000800000000000000
+      internalID: 21300792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo Dan Arm 1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 240
+        width: 3
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04605410000000000800000000000000
+      internalID: 21300800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone Zombie Dan Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 231
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44605410000000000800000000000000
+      internalID: 21300804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone Zombie Dan Arm 1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 229
+        width: 2
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4605410000000000800000000000000
+      internalID: 21300814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 226
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05605410000000000800000000000000
+      internalID: 21300816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f505410000000000800000000000000
+      internalID: 21300720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan Arm 1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 218
+        width: 2
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6605410000000000800000000000000
+      internalID: 21300842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tommy Gun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 472
+        width: 55
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6605410000000000800000000000000
+      internalID: 21300846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Happy
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 278
+        width: 17
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4c1c91432c02e488b59d8be6a648ab
+      internalID: -53238633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Love
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 261
+        width: 17
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e878529b3bfd4f34799d504603d351b0
+      internalID: -589499410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Laughing
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 244
+        width: 19
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cf37550908cb84aa3fa4713caed231
+      internalID: 537260675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Cool
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 227
+        width: 17
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354665538deb45e44b425f08d9bb638c
+      internalID: 1382578102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Nerd
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 210
+        width: 17
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7adc20020077e4696948acf2a2a446
+      internalID: 156050680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Yeah
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 193
+        width: 17
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c8cd8f3f6154d4aa0d7f4e6ab17f87
+      internalID: -1138650253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Eggplant
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 213
+        width: 19
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee318431aa683c49b7a30ecc0735a0e
+      internalID: -383063961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Poop
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 192
+        width: 18
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28feca42b52585544af73274a46cbf01
+      internalID: -1750042337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Arm
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 295
+        width: 7
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99677f9a04cc433419608dfeb901ca04
+      internalID: 862658699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Idle
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 271
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55ca6467856f86409a2bdd33893d96c
+      internalID: 1786178830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Walk 1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 257
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089922c7ac2ad60409d7decb9589b0ab
+      internalID: -1225938573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Walk 2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 257
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa75d57140e616d4b90af85322c4060c
+      internalID: -1037522733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Jump
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 271
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ebf8d955bdc3948824778cbbf3f1c0
+      internalID: 526180074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Checkpoint Base
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 480
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd8d2c50a965d0438b4d8abcf6f4472
+      internalID: 610368297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Checkpoint Beacan Glow
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 496
+        width: 10
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 5, z: 0, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af03afb1ac877244a9fbac5908a2b2aa
+      internalID: 775253274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rainbow Gun Glow
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 371
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbb6f6493684534a927219a5cb696b5
+      internalID: -1117488336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser Gun Glow
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 355
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17cf45cc23b19f4db468a7cf31035b9
+      internalID: 969944771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning Gun Glow
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 307
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3371c34896344e942be7878a43fd6de8
+      internalID: -218421234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lava Gun Glow
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 337
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7229c159f1b14741a9e50f0e0ea3f20
+      internalID: 1425134771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet Line
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 503
+        width: 16
+        height: 1
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489c66c1a6559a34ea967a323478217d
+      internalID: -141926517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy Legs 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90e51c30c17b1c4d93f66523757b739
+      internalID: -1321261832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy Arm 1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 207
+        width: 2
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d28b785e1e88d42a24a46b27a4d791
+      internalID: 82847855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D-207 Laser
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 311
+        width: 7
+        height: 8
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 3, y: 0, z: 3, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c1ffb9719ead34fa19f3906ad5b252
+      internalID: -167448032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stubby Shotgun
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 475
+        width: 30
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf7f598d51657c45a43e5ba66093afa
+      internalID: 215247076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sniper Rifle
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 448
+        width: 75
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd28c8a5cb537de428dec927fdae952b
+      internalID: -1053140107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trajectory End Point
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 496
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbc37b7ed84f08469ca3b4e35d56490
+      internalID: 998501555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem 1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8361ec4c53994554ea10fa41e291650a
+      internalID: -407638872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem 2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3cbaf41dcb00b4d9805a666f4fabcd
+      internalID: 281116368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem 3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f38d31e22534d441b46026074c372d5
+      internalID: 544323233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem 4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c2a86ae7abe13488703f191ffa2920
+      internalID: -2118553872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem 5
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2545b13007f854f458e198bb26b81b65
+      internalID: -1290615325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem 6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5f459495c4a4142b5a1a96d8d9dadf
+      internalID: -1008661209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem 7
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 496
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff3530930959024cbd24448a4050f62
+      internalID: 1190753641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 1
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 496
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae2959142b0d784b87951f6626d4010
+      internalID: 544257496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 2
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 496
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ac158ad6e67b445a84cb8ffefbcf1a
+      internalID: 1723672978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 3
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 479
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b74fabc7d1bcb49969e2384a499fa0
+      internalID: 1256654348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy 4
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 479
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4648ca0d643dc4a8da58bad654b4d0
+      internalID: 1863110594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling Robo Spike 2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 482
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3a7ad56990d8240b2e91a003bb9d15
+      internalID: -2003904764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling Robo Spike 1
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 492
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf20d218e136f4143bef4362d17d9a23
+      internalID: 28267803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Killer Wheel
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 472
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67503e32750ed548a4fcf30a38f9892
+      internalID: -2010828533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Eye Red Small
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 504
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79607b1571423dd4ba8b59bb31069f69
+      internalID: -1386913816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Eye Green Small
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 504
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7b33ea4d5fe1a4f95e10612ac526f8
+      internalID: 1746050392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Eye Green Medium
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 502
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b1b11a03cb6664f82a4e13a1c1a522
+      internalID: -1522932627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Eye Red Medium
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 502
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1acc1ddcd4aad4d8b1c08fe0e41201
+      internalID: -1864644108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Eye Red Large
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 501
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e150c6b20fba54d87c8efe9f8f5ce7
+      internalID: 1894441218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn Body
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 457
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d620c84f43eb7364484dd9c25abb6fa4
+      internalID: -272791460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn 7
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 457
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349f9a7c7606b3b4eb5e5f34a7df184c
+      internalID: -795990436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn 6
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 457
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a808355de0538de48aa4adda4a8d9e50
+      internalID: 988372736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn 5
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 457
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9dbb2426041f4c4c9e4649e0a7c9272
+      internalID: -2002943272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn 4
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 457
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67628fdc960df9742966b1b3ae3678e9
+      internalID: 2098447631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn 3
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 457
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536ccca9aa90a1348b0967c864a4d80c
+      internalID: 1892842877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn 2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 457
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133fa0ea1aba7b246997b25e2081adaf
+      internalID: 676697072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crorgn 1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 457
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f7f3162814559449a08e662c9fb55a
+      internalID: -696503459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 434
+        width: 38
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2adc3bf8e4c48dc4ba86574064b7611c
+      internalID: -2034873659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 2
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 434
+        width: 38
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d686ef7b7e65347ad9a4cc2b60ee77
+      internalID: 34564933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 3
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 434
+        width: 38
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147015300bb9b8c47b9c4e81037d343f
+      internalID: 1154220454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 434
+        width: 38
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd1f3a8cb2f24245ad0100a88396bd8
+      internalID: 1530770386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 5
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 434
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc0140701d9a814483a8c75750d8699
+      internalID: 1923306631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 6
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 434
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02478aa495caa0e49a138fee6178ee53
+      internalID: -2087014390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 7
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 411
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6bafffe420b314cb81622c1610a944
+      internalID: 845510212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 8
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 411
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e9186b85605b74c87f994c1e71a2f7
+      internalID: -187015523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 9
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 411
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15ebbb97b0ad2741915359444a55f8f
+      internalID: 1123764677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 411
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e761c6afa9dc264193af666c6a9987a
+      internalID: 1776857899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 11
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 411
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba7eda6e5ed56243a66e86a14bcfcec
+      internalID: 1340155080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon 12
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 411
+        width: 38
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ca0acacf0bb1e44860c988ae9abf1e
+      internalID: -2048778632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Tracks 3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 397
+        width: 47
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63cfda148364246418da2410361999ec
+      internalID: -748450080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Tracks 2
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 397
+        width: 47
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1d94436f2ebdf40b102c0d9d65e2d9
+      internalID: 2051676071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Tracks 1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 397
+        width: 47
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b801214c975264c95bcb839b7c2f06
+      internalID: -83714971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satelite 2
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 400
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6ec79919a822f49bec3e426c4a8c2b
+      internalID: -335886244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satelite 1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 400
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2838c3335fdbab948b2fea0f4c9015c4
+      internalID: 404431515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satelite 3
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 400
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd47c6543a5c5f54998dd4c2ac8cb5b5
+      internalID: -1170866088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satelite 4
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 389
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640bc33696b628c4194f06fa205a29c1
+      internalID: 879996320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satelite 5
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 389
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e394892a62198846aaf5de34953af3b
+      internalID: 74463467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satelite 6
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 389
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d600d6a8b00294cb18b24f6a1bf5da
+      internalID: 251596512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Rocket Launcher
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 401
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2c48b99d33601439490b2c5f4fcff7
+      internalID: -853098502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Rocket
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 395
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabf94d6eb63a0f4f8117bb82bf05b49
+      internalID: 533204486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Laser
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 389
+        width: 3
+        height: 5
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdaaf503bc6e1154da660e64887454ad
+      internalID: -571491363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Wheels 1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 386
+        width: 38
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d044c6a4701eb0c4db246c141b98b68c
+      internalID: 1961737182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Wheels 2
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 386
+        width: 38
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e8bc97f4cd0a54cb05882ed38bcead
+      internalID: -769385202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Wheels 3
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 386
+        width: 38
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b6f1d29388ec348b8b588e7d8cc13b
+      internalID: 2085665538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tredicon Wheels 4
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 386
+        width: 38
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a02e303daa238c44b1ad1c25f5203bb
+      internalID: 933699942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buzz Saw
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 365
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0642c0abd786eb47bdb6655eff2cbff
+      internalID: 722863783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moving Platform Tiny
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 352
+        width: 20
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.24242425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48c9587fba34a14e989f76e9a5cbb05
+      internalID: -935509271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moving Platform Small
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 352
+        width: 32
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.24242425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5cce245293aee442bbc258cc3fecbb4
+      internalID: 1485391032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moving Platform Medium
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 352
+        width: 48
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.24242425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63361ebf0416eed498fa245aa98f2d9f
+      internalID: 1744887737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moving Platform Large
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 352
+        width: 80
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.24242425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a51122b6dc412e4e9cd1c23bac5f896
+      internalID: -902477365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engine
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 338
+        width: 20
+        height: 13
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ef169db3b18604fbeeb62f36b60333
+      internalID: 1200315246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Engine Small
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 338
+        width: 8
+        height: 13
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303fb8bc10aadd7469cfa112a25f2b5f
+      internalID: -510349390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike O Death Top
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 319
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c016098806112084ea2d2dc2d7b92786
+      internalID: -1327982969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spike O Death Segmant
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 302
+        width: 16
+        height: 16
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d97ef1953d5634f87910c5d213eef3
+      internalID: -154497618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spikes
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 321
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0052c3420d30c5c419c625e92cb890c5
+      internalID: 1158781519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top Hat
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c79c818b7721ee4eaf345805d39a2d2
+      internalID: 833948488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandana Dan
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 10
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a738604d1e7d4ad438bde36d40b9eb2c
+      internalID: -1694186720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mohalk
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dfc38dac0b4ae4790511df2e02c8df
+      internalID: 209388247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trump Hair
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 18
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efd2a5c7fa43d44a84f54966c9a3cff
+      internalID: -99176680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Covid Mask
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 23
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095cfa1ef5fa53a4a8778828ecf6bac3
+      internalID: -883675269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crown
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 28
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3abd2d29fcf6f54dbf13c2b1842ebb0
+      internalID: 763082680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wig
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 37
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2e3ff054556a347b9b892919342b2d
+      internalID: -1965648901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Halo
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 34
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6777017adfe338d49a7d559334bcac9c
+      internalID: -1872593163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Devil Horns
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 40
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcb9a0aaaa2dc541b4f572944250f46
+      internalID: 1143102318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunglasses
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 42
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31f9c69283ddbe43a4485c1854f3ad5
+      internalID: 1050584340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b99aee626508a409370b317d0b9b47
+      internalID: 824108254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531430e924a8b7c49953e641a2618461
+      internalID: 743296798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 3
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fac186f96d14994e814594f75231c2c
+      internalID: 1342586833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 4
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5105afce78e8e4d86694b55645de77
+      internalID: 667949698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d5bce3fccdb93468d1e5ae9d4622a3
+      internalID: 1691611971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7947b0bae5fd84a9da283f64512ede
+      internalID: -1722502615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 7
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2005185be7825c54b904f53900ad7854
+      internalID: 1334892102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 8
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa626f4aa2a864143b98e0731bfa31cb
+      internalID: -1167262954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 9
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11562d68e3ff7c40aaa6d2a3c1ce66e
+      internalID: 2142325147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909b957f9ec9068489bb3482fe615e53
+      internalID: -1224414483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Pack 11
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 485
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9703413a00a30864d91eb827b000190f
+      internalID: -1578717589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aba8ad9f42d12e438c72ad02f6a85b0
+      internalID: 511853522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8567a743592ac42bf154e603b81f56
+      internalID: 1155761098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab16f3f439314b245b9c583622ad7a5a
+      internalID: -1666618022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6e79dfc9cd566459671be0f2950136
+      internalID: -101554142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 5
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c657c87e1ec0c943b82294a9f1f673d
+      internalID: -1223013657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8172da20f222b544b95043d24113c0da
+      internalID: 1871745892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 7
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49e34861e333584e9d837bae74c6cd9
+      internalID: 2041584256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff26e0de2a26654e9325500349b7a99
+      internalID: -1152737244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 9
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4a8c1e2640de248af3bc9503bf07ea
+      internalID: 701942422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem Shine 10
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25788d1588ed87f4298d5f644d5bf142
+      internalID: 1738717788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Arm Jump
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 297
+        width: 7
+        height: 5
+      alignment: 9
+      pivot: {x: 1, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d228cf51645540545b3333a94f491068
+      internalID: -1041291766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dan Legs 2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 286
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e152884cc010354289838247f61fcb1
+      internalID: -2071754092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dan Legs 3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 286
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cdf4a1bf2d4d7f4da3006d062cd0695
+      internalID: 515335340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Stan Legs 2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 275
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373572ec49111df45b3343acd3f089a7
+      internalID: -1740719721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Stan Legs 3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 275
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8f9cb9d14d78a418d85b80ea0d463f
+      internalID: 1824389379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops Legs 2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 264
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2041cc846aa9994995ff57b3b0a03d2
+      internalID: 86279364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops Legs 3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 264
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9a2a8c6eda8d349828d1b3ef111ab6
+      internalID: -482841015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Danielle Legs 2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 253
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f378bea094bbcb4fac0d9833701922f
+      internalID: 776554390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Danielle Legs 3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 253
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4989c398d240d3644aed72b0f7f24a03
+      internalID: -1187771390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Danielle Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 254
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3fa8d593322034ea249bb4035c182c
+      internalID: -123073859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo Dan Legs 2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 242
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ceb0bc0f06cff6479bf6deeb28301c3
+      internalID: -1263212841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo Dan Legs 3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 242
+        width: 8
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0945f5e5abfdb47b90f563e9668921
+      internalID: 487998498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo Dan Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 242
+        width: 10
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c79ce7cd3fe0564dbbcaf163743cc93
+      internalID: 1038185661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone Zombie Dan Legs 2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 231
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e823a2bbaa6a5084d8cca5d1cb371946
+      internalID: -1214374703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone Zombie Dan Legs 3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 231
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcdac65b38cb264d817d5dddaa4f51d
+      internalID: -1932593178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone Zombie Dan Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 232
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2cdb687c3c61240ad2dd241925870f
+      internalID: 530707981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan Legs 2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 220
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe54d45c9244d94c9b553ca4a6a4cdb
+      internalID: 538071221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan Legs 3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 220
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6056af5b5824a45adb0904d2739c3e
+      internalID: -750457609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 221
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6864a375c8e5bfd43b74646c12a26405
+      internalID: 12648820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy Legs 2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 209
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cfa41ad2a63684da8afd56f3b9177a
+      internalID: 2002509159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy Legs 3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 209
+        width: 6
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e155f1ce4fd660c4bb7d333a63756b75
+      internalID: -544682229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy Legs Jump
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 210
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324a429afd8def74f815b0dcf00cb24d
+      internalID: -14743228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dan Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ccfd81469c872459447dae95ff2a8c
+      internalID: 1198447221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Stan Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 183
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1071f8248c30fda41b605c4086f33904
+      internalID: -1859713128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 170
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47f4fb512f5997409cdabd5dc346c8d
+      internalID: -1437075179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Danielle Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 157
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42203db4c4bbcf94d8f90796badd488d
+      internalID: 2096144794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo Dan Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de930e382efff614fadc7287322d46a4
+      internalID: -1822459293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone Zombie Dan Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 131
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33210746148d505488dedcc3880259b0
+      internalID: 2086665814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be702d872778a85409688cdf6f21f08e
+      internalID: -1611590109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy Body
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 18
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f132b6beb157b44a59ec7c00f7eaab
+      internalID: 353771858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man Arm Normal
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 289
+        width: 7
+        height: 5
+      alignment: 9
+      pivot: {x: 1, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c890d315e7a784445a10da05469d5735
+      internalID: -239477705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4b785ff875da4ba4d98e736962029ed1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      22 Magnum: 21300526
+      44 Magnum: 21300246
+      50 Caliber Handgun: 21300114
+      AK-47: 21300250
+      Angry Stan Arm: 21300758
+      Angry Stan Body: -1859713128
+      Angry Stan Legs 1: 21300730
+      Angry Stan Legs 2: -1740719721
+      Angry Stan Legs 3: 1824389379
+      Angry Stan Legs Jump: 21300752
+      Angry Stan Walk 1: 21300754
+      Angry Stan Walk 2: 21300756
+      Bandana Dan: -1694186720
+      Beer Bottle: 21300750
+      Big Smoke: -1483848238
+      Bullet Destroyed Effect 1: 21300262
+      Bullet Destroyed Effect 2: 21300264
+      Bullet Destroyed Effect 3: 21300266
+      Bullet Destroyed Effect 4: 21300268
+      Bullet Destroyed Effect 5: 21300220
+      Bullet Destroyed Effect 6: 21300242
+      Bullet Destroyed Effect 7: 21300540
+      Bullet Line: -141926517
+      Bullet Shell: 21300204
+      Buzz Saw: 722863783
+      Checkpoint Base: 610368297
+      Checkpoint Beacan: 478825435
+      Checkpoint Beacan Glow: 775253274
+      Chicken Gun 1: 21300726
+      Chicken Gun 2: 21300038
+      Covid Mask: -883675269
+      Crorgn 1: -696503459
+      Crorgn 2: 676697072
+      Crorgn 3: 1892842877
+      Crorgn 4: 2098447631
+      Crorgn 5: -2002943272
+      Crorgn 6: 988372736
+      Crorgn 7: -795990436
+      Crorgn Body: -272791460
+      Crown: 763082680
+      Cyclops Arm: 21300770
+      Cyclops Body: -1437075179
+      Cyclops Legs 1: 21300762
+      Cyclops Legs 2: 86279364
+      Cyclops Legs 3: -482841015
+      Cyclops Legs Jump: 21300764
+      Cyclops Walk 1: 21300766
+      Cyclops Walk 2: 21300768
+      D-207: 21300740
+      D-207 Laser: -167448032
+      D-207 Shot Light: 21300742
+      Dan Body: 1198447221
+      Dan Legs 1: 21300000
+      Dan Legs 2: -2071754092
+      Dan Legs 3: 515335340
+      Dan Legs Jump: 21300002
+      Dan Walk 1: 21300008
+      Dan Walk 2: 21300014
+      Danielle Arm 1: 21300780
+      Danielle Body: 2096144794
+      Danielle Jump: 21300774
+      Danielle Legs 1: 21300772
+      Danielle Legs 2: 776554390
+      Danielle Legs 3: -1187771390
+      Danielle Legs Jump: -123073859
+      Danielle Walk 1: 21300776
+      Danielle Walk 2: 21300778
+      Devil Horns: 1143102318
+      Dotted Line: -161986581
+      Egg: 21300728
+      Emoji Man Arm: 862658699
+      Emoji Man Arm Jump: -1041291766
+      Emoji Man Arm Normal: -239477705
+      Emoji Man Cool: 1382578102
+      Emoji Man Eggplant: -383063961
+      Emoji Man Happy: -53238633
+      Emoji Man Idle: 1786178830
+      Emoji Man Jump: 526180074
+      Emoji Man Laughing: 537260675
+      Emoji Man Love: -589499410
+      Emoji Man Nerd: 156050680
+      Emoji Man Poop: -1750042337
+      Emoji Man Walk 1: -1225938573
+      Emoji Man Walk 2: -1037522733
+      Emoji Man Yeah: -1138650253
+      Enemy 1: 544257496
+      Enemy 2: 1723672978
+      Enemy 3: 1256654348
+      Enemy 4: 1863110594
+      Enemy Health Bar Background: 21300704
+      Enemy Health Bar Fill: 21300706
+      Enemy Idle: 21300622
+      Enemy Walk 1: 21300624
+      Enemy Walk 2: 21300626
+      Enemy Walk 3: 21300628
+      Engine: 1200315246
+      Engine Small: -510349390
+      Falling Robo Spike 1: 28267803
+      Falling Robo Spike 2: -2003904764
+      Feather: -685749273
+      Fire: -206864798
+      GL Shot Force Background: 21300736
+      GL Shot Force Fill: 21300738
+      Gem 1: -407638872
+      Gem 2: 281116368
+      Gem 3: 544323233
+      Gem 4: -2118553872
+      Gem 5: -1290615325
+      Gem 6: -1008661209
+      Gem 7: 1190753641
+      Gem Shine 1: 511853522
+      Gem Shine 10: 1738717788
+      Gem Shine 2: 1155761098
+      Gem Shine 3: -1666618022
+      Gem Shine 4: -101554142
+      Gem Shine 5: -1223013657
+      Gem Shine 6: 1871745892
+      Gem Shine 7: 2041584256
+      Gem Shine 8: -1152737244
+      Gem Shine 9: 701942422
+      Grenade: 21300054
+      Grenade Launcher: 21300524
+      HP Collect 1: 1372372544
+      HP Collect 2: -2033669321
+      HP Collect 3: -1868703170
+      HP Collect 4: 1096035632
+      HP Collect 5: 1807069482
+      HP Collect 6: 1107810440
+      HP Collect 7: -15636809
+      HP Collect 8: 157873776
+      Halo: -1872593163
+      Health Pack 1: 824108254
+      Health Pack 10: -1224414483
+      Health Pack 11: -1578717589
+      Health Pack 2: 743296798
+      Health Pack 3: 1342586833
+      Health Pack 4: 667949698
+      Health Pack 5: 1691611971
+      Health Pack 6: -1722502615
+      Health Pack 7: 1334892102
+      Health Pack 8: -1167262954
+      Health Pack 9: 2142325147
+      Killer Wheel: -2010828533
+      Laser Green: 21300580
+      Laser Gun 1: 21300576
+      Laser Gun 2: 21300578
+      Laser Gun Glow: 969944771
+      Laser Red: 21300574
+      Lava Gun: 21300634
+      Lava Gun Glow: 1425134771
+      Lightning Gun: 21300724
+      Lightning Gun Glow: -218421234
+      Minigun 1: 21300348
+      Minigun 2: 21300350
+      Mohalk: 209388247
+      Moving Platform Large: -902477365
+      Moving Platform Medium: 1744887737
+      Moving Platform Small: 1485391032
+      Moving Platform Tiny: -935509271
+      Muzzle Flash Gun: 21300592
+      Pistol: 21300118
+      Player Arm: 21300672
+      Portal: 21300346
+      Portal Glow: 21300746
+      Portal White: 21300748
+      Rainbow Gun: 21300702
+      Rainbow Gun Glow: -1117488336
+      Randy Arm 1: 82847855
+      Randy Body: 353771858
+      Randy Jump: -1094673975
+      Randy Legs 1: -1321261832
+      Randy Legs 2: 2002509159
+      Randy Legs 3: -544682229
+      Randy Legs Jump: -14743228
+      Randy Walk 1: 267940721
+      Randy Walk 2: 2051252053
+      Red Laser: -734467599
+      Robo Dan Arm 1: 21300800
+      Robo Dan Body: -1822459293
+      Robo Dan Jump: 21300794
+      Robo Dan Legs 1: 21300792
+      Robo Dan Legs 2: -1263212841
+      Robo Dan Legs 3: 487998498
+      Robo Dan Legs Jump: 1038185661
+      Robo Dan Walk 1: 21300796
+      Robo Dan Walk 2: 21300798
+      Robot Eye Green Medium: -1522932627
+      Robot Eye Green Small: 1746050392
+      Robot Eye Red Large: 1894441218
+      Robot Eye Red Medium: -1864644108
+      Robot Eye Red Small: -1386913816
+      Satelite 1: 404431515
+      Satelite 2: -335886244
+      Satelite 3: -1170866088
+      Satelite 4: 879996320
+      Satelite 5: 74463467
+      Satelite 6: 251596512
+      Shadow Dan Arm 1: 21300842
+      Shadow Dan Body: -1611590109
+      Shadow Dan Jump: 21300834
+      Shadow Dan Legs 1: 21300720
+      Shadow Dan Legs 2: 538071221
+      Shadow Dan Legs 3: -750457609
+      Shadow Dan Legs Jump: 12648820
+      Shadow Dan Walk 1: 21300836
+      Shadow Dan Walk 2: 21300838
+      Shotgun: 21300256
+      Smartphone: 21300816
+      Smartphone Zombie Dan Arm 1: 21300814
+      Smartphone Zombie Dan Body: 2086665814
+      Smartphone Zombie Dan Jump: 21300806
+      Smartphone Zombie Dan Legs 1: 21300804
+      Smartphone Zombie Dan Legs 2: -1214374703
+      Smartphone Zombie Dan Legs 3: -1932593178
+      Smartphone Zombie Dan Legs Jump: 530707981
+      Smartphone Zombie Dan Walk 1: 21300808
+      Smartphone Zombie Dan Walk 2: 21300810
+      Sniper Rifle: -1053140107
+      Spike O Death Segmant: -154497618
+      Spike O Death Top: -1327982969
+      Spikes: 1158781519
+      Stubby Shotgun: 215247076
+      Sunglasses: 1050584340
+      Tacodon Idle: 21300594
+      Tacodon Walk 1: 21300596
+      Tacodon Walk 2: 21300598
+      Tacodon Walk 3: 21300600
+      Tacodon Walk 4: 21300602
+      Tacodon Walk 5: 21300604
+      Tacodon Walk 6: 21300606
+      Tacodon Walk 7: 21300608
+      Tacodon Walk 8: 21300610
+      Tommy Gun: 21300846
+      Top Hat: 833948488
+      Trajectory End Point: 998501555
+      Tredicon 1: -2034873659
+      Tredicon 10: 1776857899
+      Tredicon 11: 1340155080
+      Tredicon 12: -2048778632
+      Tredicon 2: 34564933
+      Tredicon 3: 1154220454
+      Tredicon 4: 1530770386
+      Tredicon 5: 1923306631
+      Tredicon 6: -2087014390
+      Tredicon 7: 845510212
+      Tredicon 8: -187015523
+      Tredicon 9: 1123764677
+      Tredicon Laser: -571491363
+      Tredicon Rocket: 533204486
+      Tredicon Rocket Launcher: -853098502
+      Tredicon Tracks 1: -83714971
+      Tredicon Tracks 2: 2051676071
+      Tredicon Tracks 3: -748450080
+      Tredicon Wheels 1: 1961737182
+      Tredicon Wheels 2: -769385202
+      Tredicon Wheels 3: 2085665538
+      Tredicon Wheels 4: 933699942
+      Trump Hair: -99176680
+      Uzi: 21300248
+      Wig: -1965648901
+      Wisky Gun: 21300732
+      sda: -30880498
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

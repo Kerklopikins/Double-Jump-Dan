@@ -1,0 +1,2028 @@
+fileFormatVersion: 2
+guid: fd62903050e1ca349bba8b53f64cbbda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: UI Background White
+  - first:
+      213: 21300002
+    second: Health Bar Fill
+  - first:
+      213: 21300004
+    second: Hearts 1
+  - first:
+      213: 21300006
+    second: Hearts 2
+  - first:
+      213: 21300008
+    second: Hearts 3
+  - first:
+      213: 21300010
+    second: Dan
+  - first:
+      213: 21300012
+    second: Gem
+  - first:
+      213: 21300014
+    second: UI Background
+  - first:
+      213: 21300016
+    second: UI Transparent
+  - first:
+      213: 21300018
+    second: UI Transparent FB
+  - first:
+      213: 21300020
+    second: UI Transparent FT
+  - first:
+      213: 21300022
+    second: UI Transparent FR
+  - first:
+      213: 21300024
+    second: UI Transparent FL
+  - first:
+      213: 21300026
+    second: UI Button
+  - first:
+      213: 21300028
+    second: Button Normal
+  - first:
+      213: 21300030
+    second: Nothing
+  - first:
+      213: 21300032
+    second: Button Highlighted
+  - first:
+      213: 21300034
+    second: Ammo
+  - first:
+      213: 21300036
+    second: Hearts 4
+  - first:
+      213: 21300038
+    second: Pause Normal
+  - first:
+      213: 21300040
+    second: Left Arrow
+  - first:
+      213: 21300042
+    second: Right Arrow
+  - first:
+      213: 21300044
+    second: Jump
+  - first:
+      213: 21300046
+    second: Pause Highlighted
+  - first:
+      213: 21300048
+    second: UI Background
+  - first:
+      213: 21300050
+    second: Play
+  - first:
+      213: 21300052
+    second: Shop
+  - first:
+      213: 21300054
+    second: Exit
+  - first:
+      213: 21300056
+    second: UI Background3
+  - first:
+      213: 21300058
+    second: UI Background
+  - first:
+      213: 21300060
+    second: UI Background FB
+  - first:
+      213: 21300062
+    second: A
+  - first:
+      213: 21300064
+    second: A 2
+  - first:
+      213: 21300066
+    second: Double Jump
+  - first:
+      213: 21300068
+    second: Arrow
+  - first:
+      213: 21300070
+    second: Button Pressed
+  - first:
+      213: 21300072
+    second: Play
+  - first:
+      213: 21300074
+    second: Restart
+  - first:
+      213: 21300076
+    second: Main Menu
+  - first:
+      213: 21300078
+    second: UI Background
+  - first:
+      213: 21300080
+    second: UI Background Flat L&T
+  - first:
+      213: 21300082
+    second: UI Background FT
+  - first:
+      213: 21300084
+    second: UI Background FL
+  - first:
+      213: 21300086
+    second: UI Background FR
+  - first:
+      213: 21300088
+    second: Button Disabled
+  - first:
+      213: 21300090
+    second: Loading Circle
+  - first:
+      213: 21300092
+    second: Loading Dan 1
+  - first:
+      213: 21300094
+    second: Loading Dan 2
+  - first:
+      213: 21300096
+    second: Loading Dan 3
+  - first:
+      213: 21300098
+    second: Lock
+  - first:
+      213: 21300100
+    second: Back Arrow
+  - first:
+      213: 21300102
+    second: Game Over Dan 1
+  - first:
+      213: 21300104
+    second: Game Over Dan 2
+  - first:
+      213: 21300106
+    second: Game Over Dan 3
+  - first:
+      213: 21300108
+    second: UI Background Title
+  - first:
+      213: 21300110
+    second: Fire Rate
+  - first:
+      213: 21300112
+    second: Fire Rate Bar
+  - first:
+      213: 21300114
+    second: Item Background Small
+  - first:
+      213: 21300116
+    second: Panel White
+  - first:
+      213: 21300118
+    second: Checkmark
+  - first:
+      213: 21300120
+    second: UI  Slider Background
+  - first:
+      213: 21300122
+    second: UI Slider Background Black
+  - first:
+      213: 21300124
+    second: UI Slider Background White
+  - first:
+      213: 21300126
+    second: UI Slider Handle
+  - first:
+      213: 21300128
+    second: Slider Handle Normal
+  - first:
+      213: 21300130
+    second: Slider Handle Highlighted
+  - first:
+      213: 21300132
+    second: Slider Handle Pressed
+  - first:
+      213: 21300134
+    second: Slider Handle Disabled
+  - first:
+      213: 21300136
+    second: Item Background Large
+  - first:
+      213: 21300138
+    second: Settings
+  - first:
+      213: 21300140
+    second: Shop Item Background
+  - first:
+      213: 21300142
+    second: Settings
+  - first:
+      213: 21300144
+    second: UI User
+  - first:
+      213: 21300146
+    second: Screenshots
+  - first:
+      213: 21300148
+    second: Single Player
+  - first:
+      213: 21300150
+    second: Screenshots Highlighted
+  - first:
+      213: 21300152
+    second: Presents Text
+  - first:
+      213: 21300154
+    second: Angry Stan
+  - first:
+      213: 21300156
+    second: Cyclops
+  - first:
+      213: 21300158
+    second: Danielle
+  - first:
+      213: 21300160
+    second: Robo Dan
+  - first:
+      213: 21300162
+    second: Smartphone Zombie Dan
+  - first:
+      213: 21300164
+    second: Class Bar
+  - first:
+      213: 21300166
+    second: UI Outline
+  - first:
+      213: 21300168
+    second: Black Dan
+  - first:
+      213: 21300170
+    second: Shadow Dan
+  - first:
+      213: 21300172
+    second: Emoji Man
+  - first:
+      213: 21300174
+    second: Premium Item Background Small
+  - first:
+      213: 21300176
+    second: Premium Item Background Large
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 2, y: 2, z: 2, w: 2}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI Bar
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 508
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 2, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 496
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts 2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 486
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts 3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 476
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button Normal
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 491
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button Highlighted
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 491
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ammo
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 504
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gem
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 502
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hearts 4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 466
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pause Normal
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 499
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pause Highlighted
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 499
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Background
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Background FT
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 455
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27305410000000000800000000000000
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Background FB
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 455
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Background FL
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47305410000000000800000000000000
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Background FR
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 444
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67305410000000000800000000000000
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button Disabled
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 491
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87305410000000000800000000000000
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading Circle
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 452
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7305410000000000800000000000000
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading Dan 1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 477
+        width: 22
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7305410000000000800000000000000
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading Dan 2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 459
+        width: 22
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7305410000000000800000000000000
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading Dan 3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 441
+        width: 22
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08305410000000000800000000000000
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back Arrow
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 467
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48305410000000000800000000000000
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Background Title
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 444
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8305410000000000800000000000000
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Rate 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 439
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8305410000000000800000000000000
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dan
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 492
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panel White
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 456
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49305410000000000800000000000000
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Slider Background Black
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 450
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9305410000000000800000000000000
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Slider Background White
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 450
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9305410000000000800000000000000
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Background Large
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 132
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a305410000000000800000000000000
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshots
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 425
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b305410000000000800000000000000
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshots Highlighted
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 425
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b305410000000000800000000000000
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nothing
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 511
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry Stan
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 475
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab305410000000000800000000000000
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 458
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb305410000000000800000000000000
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Danielle
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 441
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb305410000000000800000000000000
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo Dan
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 424
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c305410000000000800000000000000
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smartphone Zombie Dan
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 407
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c305410000000000800000000000000
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Outline
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 491
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c305410000000000800000000000000
+      internalID: 21300166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 390
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac305410000000000800000000000000
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emoji Man
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 494
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc305410000000000800000000000000
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Premium Item Background Large
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 311
+        width: 132
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d305410000000000800000000000000
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White Fade
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 373
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985afa8968b19f047bc3629764a093a4
+      internalID: 1098208422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 475
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9317580ffe892418df06ecbc841d56
+      internalID: -769888253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 506
+        width: 4
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4118bf1d544f43f4d92ff54fda78daa8
+      internalID: 1004459453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 499
+        width: 9
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b2dacc555f369499c838fd59ee6a20
+      internalID: -439591434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 3
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 492
+        width: 14
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92bb7bc7251a87044ba0b56b2bfa94aa
+      internalID: -1514365359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 485
+        width: 19
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c874a5bf980f0404590dc7b1bb9381a7
+      internalID: -878534129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 5
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 478
+        width: 24
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bedc590a0fa4f4e82fd13b5817e79a
+      internalID: -1281755224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 471
+        width: 29
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8000b43ac4b81c4cad4de47ab5d6f06
+      internalID: -584552434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 7
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 464
+        width: 34
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4a341a228c3d24c8bfbaf5808a30a3
+      internalID: 1493060493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 8
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 457
+        width: 39
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad8da355923a164bb6554be181e3034
+      internalID: 537220148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 9
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 450
+        width: 44
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0684ce2b1d0f0a24d96f6b4fb4bacbbd
+      internalID: 1030265515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Gems 10
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 443
+        width: 49
+        height: 6
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc653cff60661f4cbed2efc4675ac3f
+      internalID: -332968627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Small Gems 1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 438
+        width: 3
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d5e4757f01e58488fabbdc98588f68
+      internalID: 2033021274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Small Gems 2
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 433
+        width: 7
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f226f087d0080924b99392e1e93db2ef
+      internalID: -1663142089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Small Gems 3
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 428
+        width: 11
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adbcbb1fc7c33a4fa82c54d4bd6a036
+      internalID: 1151791760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Small Gems 4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 423
+        width: 15
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b91a52f1432344b95f8104ab607e7b
+      internalID: -765162743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Bar Fill
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 510
+        width: 2
+        height: 2
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad8325d1bc5a164abd6cbb04fe1b14a
+      internalID: 1234408684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Rate 2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 434
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b3de73c5bd9894e8082010f98ad1c3
+      internalID: -847585195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Rate 3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 429
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166a45c06ba97d442ad1c03e9a5383bc
+      internalID: -1442519248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Rate 4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5618507d44fd3254aa125c4c7a13df62
+      internalID: 906634792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Rate 5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 419
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e000f33cc81312d4bb6aa5413ea481eb
+      internalID: 1919437526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Rate 6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 414
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9eeecac64322f499d938cc589bc71e
+      internalID: 1323406836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Rate 7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10452a2cf19d0084d91ff150a81b752f
+      internalID: -1131969663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop Background
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 249
+        width: 220
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 5, z: 0, w: 55}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049c9636c8ab65c40a208a09eb16aefe
+      internalID: 1957038962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Card Normal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 5, z: 0, w: 36}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bace8ab2e0c8c3a448c2d0ff1bfc1f5c
+      internalID: -1856866908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Card Premium
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 206
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 5, z: 0, w: 36}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3577ffc27f21a7418fb80d33003087d
+      internalID: 1019382623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item Card Empty
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 206
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 5, z: 0, w: 36}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d5894e4f2c54546904f6daa938afee
+      internalID: 482363449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage Background
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 409
+        width: 57
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2160847888e0cbb48a5f72fbe5cedd04
+      internalID: 952407668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pause Button Disabled
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 499
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ed917dde08efe49bd1effae32d9e0a
+      internalID: -137065137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Over Dan 1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 477
+        width: 22
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a978d44a6eed59f498334a8e45af1f25
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Over Dan 2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 459
+        width: 22
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d89df9735261f4dac58523fafb51a9
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Game Over Dan 3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 441
+        width: 22
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb3aea1cc577af44a567c50ff58670a
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0a0adce34532e59499b33f69b50f8a6d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ammo: 21300034
+      Angry Stan: 21300154
+      Back Arrow: 21300100
+      Button Disabled: 21300088
+      Button Highlighted: 21300032
+      Button Normal: 21300028
+      Cyclops: 21300156
+      Damage Background: 952407668
+      Dan: 21300010
+      Danielle: 21300158
+      Emoji Man: 21300172
+      Fire Rate 1: 21300110
+      Fire Rate 2: -847585195
+      Fire Rate 3: -1442519248
+      Fire Rate 4: 906634792
+      Fire Rate 5: 1919437526
+      Fire Rate 6: 1323406836
+      Fire Rate 7: -1131969663
+      Game Over Dan 1: 21300102
+      Game Over Dan 2: 21300104
+      Game Over Dan 3: 21300106
+      Hearts 1: 21300004
+      Hearts 2: 21300006
+      Hearts 3: 21300008
+      Hearts 4: 21300036
+      Item Background Large: 21300136
+      Item Background Small: 21300114
+      Item Card Empty: 482363449
+      Item Card Normal: -1856866908
+      Item Card Premium: 1019382623
+      Loading Circle: 21300090
+      Loading Dan 1: 21300092
+      Loading Dan 2: 21300094
+      Loading Dan 3: 21300096
+      Nothing: 21300030
+      Panel White: 21300116
+      Pause Button Disabled: -137065137
+      Pause Highlighted: 21300046
+      Pause Normal: 21300038
+      Premium Item Background Large: 21300176
+      Premium Item Background Small: 21300174
+      Presents Text: 21300152
+      Randy: -769888253
+      Robo Dan: 21300160
+      Screenshots: 21300146
+      Screenshots Highlighted: 21300150
+      Shadow Dan: 21300170
+      Shop Background: -1014530495
+      Smartphone Zombie Dan: 21300162
+      UI Background: 21300014
+      UI Background FB: 21300060
+      UI Background FL: 21300084
+      UI Background FR: 21300086
+      UI Background FT: 21300082
+      UI Background Title: 21300108
+      UI Bar: 21300000
+      UI Bar Fill: 1234408684
+      UI Gem: 21300012
+      UI Gem Counter: 878895798
+      UI Gem Small: -1055187834
+      UI Gems 1: 1004459453
+      UI Gems 10: -332968627
+      UI Gems 2: -439591434
+      UI Gems 3: -1514365359
+      UI Gems 4: -878534129
+      UI Gems 5: -1281755224
+      UI Gems 6: -584552434
+      UI Gems 7: 1493060493
+      UI Gems 8: 537220148
+      UI Gems 9: 1030265515
+      UI Outline: 21300166
+      UI Slider Background Black: 21300122
+      UI Slider Background White: 21300124
+      UI Small Gems 1: 2033021274
+      UI Small Gems 2: -1663142089
+      UI Small Gems 3: 1151791760
+      UI Small Gems 4: -765162743
+      UI Small Gems 5: -403799760
+      UI User: 21300144
+      White Fade: 1098208422
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
