@@ -23,13 +23,14 @@ public class UserMenu : MonoBehaviour
     [SerializeField] InputField createNewUserInputField;
     [SerializeField] Button createNewUserButton;
     [SerializeField] EventSystem eventSystem;
-
+    
     public User user { get; set; }
     public Animator mainMenu { get; set; }
     public UIScreenManager uiScreenManager { get; set; }
     GameManager gameManager;
     bool renaming;
 	string oldUserName;
+    bool createdNewUser;
 
     void Start()
     {
@@ -84,7 +85,16 @@ public class UserMenu : MonoBehaviour
                 createNewUserButton.interactable = true;
 
                 if(Input.GetKeyDown(KeyCode.Return))
-                    CreateNewUser();
+                {
+                    if(!createdNewUser)
+                    {
+                        CreateNewUser();
+                        createNewUserButton.interactable = false;
+                        uiScreenManager.OpenPanel(mainMenu);
+                        createdNewUser = true;
+                    }
+                    
+                }
             }
             else
                 createNewUserButton.interactable = false;
@@ -135,7 +145,6 @@ public class UserMenu : MonoBehaviour
 
         AudioManager.Instance.PlaySound2D(buttonClick);
 
-        gameManager.ResetCurrentUserData();
         userNameInputField.interactable = false;
         usersParent.interactable = true;
 
@@ -154,20 +163,9 @@ public class UserMenu : MonoBehaviour
             gameManager.currentUser = randomUserID;
             gameManager.currentUserName = userName;
 
-            ///Starter Data
-            gameManager.ownedHats.Add(1111);
-            gameManager.hatID = 1111;
-
-            gameManager.ownedGuns.Add(1111);
-            gameManager.gunID = 1111;
-
-			gameManager.ownedSkins.Add(1111);
-			gameManager.skinID = 1111;
-
-            gameManager.levelsCompleted = 1;           
-            
-            gameManager.SaveData();
+            gameManager.ResetCurrentUserData();
             gameManager.SaveUserData();
+            gameManager.SaveData();
 
             var _userToggle = (Toggle)Instantiate(userToggle, Vector3.zero, Quaternion.identity);
             _userToggle.GetComponentInChildren<Text>().text = userName;

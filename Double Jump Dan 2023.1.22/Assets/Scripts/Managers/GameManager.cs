@@ -2,15 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using System.Security.Cryptography;
+using System.Text;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public Sprite[] gemSprites;
-    [SerializeField] Material mainMaterial;
-    [SerializeField] Material mainMaterialStencil;
+    public Material mainMaterial;
+    public Material mainMaterialStencil;
 
     //Game Data
     [HideInInspector] public List<int> users = new List<int>();
@@ -36,6 +39,8 @@ public class GameManager : MonoBehaviour
     public SpriteRenderer centralizedGem { get; set; }
     LocalWorldManager localWorldManager;
     public static bool died;
+    bool inMainMenu;
+    MainMenuManager mainMenuManager;
 
     void Awake()
     {
@@ -43,6 +48,12 @@ public class GameManager : MonoBehaviour
 
 		//folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Double Jump Dan";
         folderPath = Application.persistentDataPath;
+
+        if(SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            inMainMenu = true;
+            mainMenuManager = GameObject.FindWithTag("Main Menu").GetComponent<MainMenuManager>();
+        }
 
 		if(!Directory.Exists(folderPath))   
 			Directory.CreateDirectory(folderPath);
@@ -53,7 +64,7 @@ public class GameManager : MonoBehaviour
         localWorldManager = GameObject.FindWithTag("Local World Manager").GetComponent<LocalWorldManager>();
 
         if(localWorldManager.world != LocalWorldManager.World.MainMenu)
-            centralizedGem = transform.Find("Centralized Gem").GetComponent<SpriteRenderer>();
+            centralizedGem = transform.Find("Centralized Gem").GetComponent<SpriteRenderer>();     
     }
     
     void Start()
@@ -62,6 +73,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(SetStartedToTrueDelayed());
     }
     
+    //////Might not even need this????
     IEnumerator SetStartedToTrueDelayed()
     {
         yield return new WaitForEndOfFrame();
@@ -69,13 +81,55 @@ public class GameManager : MonoBehaviour
         SaveData();
     }
     
+    #region Encryption
+    public static string Encrypt(string plainText, string key)
+    {
+        byte[] keyBytes = Encoding.UTF8.GetBytes(key.PadRight(32)); // 256-bit key
+
+        using (Aes aes = Aes.Create())
+        {
+            aes.Key = keyBytes;
+            aes.GenerateIV();
+
+            using (var encryptor = aes.CreateEncryptor())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(plainText);
+                byte[] encrypted = encryptor.TransformFinalBlock(inputBytes, 0, inputBytes.Length);
+
+                return Convert.ToBase64String(aes.IV) + ":" + Convert.ToBase64String(encrypted);
+            }
+        }
+    }
+
+    public static string Decrypt(string cipherText, string key)
+    {
+        var parts = cipherText.Split(':');
+
+        byte[] iv = Convert.FromBase64String(parts[0]);
+        byte[] data = Convert.FromBase64String(parts[1]);
+        byte[] keyBytes = Encoding.UTF8.GetBytes(key.PadRight(32));
+
+        using (Aes aes = Aes.Create())
+        {
+            aes.Key = keyBytes;
+            aes.IV = iv;
+
+            using (var decryptor = aes.CreateDecryptor())
+            {
+                byte[] decrypted = decryptor.TransformFinalBlock(data, 0, data.Length);
+                return Encoding.UTF8.GetString(decrypted);
+            }
+        }
+    }
+
+    #endregion
+
+    #region GameData
     public void SaveData()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-		FileStream file = File.Create(folderPath + "/GameData.djd");
         GameData gameData = new GameData();
 
-        //Game Data Here
+        //Game Data
         gameData.started = started;
         gameData.users = users;
         gameData.userNames = userNames;
@@ -85,20 +139,20 @@ public class GameManager : MonoBehaviour
         gameData.musicVolume = musicVolume;
 		gameData.screenResolution = screenResolution;
 
-        bf.Serialize(file, gameData);
-        file.Close();
+        string json = JsonUtility.ToJson(gameData);
+        string encrypted = Encrypt(json, "5a82be8ec0fdafa41013f6ac33b109");
+        File.WriteAllText(folderPath + "/GameData.json", encrypted);
     }
 
     public void LoadData()
     {
-		if(File.Exists(folderPath + "/GameData.djd"))
+		if(File.Exists(folderPath + "/GameData.json"))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(folderPath + "/GameData.djd", FileMode.Open);
-            GameData gameData = (GameData)bf.Deserialize(file);
-            file.Close();
+            string encrypted = File.ReadAllText(folderPath + "/GameData.json");
+            string json = Decrypt(encrypted, "5a82be8ec0fdafa41013f6ac33b109");
+            GameData gameData = JsonUtility.FromJson<GameData>(json);
 
-            //Game Data Here
+            //Game Data
             started = gameData.started;
             users = gameData.users;
             userNames = gameData.userNames;
@@ -109,11 +163,11 @@ public class GameManager : MonoBehaviour
 			screenResolution = gameData.screenResolution;
         }
     }
+    #endregion
 
+    #region UserData
     public void SaveUserData()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-		FileStream file = File.Create(folderPath + "/UserData" + currentUser + ".djd");
         UserData userData = new UserData();
 
         //User Data Here
@@ -125,36 +179,77 @@ public class GameManager : MonoBehaviour
         userData.gunID = gunID;
 		userData.skinID = skinID;
 		userData.levelsCompleted = levelsCompleted;
+        userData.hash = (userData.gems * 17 + 9).ToString();
 
-        bf.Serialize(file, userData);
-        file.Close();
+        string json = JsonUtility.ToJson(userData);
+        string encrypted = Encrypt(json, "5a82be8ec0fdafa41013f6ac33b109");
+
+        File.WriteAllText(folderPath + "/UserData" + currentUser + ".json", encrypted);
+        File.WriteAllText(folderPath + "/UserData" + currentUser + ".json.bak", encrypted);
     }
 
     public void LoadUserData()
     {
-		if(File.Exists(folderPath + "/UserData" + currentUser + ".djd"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(folderPath + "/UserData" + currentUser + ".djd", FileMode.Open);
-            UserData userData = (UserData)bf.Deserialize(file);
-            file.Close();
+		if(File.Exists(folderPath + "/UserData" + currentUser + ".json"))
+        {            
+            string encrypted = File.ReadAllText(folderPath + "/UserData" + currentUser + ".json");
+            string json = Decrypt(encrypted, "5a82be8ec0fdafa41013f6ac33b109");
+            UserData userData = JsonUtility.FromJson<UserData>(json);
 
-            //User Data Here
-            gems = userData.gems;
-            ownedHats = userData.ownedHats;
-            ownedGuns = userData.ownedGuns;
-			ownedSkins = userData.ownedSkins;
-            hatID = userData.hatID;
-            gunID = userData.gunID;
-			skinID = userData.skinID;
-			levelsCompleted = userData.levelsCompleted;
+            if(userData.hash == (userData.gems * 17 + 9).ToString())
+            {
+                gems = userData.gems;
+                ownedHats = userData.ownedHats;
+                ownedGuns = userData.ownedGuns;
+                ownedSkins = userData.ownedSkins;
+                hatID = userData.hatID;
+                gunID = userData.gunID;
+                skinID = userData.skinID;
+                levelsCompleted = userData.levelsCompleted;
+                return;
+            }
+        }
+
+        if(File.Exists(folderPath + "/UserData" + currentUser + ".bak"))
+        {
+            string encryptedBak = File.ReadAllText(folderPath + "/UserData" + currentUser + ".json.bak");
+            string jsonBak = Decrypt(encryptedBak, "5a82be8ec0fdafa41013f6ac33b109");
+            UserData userDataBak = JsonUtility.FromJson<UserData>(jsonBak);
+
+            if(userDataBak.hash == (userDataBak.gems * 17 + 9).ToString())
+            {
+                if(inMainMenu)
+                    mainMenuManager.TamperedUserFile("User file tampered with, loading backup...");
+
+                gems = userDataBak.gems;
+                ownedHats = userDataBak.ownedHats;
+                ownedGuns = userDataBak.ownedGuns;
+                ownedSkins = userDataBak.ownedSkins;
+                hatID = userDataBak.hatID;
+                gunID = userDataBak.gunID;
+                skinID = userDataBak.skinID;
+                levelsCompleted = userDataBak.levelsCompleted;
+                SaveUserData();
+                return;
+            }
+            else
+            {
+                if(inMainMenu)
+                    mainMenuManager.TamperedUserFile("All user files tampered with, creating new file...");
+                
+                ResetCurrentUserData();
+                SaveUserData();
+            }              
         }
     }
 
     public void DeleteUserData(int user)
     {
-		if(File.Exists(folderPath + "/UserData" + user + ".djd"))
-			File.Delete(folderPath + "/UserData" + user + ".djd");
+		if(File.Exists(folderPath + "/UserData" + user + ".json"))
+			File.Delete(folderPath + "/UserData" + user + ".json");
+
+        if(File.Exists(folderPath + "/UserData" + user + ".bak"))
+			File.Delete(folderPath + "/UserData" + user + ".bak");
     }
 
     public void ResetCurrentUserData()
@@ -166,27 +261,39 @@ public class GameManager : MonoBehaviour
         ownedGuns = userData.ownedGuns;
 		ownedSkins = userData.ownedSkins;
 		levelsCompleted = userData.levelsCompleted;
+
+        ownedHats.Add(1111);
+        hatID = 1111;
+        ownedGuns.Add(1111);
+        gunID = 1111;
+        ownedSkins.Add(1111);
+        skinID = 1111;
+        levelsCompleted = 1;
     }
 
     public int LoadUserFileSize(int _currentUser)
     {
-		FileStream file = File.Open(folderPath + "/UserData" + _currentUser + ".djd", FileMode.Open);
+		FileStream file = File.Open(folderPath + "/UserData" + _currentUser + ".json", FileMode.Open);
         int fileSize = (int)file.Length;
         file.Close();
 
         return fileSize;
     }
+    #endregion
 
     public void ResetGame()
     {
         for(int i = 0; i < users.Count; i++)
         {
-			if(File.Exists(folderPath + "/UserData" + users[i] + ".djd"))
-				File.Delete(folderPath + "/UserData" + users[i] + ".djd");
+			if(File.Exists(folderPath + "/UserData" + users[i] + ".json"))
+				File.Delete(folderPath + "/UserData" + users[i] + ".json");
+            
+            if(File.Exists(folderPath + "/UserData" + users[i] + ".bak"))
+				File.Delete(folderPath + "/UserData" + users[i] + ".bak");
         }
 
-		if(File.Exists(folderPath + "/GameData.djd"))
-			File.Delete(folderPath + "/GameData.djd");
+		if(File.Exists(folderPath + "/GameData.json"))
+			File.Delete(folderPath + "/GameData.json");
     }
 
     void OnApplicationQuit()
@@ -220,4 +327,5 @@ public class UserData
     public int gunID;
 	public int skinID;
 	public int levelsCompleted;
+    public string hash;
 }
