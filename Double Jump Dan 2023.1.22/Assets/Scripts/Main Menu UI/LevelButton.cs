@@ -11,11 +11,18 @@ public class LevelButton : MonoBehaviour
     void Start()
 	{
 		gameManager = GameManager.Instance;
+		MainMenuManager.Instance.OnLevelButtonsRefresh += Refresh;
+
 		level = int.Parse(gameObject.name);
 
         button = GetComponent<Button>();
         buttonEffects = GetComponent<ButtonEffects>();
 
+		Refresh();
+	}
+
+	void Refresh()
+	{
 		if(level <= gameManager.levelsCompleted)
             button.interactable = true;
 		else

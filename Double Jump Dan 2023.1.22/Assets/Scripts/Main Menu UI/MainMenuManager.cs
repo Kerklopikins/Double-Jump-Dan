@@ -8,6 +8,8 @@ using System.Collections.Generic;
 public class MainMenuManager : MonoBehaviour
 {
     public static MainMenuManager Instance;
+    public Button playButton;
+    public Button shopButton;
 
     [SerializeField] Slider[] volumeSliders;
     [SerializeField] GameObject resettedGameImage;
@@ -21,6 +23,7 @@ public class MainMenuManager : MonoBehaviour
     public ItemManager itemManager;
 
     public event Action OnShopItemsChanged;
+    public event Action OnLevelButtonsRefresh;
     GameManager gameManager;
 	List<Vector2> screenResolutions = new List<Vector2>();
     float startDelay = 1;
@@ -66,6 +69,12 @@ public class MainMenuManager : MonoBehaviour
             RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
 		else
             RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGem");
+
+        if(playButton == null || shopButton == null)
+            Debug.LogError("Play or Shop button is null");
+            
+        playButton.onClick.AddListener(RefreshLevels);
+        shopButton.onClick.AddListener(RefreshShop);
     }
 
     void Update()
@@ -92,9 +101,19 @@ public class MainMenuManager : MonoBehaviour
         OnShopItemsChanged?.Invoke();
     }
 
-    public void Refresh()
+    public void RefreshShop()
     {
+        if(gameManager.gems != 1)
+            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
+		else
+            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGem");
+        
         OnShopItemsChanged?.Invoke();
+    }
+
+    public void RefreshLevels()
+    {
+        OnLevelButtonsRefresh?.Invoke();
     }
 
     public void LoadScene(string sceneToLoad)
@@ -151,7 +170,7 @@ public class MainMenuManager : MonoBehaviour
         RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
         gameManager.SaveUserData();
 
-		Refresh();
+		RefreshShop();
     }
 
 	public void FlashGemsText()

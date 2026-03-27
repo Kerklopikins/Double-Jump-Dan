@@ -4,9 +4,9 @@ using System.Collections;
 public class SpikeODeath : MonoBehaviour
 {   
     [SerializeField] float movementTime;
-    [Range(2, 100)]
+    [Range(2, 30)]
     [SerializeField] int length;
-    [SerializeField] float delay;
+    [SerializeField] float pauseDuration;
     [SerializeField] float startDelay;
 	[SerializeField] SpriteRenderer bottomSegmant;
     [SerializeField] BoxCollider2D spikeCollider;
@@ -17,6 +17,10 @@ public class SpikeODeath : MonoBehaviour
     float speed;
     float percent;
     int direction = -1;
+    float pauseTimer;
+    bool pausing;
+    float rawT;
+
 
     void Start()
     {
@@ -35,11 +39,7 @@ public class SpikeODeath : MonoBehaviour
         }
 
 		spikeCollider.size = new Vector2(spikeCollider.size.x, bottomSegmant.size.y);
-		spikeCollider.offset = new Vector2(0, -bottomSegmant.size.y / 2);
-
-        speed = 1 / movementTime;
-        
-		StartCoroutine(Move());
+		spikeCollider.offset = new Vector2(0, -bottomSegmant.size.y / 2);        
     }
 
     void OnValidate()
@@ -47,33 +47,49 @@ public class SpikeODeath : MonoBehaviour
         length = (int)Mathf.Round(length / 2) * 2;
     }
 
-    IEnumerator Move()
+    void Update()
     {
-        yield return new WaitForSeconds(startDelay);
+        if(startDelay > 0)
+        {
+            startDelay -= Time.deltaTime;
+            return;
+        }
+        
+        if(pausing)
+        {
+            pauseTimer += Time.deltaTime;
 
-		while(true)
-		{
-			percent += Time.deltaTime * speed * direction;
-			transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Lerp(localStartPosition.y, length + localStartPosition.y, percent), transform.localPosition.z);
+            if(pauseTimer > pauseDuration)
+            {
+                pausing = false;
+                pauseTimer = 0;
+            }
 
-			if(percent >= 1)
-			{
-				direction = 0;
-				yield return new WaitForSeconds(delay);
-				direction = -1;
-			}
-			else if(percent <= 0)
-			{
-				direction = 0;
-				yield return new WaitForSeconds(delay);
-				direction = 1;
-			}
+            return;
+        }
 
-			percent = Mathf.Clamp(percent, 0, 1);
+        rawT += (Time.deltaTime / movementTime) * direction;
 
-			yield return null;
-		}
-	}
+        if(rawT > 1)
+        {
+            rawT = 1;
+            direction = -1;
+            pausing = true;
+        }
+        else if(rawT < 0)
+        {
+            rawT = 0;
+            direction = 1;
+            pausing = true;
+        }
+
+        float t = rawT * rawT * (3 - 2 * rawT);
+        float positionY = Mathf.Lerp(localStartPosition.y, length + localStartPosition.y, t);
+
+
+        transform.localPosition = new Vector3(transform.localPosition.x, positionY, transform.localPosition.z);
+
+    }
 
     void OnDrawGizmos()
     {

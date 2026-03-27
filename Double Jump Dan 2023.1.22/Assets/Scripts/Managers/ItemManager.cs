@@ -18,30 +18,6 @@ public class ItemManager : MonoBehaviour
 	{
 		gameManager = GameManager.Instance;
 		
-		///None Hat ID
-        if(!gameManager.ownedHats.Contains(1111) && gameManager.users.Count > 0)
-        {
-            gameManager.ownedHats.Add(1111);
-            gameManager.hatID = 1111;
-            gameManager.SaveUserData();
-        }
-
-		///22-Magnum Gun ID
-        if(!gameManager.ownedGuns.Contains(1111) && gameManager.users.Count > 0)
-        {
-            gameManager.ownedGuns.Add(1111);
-            gameManager.gunID = 1111;
-            gameManager.SaveUserData();
-        }
-
-		///Dan SKin ID
-		if(!gameManager.ownedSkins.Contains(1111) && gameManager.users.Count > 0)
-		{
-			gameManager.ownedSkins.Add(1111);
-			gameManager.skinID = 1111;
-			gameManager.SaveUserData();
-		}
-
         if(SceneManager.GetActiveScene().name != "Main Menu")
         {
             player = GameObject.FindWithTag("Player").GetComponent<Player>();

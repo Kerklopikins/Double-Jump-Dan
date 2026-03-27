@@ -50,7 +50,7 @@ public class Screenshot : MonoBehaviour
         if(!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "Double Jump Dan")))
             Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "Double Jump Dan"));
 
-        ScreenCapture.CaptureScreenshot(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "Double Jump Dan") + "/DJD Screenshot " + DateTime.Now.Month + "-" + DateTime.Now.Day + "-" + DateTime.Now.Year + " " + "(" + string.Format("{0:hh-mm-ss tt}", DateTime.Now) + ")" + ".png");
+        ScreenCapture.CaptureScreenshot(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "Double Jump Dan") + "/DJD Screenshot " + DateTime.Now.Month + "-" + DateTime.Now.Day + "-" + DateTime.Now.Year + " " + "(" + string.Format("{0:hh-mm-ss tt}", DateTime.Now) + ")" + ".jpg");
         
         yield return new WaitForEndOfFrame();
         

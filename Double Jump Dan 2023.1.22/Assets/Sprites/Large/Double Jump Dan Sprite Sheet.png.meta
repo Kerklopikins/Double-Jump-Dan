@@ -5875,6 +5875,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Pendulum End
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 319
+        width: 40
+        height: 32
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372fb7b531abe334581a6310d6630de0
+      internalID: -1966021168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pendulum Segmant
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 335
+        width: 16
+        height: 16
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b53f4ca5697024ab13693eb239b2f3
+      internalID: 998831247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pendulum Engine
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 335
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae167322991edc409dcc44ebaa57ded
+      internalID: -444167055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -6046,6 +6109,9 @@ TextureImporter:
       Moving Platform Small: 1485391032
       Moving Platform Tiny: -935509271
       Muzzle Flash Gun: 21300592
+      Pendulum End: -1966021168
+      Pendulum Engine: -444167055
+      Pendulum Segmant: 998831247
       Pistol: 21300118
       Player Arm: 21300672
       Portal: 21300346

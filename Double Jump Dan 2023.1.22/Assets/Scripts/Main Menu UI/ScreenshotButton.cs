@@ -19,11 +19,10 @@ public class ScreenshotButton : MonoBehaviour
         if(screenshotsMenu.screenshotViewerAnimator.transform.GetChild(0).transform.localScale.x > 0 && screenshotsMenu.screenshotViewerAnimator.gameObject.activeInHierarchy)
             return;
 
-        string newName = image.name.Replace(".png", "");
+        string newName = image.name.Replace(".jpg", "");
 
         screenshotsMenu.screenshotViewerText.text = newName;
         screenshotsMenu.screenshotViewerImage.sprite = image.sprite;
-
         uiScreenManager.OpenPanel(screenshotsMenu.screenshotViewerAnimator);
 	}
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 
 public class ShopItem : MonoBehaviour 
 {
@@ -11,7 +11,6 @@ public class ShopItem : MonoBehaviour
 	[SerializeField] Sprite[] fireRateSprites;
 	[SerializeField] AudioClip equippedSound;
 
-	bool initialized;
 	Button equipButton;
 	Text equipButtonText;
 	GameManager gameManager;
@@ -29,6 +28,11 @@ public class ShopItem : MonoBehaviour
 	ConfirmPurchase confirmPurchase;
     Text priceText;
     Animator confirmPurchaseAnimator;
+	bool refreshed;
+	bool checkedVisibility;
+	List<GameObject> children = new List<GameObject>();
+	float lastStep;
+	RectTransform contentHolder;
 
 	void Awake()
 	{
@@ -38,9 +42,13 @@ public class ShopItem : MonoBehaviour
 		equipButtonText = equipButton.GetComponentInChildren<Text>();
 		rectTransform = GetComponent<RectTransform>();
 		image = GetComponent<Image>();
+		contentHolder = transform.parent.GetComponent<RectTransform>();
 
 		equipButton.onClick.AddListener(OnEquipButtonClicked);
 		MainMenuManager.Instance.OnShopItemsChanged += Refresh;
+		
+		for(int i = 0; i < transform.childCount; i++)
+			children.Add(transform.GetChild(i).gameObject);
 
 		if(item.itemID != 1111)
 		{
@@ -126,13 +134,9 @@ public class ShopItem : MonoBehaviour
 		if(descriptionText != null)
 			descriptionText.text = item.description;
 
-		MainMenuManager.Instance.OnShopItemsChanged += Refresh;
 		Refresh();
-
-		Refresh();
+		UpdateVisibility();
 	}
-	///////////////////////////////
-	/// MAKE BUY BUTTON HERE
 
 	public void Refresh()
 	{
@@ -271,51 +275,46 @@ public class ShopItem : MonoBehaviour
 
 	void Update()
 	{
-		if(item.itemType == Item.ItemType.Gun)
+		int currentStep = Mathf.FloorToInt(contentHolder.anchoredPosition.x / 70);
+
+		if(currentStep != lastStep)
 		{
-			if(rectTransform.position.x < -100 || rectTransform.position.x > 100)
+			lastStep = currentStep;
+			UpdateVisibility();
+		}
+	}
+
+	void UpdateVisibility()
+	{
+		if(rectTransform.position.x < -100 || rectTransform.position.x > 100)
+		{
+			if(!checkedVisibility)
 			{
-				transform.GetChild(0).gameObject.SetActive(false);
-				transform.GetChild(1).gameObject.SetActive(false);
-				transform.GetChild(2).gameObject.SetActive(false);
-				transform.GetChild(3).gameObject.SetActive(false);
-				transform.GetChild(4).gameObject.SetActive(false);
-				transform.GetChild(5).gameObject.SetActive(false);
-				transform.GetChild(6).gameObject.SetActive(false);
-				//transform.GetChild(7).gameObject.SetActive(false);
+				//print("Checked Vis " + gameObject.name);
+				foreach(var child in children)
+					child.SetActive(false);
+
 				image.enabled = false;
+				checkedVisibility = true;
 			}
-			else
-			{
-				transform.GetChild(0).gameObject.SetActive(true);
-				transform.GetChild(1).gameObject.SetActive(true);
-				transform.GetChild(2).gameObject.SetActive(true);
-				transform.GetChild(3).gameObject.SetActive(true);
-				transform.GetChild(4).gameObject.SetActive(true);
-				transform.GetChild(5).gameObject.SetActive(true);
-				transform.GetChild(6).gameObject.SetActive(true);
-				//transform.GetChild(7).gameObject.SetActive(true);
-				image.enabled = true;
-			}
+			
+			refreshed = false;
 		}
 		else
 		{
-			if(rectTransform.position.x < -100 || rectTransform.position.x > 100)
+			if(!refreshed)
 			{
-				transform.GetChild(0).gameObject.SetActive(false);
-				transform.GetChild(1).gameObject.SetActive(false);
-				transform.GetChild(2).gameObject.SetActive(false);
-				//transform.GetChild(3).gameObject.SetActive(false);
-				image.enabled = false;
-			}
-			else
-			{
-				transform.GetChild(0).gameObject.SetActive(true);
-				transform.GetChild(1).gameObject.SetActive(true);
-				transform.GetChild(2).gameObject.SetActive(true);
-				//transform.GetChild(3).gameObject.SetActive(true);
+				//print("Refreshed Vis " + gameObject.name);
+				foreach(var child in children)
+					child.SetActive(true);
+
 				image.enabled = true;
+
+				Refresh();
+				refreshed = true;
 			}
+			
+			checkedVisibility = false;
 		}
 	}
 }

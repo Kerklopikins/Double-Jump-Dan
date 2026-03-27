@@ -126,8 +126,6 @@ public class UserMenu : MonoBehaviour
 
     public void CreateNewUser()
 	{
-		LevelLoadingManager.Instance.LoadScene(1);
-		
         string userName = "";
 
         if(gameManager.users.Count == 0)
@@ -137,7 +135,7 @@ public class UserMenu : MonoBehaviour
 
         AudioManager.Instance.PlaySound2D(buttonClick);
 
-        gameManager.DeleteTempValues();
+        gameManager.ResetCurrentUserData();
         userNameInputField.interactable = false;
         usersParent.interactable = true;
 
@@ -155,8 +153,20 @@ public class UserMenu : MonoBehaviour
 
             gameManager.currentUser = randomUserID;
             gameManager.currentUserName = userName;
-            gameManager.SaveData();
 
+            ///Starter Data
+            gameManager.ownedHats.Add(1111);
+            gameManager.hatID = 1111;
+
+            gameManager.ownedGuns.Add(1111);
+            gameManager.gunID = 1111;
+
+			gameManager.ownedSkins.Add(1111);
+			gameManager.skinID = 1111;
+
+            gameManager.levelsCompleted = 1;           
+            
+            gameManager.SaveData();
             gameManager.SaveUserData();
 
             var _userToggle = (Toggle)Instantiate(userToggle, Vector3.zero, Quaternion.identity);
@@ -165,7 +175,6 @@ public class UserMenu : MonoBehaviour
             _userToggle.transform.localScale = Vector3.one;
             _userToggle.transform.localPosition = Vector3.zero;
             _userToggle.group = userToggleGroup;
-            //uiScreenManager.OpenPanel(mainMenu);
         }
 
         if(gameManager.users.Count == 6)

@@ -420,6 +420,8 @@ public class Player: MonoBehaviour
         Instantiate(destroyedEffect, transform.position, Quaternion.identity);
         lives -= 1;
 
+        walkParticles.Stop();
+
         OnPlayerKilled?.Invoke();
 
         StartCoroutine(KillCo());
@@ -484,6 +486,7 @@ public class Player: MonoBehaviour
         rb2D.velocity = Vector2.zero;
         canFollow = true;
         parts.SetActive(true);
+        walkParticles.Play();
 
         _health = health;
 

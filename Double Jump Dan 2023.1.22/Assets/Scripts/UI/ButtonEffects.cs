@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 public class ButtonEffects : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField] AudioClip buttonClick;
+    [SerializeField] Color textStartingColor = Color.black;
+    [SerializeField] bool dontChangeText;
     Text text;
     Selectable selectable;
-    Color textStartingColor;
     bool pointerDown;
     CanvasGroup canvasGroup;
 
@@ -18,11 +19,8 @@ public class ButtonEffects : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         if(GetComponentInChildren<Text>() != null)
         {
-            if(GetComponentInChildren<Text>().color != Color.white)
-            {
+            if(!dontChangeText)
                 text = GetComponentInChildren<Text>();
-                textStartingColor = text.color;
-            }
         }
 
         selectable = GetComponent<Selectable>();

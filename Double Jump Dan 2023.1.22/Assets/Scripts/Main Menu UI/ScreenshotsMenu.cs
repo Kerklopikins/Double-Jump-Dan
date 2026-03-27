@@ -5,7 +5,7 @@ using System.IO;
 
 public class ScreenshotsMenu : MonoBehaviour
 {
-    [SerializeField] Image image;
+    [SerializeField] Image screenshotButton;
     [SerializeField] Transform imagesParent;
     [SerializeField] GameObject noScreenshotsText;
     public Animator screenshotViewerAnimator;
@@ -31,17 +31,21 @@ public class ScreenshotsMenu : MonoBehaviour
             return null;
         }
 
-        if(File.Exists(path))
+        if(!File.Exists(path))
         {
-            byte[] bytes = File.ReadAllBytes(path);
-            Texture2D texture = new Texture2D(1, 1, TextureFormat.Alpha8, false);
-            texture.LoadImage(bytes);
-            texture.filterMode = FilterMode.Point;
-            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            return sprite;
+            Debug.LogError("File is null");
+            return null;
         }
 
-        return null;
+        byte[] bytes = File.ReadAllBytes(path);
+        Texture2D texture = new Texture2D(2, 2, TextureFormat.RGBA32, false, false);
+        ImageConversion.LoadImage(texture, bytes, false);
+        texture.filterMode = FilterMode.Bilinear;
+        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+
+        //texture.Apply(false, false);
+
+        return sprite;
     }
 
     public void MaybeLoadScreenshots()
@@ -53,7 +57,7 @@ public class ScreenshotsMenu : MonoBehaviour
             return;
 
         DirectoryInfo directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "/Double Jump Dan");
-        FileInfo[] files = directory.GetFiles("*.png");
+        FileInfo[] files = directory.GetFiles("*.jpg");
 
         if(files.Length == 0)
         {
@@ -63,13 +67,14 @@ public class ScreenshotsMenu : MonoBehaviour
 
         for(int i = 0; i < files.Length; i++)
         {
-            var _image = (Image)Instantiate(image, Vector3.zero, Quaternion.identity, imagesParent);
+            var _image = (Image)Instantiate(screenshotButton, Vector3.zero, Quaternion.identity, imagesParent);
             string imageName = files[i].CreationTime.Month + "-" + files[i].CreationTime.Day + "-" + files[i].CreationTime.Year;
             _image.GetComponentInChildren<Text>().text = imageName;
             _image.name = imageName;
-            _image.sprite = LoadSprite(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "/Double Jump Dan/" + files[i].ToString());
-            _image.GetComponent<ScreenshotButton>().screenshotsMenu = this;
-            _image.GetComponent<ScreenshotButton>().uiScreenManager = uiScreenManager;
+            _image.sprite = LoadSprite(files[i].FullName);
+            ScreenshotButton button = _image.GetComponent<ScreenshotButton>();
+            button.screenshotsMenu = this;
+            button.uiScreenManager = uiScreenManager;
             //_image.GetComponentInChildren<Text>().text = files[i].CreationTime.Month + "-" + files[i].CreationTime.Day + "-" + files[i].CreationTime.Year;
             //_image.name = files[i].ToString();
         }

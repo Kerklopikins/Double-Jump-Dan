@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int gunID;
 	[HideInInspector] public int skinID;
 	[HideInInspector] public int levelsCompleted;
-	string folderPath;
+	
+    string folderPath;
     bool started;
     public SpriteRenderer centralizedGem { get; set; }
     LocalWorldManager localWorldManager;
@@ -156,7 +157,7 @@ public class GameManager : MonoBehaviour
 			File.Delete(folderPath + "/UserData" + user + ".djd");
     }
 
-    public void DeleteTempValues()
+    public void ResetCurrentUserData()
     {
         UserData userData = new UserData();
 
@@ -218,5 +219,5 @@ public class UserData
     public int hatID;
     public int gunID;
 	public int skinID;
-	public int levelsCompleted = 1;
+	public int levelsCompleted;
 }
