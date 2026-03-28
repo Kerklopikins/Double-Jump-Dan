@@ -11,6 +11,11 @@ public class MainMenuManager : MonoBehaviour
     [Header("Main Menu")]
     public Button playButton;
     public Button shopButton;
+    public Button userButton;
+    public Button tutorialButton;
+
+    [Header("Level Select")]
+    [SerializeField] ScrollRect levelsScrollRect;
     
     [Header("Settings")]
     [SerializeField] Slider[] volumeSliders;
@@ -23,7 +28,10 @@ public class MainMenuManager : MonoBehaviour
     public ConfirmPurchase confirmPurchase;
 	[SerializeField] Text gemsText;
     [SerializeField] AudioClip tooExpensiveSound;
-    
+    [SerializeField] ScrollRect gunScrollRect;
+    [SerializeField] ScrollRect hatScrollRect;
+    [SerializeField] ScrollRect skinScrollRect;
+
     [Header("Tampered User File")]
     [SerializeField] Image tamperedUserFileImage;
     [SerializeField] Text tamperedUserFileText;
@@ -32,15 +40,20 @@ public class MainMenuManager : MonoBehaviour
 
     public event Action OnShopItemsChanged;
     public event Action OnLevelButtonsRefresh;
+    public event Action OnUsersRefresh;
+    public RectTransform currentGunRect { get; set; }
+    public RectTransform currentHatRect { get; set; }
+    public RectTransform currentSkinRect { get; set; }
     GameManager gameManager;
 	List<Vector2> screenResolutions = new List<Vector2>();
-    float startDelay = 1;
+    float startDelay = 1.35f;
+    CurrentShopTab currentShopTab = CurrentShopTab.Guns;
+    public enum CurrentShopTab { Guns, Hats, Skins }
 
     void Awake()
     {
         Instance = this;
     }
-
     void Start()
     {
         Time.timeScale = 1;
@@ -48,18 +61,13 @@ public class MainMenuManager : MonoBehaviour
         
         volumeSliders[0].value = gameManager.sfxVolume;
         volumeSliders[1].value = gameManager.musicVolume;
-
+        
 		for(int i = 0; i < Screen.resolutions.Length; i++)
 		{
 			if(Screen.resolutions[i].width >= 512)
 				if(!screenResolutions.Contains(new Vector2(Screen.resolutions[i].width, Screen.resolutions[i].height)))
 					screenResolutions.Add(new Vector2(Screen.resolutions[i].width, Screen.resolutions[i].height));
 		}
-			
-		screenResolutionSlider.maxValue = screenResolutions.Count - 1;
-		screenResolutionSlider.value = gameManager.screenResolution;
-
-		fullscreenToggle.isOn = Screen.fullScreen;
 
 		if(gameManager.screenResolution == -1)
 		{
@@ -71,24 +79,35 @@ public class MainMenuManager : MonoBehaviour
 			gameManager.screenResolution = screenResolutions.Count;
 		}
 
+        screenResolutionSlider.maxValue = screenResolutions.Count - 1;
+		screenResolutionSlider.value = gameManager.screenResolution;
+
+		fullscreenToggle.isOn = Screen.fullScreen;
+
 		gameManager.SaveData();
 
-        if(gameManager.gems != 1)
-            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
-		else
-            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGem");
+        RefreshGemsText();
 
-        if(playButton == null || shopButton == null)
-            Debug.LogError("Play or Shop button is null");
+        if(playButton == null || shopButton == null || userButton == null)
+            Debug.LogError("Play, Shop, or User button is null");
             
         playButton.onClick.AddListener(RefreshLevels);
         shopButton.onClick.AddListener(RefreshShop);
+        shopButton.onClick.AddListener(RefreshShopScrollRects);
+        userButton.onClick.AddListener(RefreshUsers);
     }
 
     void Update()
     {
         if(startDelay > 0)
+        {
+            tutorialButton.interactable = false;
             startDelay -= Time.deltaTime;
+        }
+        else
+        {
+            tutorialButton.interactable = true;
+        }
     }
 
 	public void UpdateScreenResolution()
@@ -111,17 +130,94 @@ public class MainMenuManager : MonoBehaviour
 
     public void RefreshShop()
     {
-        if(gameManager.gems != 1)
-            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
-		else
-            RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGem");
+        RefreshGemsText();
+        OnShopItemsChanged?.Invoke();  
+    }
+
+    public void RefreshShopScrollRects()
+    {
+        StartCoroutine(DelayShopContentCentering());
+    }
+    IEnumerator DelayShopContentCentering()
+    {
+        yield return null;
+        yield return null;
         
-        OnShopItemsChanged?.Invoke();
+        switch(currentShopTab)
+        {   
+            case CurrentShopTab.Guns:
+                CenterShopScrollRect(gunScrollRect, currentGunRect);
+                break;
+            case CurrentShopTab.Hats:
+                CenterShopScrollRect(hatScrollRect, currentHatRect);
+                break;
+            case CurrentShopTab.Skins:
+                CenterShopScrollRect(skinScrollRect, currentSkinRect);
+                break;
+        }
+    }
+    public void CenterShopScrollRect(ScrollRect scrollRect, RectTransform currentRect)
+    {
+        RectTransform content = scrollRect.content;
+        RectTransform viewport = scrollRect.viewport;
+
+        float contentWidth = content.rect.width;
+        float viewportWidth = viewport.rect.width;
+
+        float itemPosition = Mathf.Abs(currentRect.anchoredPosition.x);
+        float targetPosition = itemPosition - (viewportWidth / 2);
+
+        float normalized = Mathf.Clamp01(targetPosition / (contentWidth - viewportWidth));
+        scrollRect.horizontalNormalizedPosition = normalized;
+    }
+    
+    public void SwitchToGunTab()
+    {
+        currentShopTab = CurrentShopTab.Guns;
+        RefreshShopScrollRects();
+    }
+
+    public void SwitchToSkinTab()
+    {
+        currentShopTab = CurrentShopTab.Skins;
+        RefreshShopScrollRects();
+    }
+
+    public void SwitchToHatTab()
+    {
+        currentShopTab = CurrentShopTab.Hats;
+        RefreshShopScrollRects();
+    }
+    
+    public void RefreshGemsText()
+    {
+        if(gameManager.gems != 1)
+            gemsText.text = "<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems";
+		else
+            gemsText.text = "<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGem";
+    }
+    public void RefreshGemsText(string text)
+    {
+        gemsText.text = text;
     }
 
     public void RefreshLevels()
     {
         OnLevelButtonsRefresh?.Invoke();
+        StartCoroutine(DelayLevelsContentCentering());
+    }
+
+    IEnumerator DelayLevelsContentCentering()
+    {
+        yield return null;
+        yield return null;
+
+        levelsScrollRect.verticalNormalizedPosition = 1;
+    }
+
+    public void RefreshUsers()
+    {
+        OnUsersRefresh?.Invoke();
     }
 
     public void LoadScene(string sceneToLoad)
@@ -176,20 +272,23 @@ public class MainMenuManager : MonoBehaviour
         tamperedUserFileText.color = new Color(tamperedUserFileText.color.r, tamperedUserFileText.color.g, tamperedUserFileText.color.b, 0);
     }
 
-    public void SaveSfxVolume()
+    public void SaveSoundSettings()
     {
-        AudioManager.Instance.sfxVolumePercent = volumeSliders[0].value;
-        AudioManager.Instance.SetVolume(volumeSliders[0].value, AudioManager.AudioChannel.Sfx);
+        gameManager.musicVolume = volumeSliders[1].value;
         gameManager.sfxVolume = volumeSliders[0].value;
         gameManager.SaveData();
     }
 
-    public void SaveMusicVolume()
+    public void AdjustSfxVolume()
+    {
+        AudioManager.Instance.sfxVolumePercent = volumeSliders[0].value;
+        AudioManager.Instance.SetVolume(volumeSliders[0].value, AudioManager.AudioChannel.Sfx);
+    }
+
+    public void AdjustMusicVolume()
     {
         AudioManager.Instance.musicVolumePercent = volumeSliders[1].value;
         AudioManager.Instance.SetVolume(volumeSliders[1].value, AudioManager.AudioChannel.Music);
-        gameManager.musicVolume = volumeSliders[1].value;
-        gameManager.SaveData();
     }
 
     public void ExitGame()
@@ -211,18 +310,37 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void RefreshGemsText(string text)
-    {
-        gemsText.text = text;
-    }
-
     public void GetOneThousandGems()
     {
         gameManager.gems += 1000;
-        RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
+        RefreshGemsText();
         gameManager.SaveUserData();
 
 		RefreshShop();
+    }
+
+    public void GetEverything()
+    {
+        foreach(var hat in itemManager.hats)
+        {
+            if(!gameManager.ownedHats.Contains(hat.itemID))            
+                gameManager.ownedHats.Add(hat.itemID);
+        }
+
+        foreach(var gun in itemManager.guns)
+        {
+            if(!gameManager.ownedGuns.Contains(gun.itemID))            
+                gameManager.ownedGuns.Add(gun.itemID);
+        }
+
+		foreach(var skin in itemManager.skins)
+        {
+            if(!gameManager.ownedSkins.Contains(skin.itemID))            
+                gameManager.ownedSkins.Add(skin.itemID);
+        }
+		
+        RefreshShop();
+		gameManager.SaveUserData();
     }
 
 	public void FlashGemsText()

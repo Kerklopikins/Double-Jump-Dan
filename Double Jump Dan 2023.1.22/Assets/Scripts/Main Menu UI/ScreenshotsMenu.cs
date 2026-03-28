@@ -40,7 +40,7 @@ public class ScreenshotsMenu : MonoBehaviour
         byte[] bytes = File.ReadAllBytes(path);
         Texture2D texture = new Texture2D(2, 2, TextureFormat.RGBA32, false, false);
         ImageConversion.LoadImage(texture, bytes, false);
-        texture.filterMode = FilterMode.Bilinear;
+        texture.filterMode = FilterMode.Point;
         Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
 
         //texture.Apply(false, false);

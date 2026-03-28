@@ -33,6 +33,7 @@ public class ShopItem : MonoBehaviour
 	List<GameObject> children = new List<GameObject>();
 	float lastStep;
 	RectTransform contentHolder;
+	RectTransform rect;
 
 	void Awake()
 	{
@@ -43,7 +44,7 @@ public class ShopItem : MonoBehaviour
 		rectTransform = GetComponent<RectTransform>();
 		image = GetComponent<Image>();
 		contentHolder = transform.parent.GetComponent<RectTransform>();
-
+		rect = GetComponent<RectTransform>();
 		equipButton.onClick.AddListener(OnEquipButtonClicked);
 		MainMenuManager.Instance.OnShopItemsChanged += Refresh;
 		
@@ -142,17 +143,11 @@ public class ShopItem : MonoBehaviour
 	{
 		if(item.itemType == Item.ItemType.Hat)
 		{
-            if(transform.GetSiblingIndex() == 0)
-            {
-                if(gameManager.ownedHats.Count == 0)
-                {
-                    equipButton.interactable = false;
-                    return;
-                }
-            }
-
             if(gameManager.hatID == item.itemID)
+			{
 				equipButton.interactable = false;
+				MainMenuManager.Instance.currentHatRect = rect;
+			}
             else if(gameManager.hatID != item.itemID)
 				equipButton.interactable = true;
 
@@ -167,17 +162,11 @@ public class ShopItem : MonoBehaviour
 
 		if(item.itemType == Item.ItemType.Gun)
 		{
-            if(transform.GetSiblingIndex() == 0)
-            {
-                if(gameManager.ownedGuns.Count == 0)
-                {
-                    equipButton.interactable = false;
-                    return;
-                }
-            }
-
             if(gameManager.gunID == item.itemID)
+			{
 				equipButton.interactable = false;
+				MainMenuManager.Instance.currentGunRect = rect;
+			}
             else if(gameManager.gunID != item.itemID)
 				equipButton.interactable = true;
 
@@ -192,17 +181,11 @@ public class ShopItem : MonoBehaviour
 
 		if(item.itemType == Item.ItemType.Skin)
 		{
-			if(transform.GetSiblingIndex() == 0)
-			{
-				if(gameManager.ownedSkins.Count == 0)
-				{
-					equipButton.interactable = false;
-					return;
-				}
-			}
-
 			if(gameManager.skinID == item.itemID)
+			{
 				equipButton.interactable = false;
+				MainMenuManager.Instance.currentSkinRect = rect;
+			}
 			else if(gameManager.skinID != item.itemID)
 				equipButton.interactable = true;
 
@@ -253,6 +236,15 @@ public class ShopItem : MonoBehaviour
 	}
 	public void OnEquipButtonClicked()
 	{
+		if(item.itemType == Item.ItemType.Gun)
+            MainMenuManager.Instance.currentGunRect = rect;
+
+		if(item.itemType == Item.ItemType.Hat)
+            MainMenuManager.Instance.currentHatRect = rect;
+
+		if(item.itemType == Item.ItemType.Skin)
+			MainMenuManager.Instance.currentSkinRect = rect;
+
 		MainMenuManager.Instance.EquipItem(this);
 		AudioManager.Instance.PlaySound2D(equippedSound);
 	}

@@ -22,10 +22,10 @@ public class UserMenu : MonoBehaviour
     [SerializeField] Animator createNewUser;
     [SerializeField] InputField createNewUserInputField;
     [SerializeField] Button createNewUserButton;
+    [SerializeField] Animator mainMenu;
     [SerializeField] EventSystem eventSystem;
     
     public User user { get; set; }
-    public Animator mainMenu { get; set; }
     public UIScreenManager uiScreenManager { get; set; }
     GameManager gameManager;
     bool renaming;
@@ -34,8 +34,6 @@ public class UserMenu : MonoBehaviour
 
     void Start()
     {
-        mainMenu = GameObject.FindGameObjectWithTag("Main Menu").GetComponent<Animator>();
-
         gameManager = GameManager.Instance;
         uiScreenManager = GetComponent<UIScreenManager>();
 

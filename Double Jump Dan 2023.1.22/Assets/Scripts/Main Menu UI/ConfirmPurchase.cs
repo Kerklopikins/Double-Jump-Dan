@@ -42,10 +42,7 @@ public class ConfirmPurchase : MonoBehaviour
 		if(shopItem.item.itemType == Item.ItemType.Skin)
 			gameManager.ownedSkins.Add(shopItem.item.itemID);
 		
-        if(gameManager.gems != 1)
-            MainMenuManager.Instance.RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGems");
-        else
-            MainMenuManager.Instance.RefreshGemsText("<color=yellow>" + gameManager.gems.ToString() + "</color>" + "\nGem");
+        MainMenuManager.Instance.RefreshGemsText();
 
 		gameManager.SaveUserData();
 

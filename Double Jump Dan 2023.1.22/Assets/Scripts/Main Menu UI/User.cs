@@ -29,18 +29,22 @@ public class User : MonoBehaviour
         else
             toggle.isOn = false;
 
-		int userFileSize = gameManager.LoadUserFileSize(user) - 900;
+        MainMenuManager.Instance.OnUsersRefresh += RefreshUserByteSize;
+        RefreshUserByteSize();
+	}
+    
+    public void RefreshUserByteSize()
+    {
+        int userFileSize = gameManager.LoadUserFileSize(user) - 217;
         userFileSize = Mathf.Clamp(userFileSize, 0, 200000);
 		fileSizeText.text = userFileSize.ToString() + " Bytes";
-	}
-		
+    }
     public void CheckIfUpdated()
     {
         if(gameManager.currentUser == user)
         {
             userMenu.user = this;
             toggle.isOn = true;
-
         }
         else
         {

@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
         string encrypted = Encrypt(json, "5a82be8ec0fdafa41013f6ac33b109");
 
         File.WriteAllText(folderPath + "/UserData" + currentUser + ".json", encrypted);
-        File.WriteAllText(folderPath + "/UserData" + currentUser + ".json.bak", encrypted);
+        File.WriteAllText(folderPath + "/UserData" + currentUser + ".bak", encrypted);
     }
 
     public void LoadUserData()
@@ -212,7 +212,7 @@ public class GameManager : MonoBehaviour
 
         if(File.Exists(folderPath + "/UserData" + currentUser + ".bak"))
         {
-            string encryptedBak = File.ReadAllText(folderPath + "/UserData" + currentUser + ".json.bak");
+            string encryptedBak = File.ReadAllText(folderPath + "/UserData" + currentUser + ".bak");
             string jsonBak = Decrypt(encryptedBak, "5a82be8ec0fdafa41013f6ac33b109");
             UserData userDataBak = JsonUtility.FromJson<UserData>(jsonBak);
 
@@ -254,13 +254,11 @@ public class GameManager : MonoBehaviour
 
     public void ResetCurrentUserData()
     {
-        UserData userData = new UserData();
-
-        gems = userData.gems;
-        ownedHats = userData.ownedHats;
-        ownedGuns = userData.ownedGuns;
-		ownedSkins = userData.ownedSkins;
-		levelsCompleted = userData.levelsCompleted;
+        gems = 0;
+        ownedHats.Clear();
+        ownedGuns.Clear();
+		ownedSkins.Clear();
+		levelsCompleted = 1;
 
         ownedHats.Add(1111);
         hatID = 1111;
@@ -268,7 +266,6 @@ public class GameManager : MonoBehaviour
         gunID = 1111;
         ownedSkins.Add(1111);
         skinID = 1111;
-        levelsCompleted = 1;
     }
 
     public int LoadUserFileSize(int _currentUser)
@@ -276,7 +273,6 @@ public class GameManager : MonoBehaviour
 		FileStream file = File.Open(folderPath + "/UserData" + _currentUser + ".json", FileMode.Open);
         int fileSize = (int)file.Length;
         file.Close();
-
         return fileSize;
     }
     #endregion
@@ -313,7 +309,7 @@ public class GameData
     public string currentUserName;
     public float sfxVolume;
     public float musicVolume;
-	public int screenResolution = -1;
+	public int screenResolution;
 }
 
 [System.Serializable]

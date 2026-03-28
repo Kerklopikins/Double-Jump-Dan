@@ -25,6 +25,23 @@ public class ButtonEffects : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         selectable = GetComponent<Selectable>();
     }
+
+    void OnEnable()
+    {
+        if(selectable == null)
+            return;
+            
+        if(!selectable.interactable)
+            return;
+
+        if(canvasGroup != null)
+            if(!canvasGroup.interactable)
+                return;
+
+        if(text != null && !pointerDown)
+            text.color = textStartingColor;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if(!selectable.interactable)
@@ -36,7 +53,6 @@ public class ButtonEffects : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
         if(text != null)
             text.color = Color.white;
-
 
         if(buttonClick != null)
             AudioManager.Instance.PlaySound2D(buttonClick);
