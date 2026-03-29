@@ -33,9 +33,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int gunID;
 	[HideInInspector] public int skinID;
 	[HideInInspector] public int levelsCompleted;
+    [HideInInspector] public int totalEnemiesKilled;
+    [HideInInspector] public int totalDeaths;
+    [HideInInspector] public int totalGemsCollected;
+    [HideInInspector] public float totalPlaytime;
 	
     string folderPath;
-    bool started;
     public SpriteRenderer centralizedGem { get; set; }
     LocalWorldManager localWorldManager;
     public static bool died;
@@ -45,8 +48,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-
-		//folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Double Jump Dan";
         folderPath = Application.persistentDataPath;
 
         if(SceneManager.GetActiveScene().name == "Main Menu")
@@ -54,31 +55,27 @@ public class GameManager : MonoBehaviour
             inMainMenu = true;
             mainMenuManager = GameObject.FindWithTag("Main Menu").GetComponent<MainMenuManager>();
         }
-
-		if(!Directory.Exists(folderPath))   
-			Directory.CreateDirectory(folderPath);
         
-        LoadData();
-        LoadUserData();
+        if(!File.Exists(folderPath + "/GameData.json"))
+        {
+            SaveData();
+        }
+        else
+        {
+            LoadData();
+            LoadUserData();
+        }        
         
         localWorldManager = GameObject.FindWithTag("Local World Manager").GetComponent<LocalWorldManager>();
 
         if(localWorldManager.world != LocalWorldManager.World.MainMenu)
             centralizedGem = transform.Find("Centralized Gem").GetComponent<SpriteRenderer>();     
     }
-    
-    void Start()
+
+    void Update()
     {
-        if(!started)
-            StartCoroutine(SetStartedToTrueDelayed());
-    }
-    
-    //////Might not even need this????
-    IEnumerator SetStartedToTrueDelayed()
-    {
-        yield return new WaitForEndOfFrame();
-        started = true;
-        SaveData();
+        if(users.Count > 0)
+            totalPlaytime += Time.unscaledDeltaTime;
     }
     
     #region Encryption
@@ -130,7 +127,6 @@ public class GameManager : MonoBehaviour
         GameData gameData = new GameData();
 
         //Game Data
-        gameData.started = started;
         gameData.users = users;
         gameData.userNames = userNames;
         gameData.currentUser = currentUser;
@@ -153,7 +149,6 @@ public class GameManager : MonoBehaviour
             GameData gameData = JsonUtility.FromJson<GameData>(json);
 
             //Game Data
-            started = gameData.started;
             users = gameData.users;
             userNames = gameData.userNames;
             currentUser = gameData.currentUser;
@@ -180,6 +175,10 @@ public class GameManager : MonoBehaviour
 		userData.skinID = skinID;
 		userData.levelsCompleted = levelsCompleted;
         userData.hash = (userData.gems * 17 + 9).ToString();
+        userData.totalEnemiesKilled = totalEnemiesKilled;
+        userData.totalDeaths = totalDeaths;
+        userData.totalGemsCollected = totalGemsCollected;
+        userData.totalPlaytime = totalPlaytime;
 
         string json = JsonUtility.ToJson(userData);
         string encrypted = Encrypt(json, "5a82be8ec0fdafa41013f6ac33b109");
@@ -206,6 +205,10 @@ public class GameManager : MonoBehaviour
                 gunID = userData.gunID;
                 skinID = userData.skinID;
                 levelsCompleted = userData.levelsCompleted;
+                totalEnemiesKilled = userData.totalEnemiesKilled;
+                totalDeaths = userData.totalDeaths;
+                totalGemsCollected = userData.totalGemsCollected;
+                totalPlaytime = userData.totalPlaytime;
                 return;
             }
         }
@@ -229,6 +232,10 @@ public class GameManager : MonoBehaviour
                 gunID = userDataBak.gunID;
                 skinID = userDataBak.skinID;
                 levelsCompleted = userDataBak.levelsCompleted;
+                totalEnemiesKilled = userDataBak.totalEnemiesKilled;
+                totalDeaths = userDataBak.totalDeaths;
+                totalGemsCollected = userDataBak.totalGemsCollected;
+                totalPlaytime = userDataBak.totalPlaytime;
                 SaveUserData();
                 return;
             }
@@ -237,7 +244,7 @@ public class GameManager : MonoBehaviour
                 if(inMainMenu)
                     mainMenuManager.TamperedUserFile("All user files tampered with, creating new file...");
                 
-                ResetCurrentUserData();
+                LoadDefaultUserData();
                 SaveUserData();
             }              
         }
@@ -252,13 +259,17 @@ public class GameManager : MonoBehaviour
 			File.Delete(folderPath + "/UserData" + user + ".bak");
     }
 
-    public void ResetCurrentUserData()
+    public void LoadDefaultUserData()
     {
         gems = 0;
         ownedHats.Clear();
         ownedGuns.Clear();
 		ownedSkins.Clear();
 		levelsCompleted = 1;
+        totalEnemiesKilled = 0;
+        totalDeaths = 0;
+        totalGemsCollected = 0;
+        totalPlaytime = 0;
 
         ownedHats.Add(1111);
         hatID = 1111;
@@ -294,6 +305,9 @@ public class GameManager : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        SaveData();
+        SaveUserData();
+        
         mainMaterial.color = new Color(1, 1, 1, mainMaterial.color.a);
         mainMaterialStencil.color = mainMaterial.color;
     }
@@ -302,7 +316,6 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameData
 {
-    public bool started;
     public List<int> users = new List<int>();
     public List<string> userNames = new List<string>();
     public int currentUser;
@@ -324,4 +337,8 @@ public class UserData
 	public int skinID;
 	public int levelsCompleted;
     public string hash;
+    public int totalEnemiesKilled;
+    public int totalDeaths;
+    public int totalGemsCollected;
+    public float totalPlaytime;
 }

@@ -43,7 +43,7 @@ public class StatsHUD : MonoBehaviour
     bool canAnimateHurtUI = true;
     bool canAnimatedGemUI = true;
     bool canAnimatedAmmoUI = true;
-
+    
     void Awake()
     {
         Instance = this;
@@ -104,9 +104,11 @@ public class StatsHUD : MonoBehaviour
     public void AddGems(int gemsToGive)
     {
         gems += gemsToGive;
-        
+        GameManager.Instance.gems += gemsToGive;
+        GameManager.Instance.totalGemsCollected += gemsToGive;
+
         if(canAnimatedGemUI)
-                StartCoroutine(GemCollectAnimation());
+            StartCoroutine(GemCollectAnimation());
 
         gemsCounterIndex = gems / 50;
         
@@ -203,12 +205,6 @@ public class StatsHUD : MonoBehaviour
         else
             smallGemsCounter.sprite = smallGemsImages[0];
     }
-
-    public void SaveGems()
-    {
-        GameManager.Instance.gems += gems;
-        GameManager.Instance.SaveUserData();
-    }
     
     public void PlayerHurt()
     {
@@ -241,7 +237,6 @@ public class StatsHUD : MonoBehaviour
     void OnApplicationQuit()
     {
         uiFlashMaterial.SetFloat("_FlashAmount", 0);
-        SaveGems();
     }
     IEnumerator AmmoBarUIAnimation()
 	{

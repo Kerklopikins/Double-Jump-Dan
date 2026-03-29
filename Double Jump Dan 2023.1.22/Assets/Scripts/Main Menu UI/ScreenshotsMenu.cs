@@ -2,12 +2,15 @@
 using UnityEngine.UI;
 using System;
 using System.IO;
+using System.Collections;
 
 public class ScreenshotsMenu : MonoBehaviour
 {
+    [SerializeField] Button screenshotMenuButton;
     [SerializeField] Image screenshotButton;
     [SerializeField] Transform imagesParent;
     [SerializeField] GameObject noScreenshotsText;
+    [SerializeField] ScrollRect screenshotsScrollRect;
     public Animator screenshotViewerAnimator;
     public Text screenshotViewerText;
     public Image screenshotViewerImage;
@@ -21,6 +24,21 @@ public class ScreenshotsMenu : MonoBehaviour
 
         if(!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "/Double Jump Dan"))
             noScreenshotsText.SetActive(true);
+
+        screenshotMenuButton.onClick.AddListener(RefreshScreenshots);
+    }
+
+    public void RefreshScreenshots()
+    {
+        StartCoroutine(DelayContentCentering());
+    }
+
+    IEnumerator DelayContentCentering()
+    {
+        yield return null;
+        yield return null;
+
+        screenshotsScrollRect.verticalNormalizedPosition = 1;
     }
 
     private Sprite LoadSprite(string path)

@@ -424,6 +424,8 @@ public class Player: MonoBehaviour
 
         OnPlayerKilled?.Invoke();
 
+        GameManager.Instance.totalDeaths += 1;
+        
         StartCoroutine(KillCo());
     }
 

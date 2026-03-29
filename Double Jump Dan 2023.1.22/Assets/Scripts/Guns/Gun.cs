@@ -8,7 +8,6 @@ public class Gun : MonoBehaviour
     public AudioClip shootSound;
     public AudioClip reloadSound;
     public Animator gunAnimator;
-	public bool shootWhenTouchingGround;
     public ProjectileType projectileType;
     public GameObject projectile;
     public Transform[] projectileFirePoints;
@@ -32,6 +31,8 @@ public class Gun : MonoBehaviour
     public Transform shell;
     public bool onlyEjectShellsWhenReloading;
     public Transform shellEjectionPoint;
+    public bool hasGlow;
+    public SpriteRenderer glowSprite;
 
     public CameraManager.Properties properties;
 
@@ -50,6 +51,9 @@ public class Gun : MonoBehaviour
     {
         startingPosition = transform.localPosition;
         player = GetComponentInParent<Player>();
+
+        if(hasGlow)
+            player.spriteMaterials.Add(glowSprite);
 
         if(showTrajectory)
             projectileTrajectory = GetComponent<ProjectileTrajectory>();

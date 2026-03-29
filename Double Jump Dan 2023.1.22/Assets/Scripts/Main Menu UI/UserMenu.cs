@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections;
+using System;
 
 public class UserMenu : MonoBehaviour 
 {
-    [SerializeField] Toggle userToggle;
-    [SerializeField] ToggleGroup userToggleGroup;
-    [SerializeField] CanvasGroup usersParent;
+    [SerializeField] Button userButton;
+    [SerializeField] Transform usersParent;
     [SerializeField] InputField userNameInputField;
     [SerializeField] GameObject okayButton;
     [SerializeField] GameObject renameButton;
@@ -25,12 +24,14 @@ public class UserMenu : MonoBehaviour
     [SerializeField] Animator mainMenu;
     [SerializeField] EventSystem eventSystem;
     
+    bool renaming;
     public User user { get; set; }
     public UIScreenManager uiScreenManager { get; set; }
     GameManager gameManager;
-    bool renaming;
 	string oldUserName;
     bool createdNewUser;
+    public event Action OnUserButtonsRefresh;
+    public event Action<bool> OnButtonsDisabled;
 
     void Start()
     {
@@ -46,11 +47,10 @@ public class UserMenu : MonoBehaviour
         
         for(int i = 0; i < gameManager.userNames.Count; i++)
         {
-            var _userToggle = (Toggle)Instantiate(userToggle, Vector3.zero, Quaternion.identity);
+            var _userToggle = (Button)Instantiate(userButton, Vector3.zero, Quaternion.identity);
             _userToggle.transform.SetParent(usersParent.transform);
             _userToggle.transform.localScale = Vector3.one;
             _userToggle.transform.localPosition = Vector3.zero;
-            _userToggle.group = userToggleGroup;
         }
 
         if(gameManager.users.Count == 0)
@@ -64,7 +64,7 @@ public class UserMenu : MonoBehaviour
 		if(userNameInputField.text.Length > 0 && !renaming && !gameManager.userNames.Contains(userNameInputField.text))
         {
             okayButton.SetActive(true);
-
+///////////////////////////////////////////////////CHECK IF PRESSING ENTER AND OKAY CREATES TWO USERS
             if(Input.GetKeyDown(KeyCode.Return))
                 CreateNewUser();
         }
@@ -101,7 +101,7 @@ public class UserMenu : MonoBehaviour
 		if(renaming)
 		{
 			user.userName = userNameInputField.text;
-			user.text.text = user.userName;
+			user.usernameText.text = user.userName;
 		}
 
 		if(userNameInputField.text.Length > 0 && renaming && !gameManager.userNames.Contains(userNameInputField.text) || userNameInputField.text == oldUserName)
@@ -122,7 +122,8 @@ public class UserMenu : MonoBehaviour
         AudioManager.Instance.PlaySound2D(buttonClick);
 
         userNameInputField.interactable = true;
-        usersParent.interactable = false;
+        //usersParent.interactable = false;
+        OnButtonsDisabled?.Invoke(false);
 
         for(int i = 0; i < buttons.Length; i++)
         {
@@ -144,8 +145,8 @@ public class UserMenu : MonoBehaviour
         AudioManager.Instance.PlaySound2D(buttonClick);
 
         userNameInputField.interactable = false;
-        usersParent.interactable = true;
-
+        //usersParent.interactable = true;
+        
         for(int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = true;
@@ -153,7 +154,7 @@ public class UserMenu : MonoBehaviour
 
         if(!gameManager.userNames.Contains(userName))
         {
-            int randomUserID = Random.Range(0, 9999);
+            int randomUserID = UnityEngine.Random.Range(0, 9999);
 
             gameManager.userNames.Add(userName);
             gameManager.users.Add(randomUserID);
@@ -161,16 +162,15 @@ public class UserMenu : MonoBehaviour
             gameManager.currentUser = randomUserID;
             gameManager.currentUserName = userName;
 
-            gameManager.ResetCurrentUserData();
+            gameManager.LoadDefaultUserData();
             gameManager.SaveUserData();
             gameManager.SaveData();
 
-            var _userToggle = (Toggle)Instantiate(userToggle, Vector3.zero, Quaternion.identity);
+            var _userToggle = (Button)Instantiate(userButton, Vector3.zero, Quaternion.identity);
             _userToggle.GetComponentInChildren<Text>().text = userName;
             _userToggle.transform.SetParent(usersParent.transform);
             _userToggle.transform.localScale = Vector3.one;
             _userToggle.transform.localPosition = Vector3.zero;
-            _userToggle.group = userToggleGroup;
         }
 
         if(gameManager.users.Count == 6)
@@ -179,17 +179,17 @@ public class UserMenu : MonoBehaviour
             newButton.interactable = true;
 
         userNameInputField.text = "";
+        OnButtonsDisabled?.Invoke(true);
     }
 
     public void Rename()
     {
 		oldUserName = user.userName;
-
         AudioManager.Instance.PlaySound2D(buttonClick);
 
         userNameInputField.interactable = true;
-        usersParent.interactable = false;
-
+        //usersParent.interactable = false;
+        
         for(int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;
@@ -198,6 +198,8 @@ public class UserMenu : MonoBehaviour
         eventSystem.SetSelectedGameObject(userNameInputField.gameObject);
         userNameInputField.text = user.userName;
         renaming = true;
+
+        OnButtonsDisabled?.Invoke(false);
     }
 
     public void RenameUser()
@@ -205,7 +207,8 @@ public class UserMenu : MonoBehaviour
         AudioManager.Instance.PlaySound2D(buttonClick);
 
         userNameInputField.interactable = false;
-        usersParent.interactable = true;
+        //usersParent.interactable = true;
+        OnButtonsDisabled?.Invoke(true);
         gameManager.userNames[user.transform.GetSiblingIndex()] = user.userName;
         gameManager.currentUserName = userNameInputField.text;
         gameManager.SaveData();
@@ -235,10 +238,10 @@ public class UserMenu : MonoBehaviour
             gameManager.userNames.RemoveAt(user.transform.GetSiblingIndex());
             gameManager.currentUser = gameManager.users[0];
             gameManager.currentUserName = gameManager.userNames[0];
-            Destroy(user.gameObject);
+            user.Remove();
             gameManager.SaveData();
 
-            StartCoroutine(UpdateUsers());
+            RefreshUsers();
         }
         else if(gameManager.users.Count == 0)
         {
@@ -257,14 +260,9 @@ public class UserMenu : MonoBehaviour
         else
             newButton.interactable = true;
     }
-
-    IEnumerator UpdateUsers()
+    
+    public void RefreshUsers()
     {
-        yield return new WaitForEndOfFrame();
-
-        for(int i = 0; i < usersParent.transform.childCount; i++)
-        {
-            usersParent.transform.GetChild(i).GetComponent<User>().CheckIfUpdated();
-        }
+        OnUserButtonsRefresh?.Invoke();
     }
 }

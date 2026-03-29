@@ -9,6 +9,8 @@ public class LavaGun : MonoBehaviour
     [SerializeField] AudioClip reloadSound;
     [SerializeField] Transform firePoint;
     [SerializeField] float barrelLength;
+    [SerializeField] SpriteRenderer glowSprite;
+
     ParticleSystem lava;
     Player player;
     float lavaStartEmission;
@@ -21,6 +23,7 @@ public class LavaGun : MonoBehaviour
     {
         lava = GetComponent<ParticleSystem>();
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player.spriteMaterials.Add(glowSprite);
         lavaEmission = lava.emission;
         lavaStartEmission = lavaEmission.rateOverTime.constantMax;
 

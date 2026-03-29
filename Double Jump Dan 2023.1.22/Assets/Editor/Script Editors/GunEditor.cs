@@ -86,7 +86,10 @@ public class GunEditor : Editor
         EditorGUILayout.Space(8);
         EditorGUILayout.LabelField("Misc Settings", EditorStyles.boldLabel);
         script.gunAnimator = (Animator)EditorGUILayout.ObjectField("Gun Animator", script.gunAnimator, typeof(Animator), false);
-        script.shootWhenTouchingGround = EditorGUILayout.Toggle("Shoot When Touching Ground", script.shootWhenTouchingGround);
+        script.hasGlow = EditorGUILayout.Toggle("Has Glow", script.hasGlow);
+
+        if(script.hasGlow)
+            script.glowSprite = (SpriteRenderer)EditorGUILayout.ObjectField("Glow Sprite", script.glowSprite, typeof(SpriteRenderer), true);
 
         //DrawDefaultInspector();
         EditorGUILayout.Space(8);

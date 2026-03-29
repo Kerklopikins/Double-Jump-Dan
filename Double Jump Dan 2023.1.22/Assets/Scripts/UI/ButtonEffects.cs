@@ -2,115 +2,97 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ButtonEffects : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler
+public class ButtonEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
 {
     [SerializeField] AudioClip buttonClick;
     [SerializeField] Color textStartingColor = Color.black;
+    [SerializeField] Color disabledColor = Color.black;
     [SerializeField] bool dontChangeText;
+
     Text text;
-    Selectable selectable;
-    bool pointerDown;
-    CanvasGroup canvasGroup;
+    Button button;
+    bool isPointerOver;
+    bool isPointerDown;
 
     void Start()
     {
-        if(GetComponentInParent<CanvasGroup>() != null)
-            canvasGroup = GetComponentInParent<CanvasGroup>();
-
-        if(GetComponentInChildren<Text>() != null)
+        if(!dontChangeText)
         {
-            if(!dontChangeText)
+            if(GetComponentInChildren<Text>() != null)
                 text = GetComponentInChildren<Text>();
         }
 
-        selectable = GetComponent<Selectable>();
+        button = GetComponent<Button>();
     }
 
     void OnEnable()
     {
-        if(selectable == null)
-            return;
-            
-        if(!selectable.interactable)
-            return;
-
-        if(canvasGroup != null)
-            if(!canvasGroup.interactable)
-                return;
-
-        if(text != null && !pointerDown)
-            text.color = textStartingColor;
+        isPointerOver = false;
     }
 
+    void Update()
+    {
+        if(!button.interactable)
+        {
+            SetDisabled();
+            return;
+        }
+
+        if(isPointerDown && isPointerOver)
+            SetPressed();
+        else if(isPointerOver)
+            SetHighlighted();
+        else if(!isPointerOver && isPointerDown)
+            SetPressed();
+        else
+            SetNormal();
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(!selectable.interactable)
-            return;
-
-        if(canvasGroup != null)
-            if(!canvasGroup.interactable)
-                return;
-
-        if(text != null)
-            text.color = Color.white;
-
-        if(buttonClick != null)
+        if(buttonClick != null && button.interactable)
             AudioManager.Instance.PlaySound2D(buttonClick);
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!selectable.interactable)
-            return;
-
-        if(canvasGroup != null)
-            if(!canvasGroup.interactable)
-                return;
-
-        if(text != null)
-            text.color = Color.white;
+        isPointerOver = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(!selectable.interactable)
-            return;
-
-        if(canvasGroup != null)
-            if(!canvasGroup.interactable)
-                return;
-
-        if(text != null && !pointerDown)
-            text.color = textStartingColor;
+        isPointerOver = false;
     }
 
     public void OnPointerUp(PointerEventData eventData)
-    {
-        if(!selectable.interactable)
-            return;
-
-        if(canvasGroup != null)
-            if(!canvasGroup.interactable)
-                return;
-
-        pointerDown = false;
-
-        if(text != null)
-            text.color = textStartingColor;
+    {       
+        isPointerDown = false;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(!selectable.interactable)
-            return;
+        isPointerDown = true;
+    }
 
-        if(canvasGroup != null)
-            if(!canvasGroup.interactable)
-                return;
+    void SetNormal()
+    {
+        if(!dontChangeText && text != null)
+            text.color = textStartingColor;
+    }
 
-        pointerDown = true;
-
-        if(text != null)
+    void SetHighlighted()
+    {
+        if(!dontChangeText && text != null)
             text.color = Color.white;
+    }
+
+    void SetPressed()
+    {
+        if(!dontChangeText && text != null)
+            text.color = Color.white;
+    }
+
+    void SetDisabled()
+    {
+        if(!dontChangeText && text != null)
+            text.color = disabledColor;
     }
 }

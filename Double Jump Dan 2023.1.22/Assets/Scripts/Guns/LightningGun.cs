@@ -18,6 +18,7 @@ public class LightningGun : MonoBehaviour
     [SerializeField] AudioClip shootSound;
     [SerializeField] AudioClip reloadSound;
     [SerializeField] GameObject lightningSparks;
+    [SerializeField] SpriteRenderer glowSprite;
     [SerializeField] float shakeDuration;
     [SerializeField] float shakeAmount;
 
@@ -37,6 +38,7 @@ public class LightningGun : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player.spriteMaterials.Add(glowSprite);
         startPosition = transform.localPosition;
 
         gunInfo = GetComponent<GunInfo>();

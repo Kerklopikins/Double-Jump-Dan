@@ -3,6 +3,9 @@ using System.Collections;
 
 public class SpikeODeath : MonoBehaviour
 {   
+    [Header("Editor Mode")]
+    [SerializeField] bool editorMode;
+
     [SerializeField] float movementTime;
     [Range(2, 30)]
     [SerializeField] int length;
@@ -14,13 +17,11 @@ public class SpikeODeath : MonoBehaviour
     Vector3 localStartPosition;
     Vector3 globalStartPosition;
 
-    float speed;
-    float percent;
     int direction = -1;
     float pauseTimer;
     bool pausing;
     float rawT;
-
+    int lastAdjustment;
 
     void Start()
     {
@@ -44,7 +45,34 @@ public class SpikeODeath : MonoBehaviour
 
     void OnValidate()
     {
+        if(!editorMode)
+            return;
+            
+    #if UNITY_EDITOR
         length = (int)Mathf.Round(length / 2) * 2;
+
+        if(lastAdjustment != length)
+        {
+            localStartPosition = transform.localPosition;
+            globalStartPosition = transform.position;
+
+            if(length > 2)
+            {
+                bottomSegmant.gameObject.SetActive(true);
+                bottomSegmant.size = new Vector2(bottomSegmant.size.x, length - 2);
+            }
+            else
+            {
+                bottomSegmant.gameObject.SetActive(false);
+
+            }
+
+            spikeCollider.size = new Vector2(spikeCollider.size.x, bottomSegmant.size.y);
+            spikeCollider.offset = new Vector2(0, -bottomSegmant.size.y / 2);        
+        }
+        
+        lastAdjustment = length;
+    #endif
     }
 
     void Update()
@@ -94,7 +122,6 @@ public class SpikeODeath : MonoBehaviour
     void OnDrawGizmos()
     {
         int _length = length + 2;
-        
 
         if(Application.isPlaying)
         {

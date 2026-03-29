@@ -173,7 +173,7 @@ public class LevelLoadingManager : MonoBehaviour
             done = false;
     }
 
-    void ResizeFadeBackground()
+    public void ResizeFadeBackground()
     {
         if(Camera.main.orthographic)
 			fadeSprite.transform.localScale = new Vector3(Camera.main.orthographicSize * ((float)Screen.width / Screen.height) * 16, Camera.main.orthographicSize * 16, 1);
@@ -190,6 +190,9 @@ public class LevelLoadingManager : MonoBehaviour
     {
         fadingIn = true;
         loading = true;
+
+        GameManager.Instance.SaveUserData();
+        ResizeFadeBackground();		
         StartCoroutine(LoadSceneSlowly(sceneToLoad));
     }
 
@@ -197,6 +200,9 @@ public class LevelLoadingManager : MonoBehaviour
     {
         fadingIn = true;
         loading = true;
+
+        GameManager.Instance.SaveUserData();
+        ResizeFadeBackground();		
         StartCoroutine(LoadSceneSlowly(sceneToLoad));
     }
 

@@ -16,7 +16,7 @@ public class D207: MonoBehaviour
     [SerializeField] AudioClip reloadSound;
     [SerializeField] Vector2 kickMinMax = new Vector2(0.2f, 0.2f);
     [SerializeField] float recoilMoveSettleTime = 0.1f;
-
+    [SerializeField] SpriteRenderer glowSprite;
     bool reloading;
     float _fireRate;
     Player player;
@@ -35,6 +35,7 @@ public class D207: MonoBehaviour
         laserHitEffect.transform.parent = laserParent;
 
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player.spriteMaterials.Add(glowSprite);
         startingPosition = transform.localPosition;
         
         laserFadeSpeed = 1 / laserFadeTime;

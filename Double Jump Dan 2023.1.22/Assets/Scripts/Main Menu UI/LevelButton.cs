@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour 
@@ -31,11 +32,6 @@ public class LevelButton : MonoBehaviour
 
     public void LoadLevel()
     {
-		if(Camera.main.orthographic)
-			LevelLoadingManager.Instance.fadeSprite.transform.localScale = new Vector3(Camera.main.orthographicSize * ((float)Screen.width / Screen.height) * 16, Camera.main.orthographicSize * 16, 1);
-		else
-			LevelLoadingManager.Instance.fadeSprite.transform.localScale = new Vector3(Camera.main.orthographicSize * ((float)Screen.width / Screen.height) * 16 + 1, Camera.main.orthographicSize * 16 + 1, 1);
-		
         buttonEffects.enabled = false;
 		LevelLoadingManager.Instance.LoadScene("Level " + level);
     }

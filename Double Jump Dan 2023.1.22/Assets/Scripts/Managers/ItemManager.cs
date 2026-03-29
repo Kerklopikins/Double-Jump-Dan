@@ -73,15 +73,15 @@ public class ItemManager : MonoBehaviour
 	{
 		switch(shopItem.item.itemType)
 		{   
-                case Item.ItemType.Hat:
-					gameManager.hatID = shopItem.item.itemID;
-                    break;
-				case Item.ItemType.Gun:
-					gameManager.gunID = shopItem.item.itemID;
-					break;
-				case Item.ItemType.Skin:
-					gameManager.skinID = shopItem.item.itemID;
-                    break;
+			case Item.ItemType.Hat:
+				gameManager.hatID = shopItem.item.itemID;
+				break;
+			case Item.ItemType.Gun:
+				gameManager.gunID = shopItem.item.itemID;
+				break;
+			case Item.ItemType.Skin:
+				gameManager.skinID = shopItem.item.itemID;
+				break;
 		}
        
         gameManager.SaveUserData();

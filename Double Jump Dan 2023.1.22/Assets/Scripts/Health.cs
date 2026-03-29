@@ -153,6 +153,8 @@ public class Health : MonoBehaviour
 
         if(healthBar != null)
             healthBar.SetActive(false);
+
+        GameManager.Instance.totalEnemiesKilled += 1;
         
         StartCoroutine(FlingAnimation(gameObject));
     }

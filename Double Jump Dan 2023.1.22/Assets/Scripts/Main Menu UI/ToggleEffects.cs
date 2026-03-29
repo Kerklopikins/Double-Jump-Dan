@@ -65,10 +65,7 @@ public class ToggleEffects : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(!toggle.interactable)
-            return;
-
-        if(toggleClick != null)
+        if(toggleClick != null && toggle.interactable)
             AudioManager.Instance.PlaySound2D(toggleClick);
     }
 }

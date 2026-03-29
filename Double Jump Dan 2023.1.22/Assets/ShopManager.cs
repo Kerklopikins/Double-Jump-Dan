@@ -24,7 +24,7 @@ public class ShopManager : MonoBehaviour
     List<RectTransform> skinPlaceholders = new List<RectTransform>();
     public enum ZoneOpen { Guns, Hats, Skins }
     Vector3 contentPositionLastFrame;
-    int scrollDirection = 1;
+    //int scrollDirection = 1;
 
     void Awake()
     {
@@ -128,10 +128,10 @@ public class ShopManager : MonoBehaviour
         {   
             Vector3 delta = gunsContent.transform.position - contentPositionLastFrame;
 
-            if(delta.x > 0)
-                scrollDirection = -1;
-            if(delta.x < 0)
-                scrollDirection = 1;
+           // if(delta.x > 0)
+                //scrollDirection = -1;
+           // if(delta.x < 0)
+               // scrollDirection = 1;
             
             foreach(RectTransform rect in gunPlaceholders)
             {

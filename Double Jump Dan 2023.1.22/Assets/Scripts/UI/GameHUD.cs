@@ -139,37 +139,37 @@ public class GameHUD: MonoBehaviour
     public void LoadScene(string sceneToLoad)
     {
         if(canPause)
-        {
             LevelLoadingManager.Instance.LoadScene(sceneToLoad);
-            StatsHUD.Instance.SaveGems();
-        }
     }
 
     public void LoadNextScene()
-    {
+    {        
         if(canPause)
         {
-            LevelLoadingManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            StatsHUD.Instance.SaveGems();
+            int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+
+            if(nextScene + 1 > SceneManager.sceneCountInBuildSettings)
+            {
+                Debug.Log("Scene doesn't exist in build index, loading main menu instead...");
+                LevelLoadingManager.Instance.LoadScene("Main Menu");
+            }
+            else
+            {
+                LevelLoadingManager.Instance.LoadScene(nextScene);
+            }
         }
     }
 
     public void Restart()
     {
         if(canPause)
-        {
             LevelLoadingManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            StatsHUD.Instance.SaveGems();
-        }
     }
 
     public void LoadMainMenu()
     {
         if(canPause)
-        {
             LevelLoadingManager.Instance.LoadScene("Main Menu");
-            StatsHUD.Instance.SaveGems();
-        }
     }
 
     public void PlayerKilled()
