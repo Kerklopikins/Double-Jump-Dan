@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 public class ButtonEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
 {
     [SerializeField] AudioClip buttonClick;
-    [SerializeField] Color textStartingColor = Color.black;
-    [SerializeField] Color disabledColor = Color.black;
+    public Color textStartingColor = Color.black;
+    public Color disabledColor = Color.black;
     [SerializeField] bool dontChangeText;
 
     Text text;

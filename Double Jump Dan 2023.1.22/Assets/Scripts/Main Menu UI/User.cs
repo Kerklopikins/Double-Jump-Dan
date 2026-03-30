@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class User : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
 {
     [SerializeField] Text fileSizeText;
     public Text usernameText;
+    [SerializeField] Shadow[] dropShadows;
     [SerializeField] AudioClip buttonClick;
     [SerializeField] Sprite normalSprite;
     [SerializeField] Sprite highlightedSprite;
     [SerializeField] Sprite disabledSprite;
     public int user { get; set; }
     public string userName { get; set; }
+    public int colorIndex { get; set; }
     GameManager gameManager;
     UserMenu userMenu;
     Button button;
     bool isPointerOver;
     bool isPointerDown;
     Image buttonImage;
-
+    
 	void Start() 
 	{
         gameManager = GameManager.Instance;
@@ -26,12 +29,19 @@ public class User : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         button = GetComponent<Button>();
         buttonImage = GetComponent<Image>();
 
-        user = gameManager.users[transform.GetSiblingIndex()];
-        userName = gameManager.userNames[transform.GetSiblingIndex()];
+        int transformIndex = transform.GetSiblingIndex();
+
+        user = gameManager.users[transformIndex];
+        userName = gameManager.userNames[transformIndex];
+        colorIndex = gameManager.userColorIndexes[transformIndex];
+
+        buttonImage.color = userMenu.userColors[colorIndex];
+
+        SetTextColorAndShadow();
+
         usernameText.text = userName;
-
         gameObject.name = userName;
-
+        
         Refresh();
 
         MainMenuManager.Instance.OnUsersRefresh += RefreshUserByteSize;
@@ -60,10 +70,19 @@ public class User : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         if(gameManager.currentUser == user)
         {
             userMenu.user = this;
+            userMenu.previousUserColorIndex = colorIndex;
+            userMenu.colorSelectionIndex = colorIndex;
+            
+            fileSizeText.fontSize = 30;
+            usernameText.fontSize = 30;
+
             button.interactable = false;
         }
         else
         {
+            fileSizeText.fontSize = 25;
+            usernameText.fontSize = 25;
+
             button.interactable = true;
         }
     }
@@ -78,12 +97,35 @@ public class User : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 	{
         gameManager.SaveUserData();
         userMenu.user = this;
+        userMenu.previousUserColorIndex = colorIndex;
+        userMenu.colorSelectionIndex = colorIndex;/////////////////////MIGHT NOT NEED THIS
         gameManager.currentUser = userMenu.user.user;
         gameManager.currentUserName = userMenu.user.userName;
         gameManager.SaveData();
         gameManager.LoadUserData();
         userMenu.RefreshUsers();
 	}
+
+    public void ChangeColor(int _colorIndex)
+    {
+        colorIndex = _colorIndex;
+        buttonImage.color = userMenu.userColors[colorIndex];
+
+        SetTextColorAndShadow();
+    }
+
+    void SetTextColorAndShadow()
+    {
+        if(colorIndex == 0)
+            for(int i = 0; i < dropShadows.Length; i++)
+                dropShadows[i].enabled = false;
+        else
+            for(int i = 0; i < dropShadows.Length; i++)
+                dropShadows[i].enabled = true;
+
+        fileSizeText.color = TextColor();
+        usernameText.color = TextColor();
+    }
     void Update()
     {
         if(!button.interactable)
@@ -101,6 +143,15 @@ public class User : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         else
             SetNormal();
     }
+
+    Color TextColor()
+    {
+        if(colorIndex == 0)
+            return Color.black;
+        else
+            return Color.white;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if(buttonClick != null && button.interactable)
@@ -129,8 +180,8 @@ public class User : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     void SetNormal()
     {
         buttonImage.sprite = normalSprite;
-        usernameText.color = Color.black;
-        fileSizeText.color = Color.black;
+        usernameText.color = TextColor();
+        fileSizeText.color = TextColor();
     }
 
     void SetHighlighted()
@@ -158,8 +209,8 @@ public class User : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         else
         {
             buttonImage.sprite = disabledSprite;
-            usernameText.color = Color.black;
-            fileSizeText.color = Color.black;
+            usernameText.color = TextColor();
+            fileSizeText.color = TextColor();
         }
     }
 }

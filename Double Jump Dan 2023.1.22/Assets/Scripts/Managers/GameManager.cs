@@ -16,27 +16,28 @@ public class GameManager : MonoBehaviour
     public Material mainMaterialStencil;
 
     //Game Data
-    [HideInInspector] public List<int> users = new List<int>();
-    [HideInInspector] public List<string> userNames = new List<string>();
-    [HideInInspector] public int currentUser;
-    [HideInInspector] public string currentUserName;
-    [HideInInspector] public float sfxVolume = 1;
-    [HideInInspector] public float musicVolume = 1;
-	[HideInInspector] public int screenResolution = -1;
+    public List<int> users = new List<int>();
+    public List<string> userNames = new List<string>();
+    public List<int> userColorIndexes = new List<int>();
+    public int currentUser;
+    public string currentUserName;
+    public float sfxVolume = 1;
+    public float musicVolume = 1;
+	public int screenResolution = -1;
     
     //User Data
-    [HideInInspector] public int gems;
-    [HideInInspector] public List<int> ownedHats = new List<int>();
-    [HideInInspector] public List<int> ownedGuns = new List<int>();
-	[HideInInspector] public List<int> ownedSkins = new List<int>();
-    [HideInInspector] public int hatID;
-    [HideInInspector] public int gunID;
-	[HideInInspector] public int skinID;
-	[HideInInspector] public int levelsCompleted;
-    [HideInInspector] public int totalEnemiesKilled;
-    [HideInInspector] public int totalDeaths;
-    [HideInInspector] public int totalGemsCollected;
-    [HideInInspector] public float totalPlaytime;
+    public int gems;
+    public List<int> ownedHats = new List<int>();
+    public List<int> ownedGuns = new List<int>();
+	public List<int> ownedSkins = new List<int>();
+    public int hatID;
+    public int gunID;
+	public int skinID;
+	public int levelsCompleted;
+    public int totalEnemiesKilled;
+    public int totalDeaths;
+    public int totalGemsCollected;
+    public double totalPlaytime;
 	
     string folderPath;
     public SpriteRenderer centralizedGem { get; set; }
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
         //Game Data
         gameData.users = users;
         gameData.userNames = userNames;
+        gameData.userColorIndexes = userColorIndexes;
         gameData.currentUser = currentUser;
         gameData.currentUserName = currentUserName;
         gameData.sfxVolume = sfxVolume;
@@ -151,6 +153,7 @@ public class GameManager : MonoBehaviour
             //Game Data
             users = gameData.users;
             userNames = gameData.userNames;
+            userColorIndexes = gameData.userColorIndexes;
             currentUser = gameData.currentUser;
             currentUserName = gameData.currentUserName;
             sfxVolume = gameData.sfxVolume;
@@ -304,9 +307,12 @@ public class GameManager : MonoBehaviour
     }
 
     void OnApplicationQuit()
-    {
-        SaveData();
-        SaveUserData();
+    {        
+        if(users.Count > 0)
+        {
+            SaveData();
+            SaveUserData();
+        }
         
         mainMaterial.color = new Color(1, 1, 1, mainMaterial.color.a);
         mainMaterialStencil.color = mainMaterial.color;
@@ -318,6 +324,7 @@ public class GameData
 {
     public List<int> users = new List<int>();
     public List<string> userNames = new List<string>();
+    public List<int> userColorIndexes = new List<int>();
     public int currentUser;
     public string currentUserName;
     public float sfxVolume;
@@ -340,5 +347,5 @@ public class UserData
     public int totalEnemiesKilled;
     public int totalDeaths;
     public int totalGemsCollected;
-    public float totalPlaytime;
+    public double totalPlaytime;
 }

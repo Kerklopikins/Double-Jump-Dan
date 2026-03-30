@@ -12,12 +12,18 @@ public class FinishLevel : MonoBehaviour
     float xDistance = 1.5f;
     GameManager gameManager;
 	GameHUD gameHUD;
-
+    int currentScene;
     void Start()
     {
         gameManager = GameManager.Instance;
         gameHUD = GameHUD.Instance;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+
+        if(SceneManager.GetActiveScene().buildIndex > 2)
+        {
+            string levelName = SceneManager.GetActiveScene().name;
+            currentScene = int.Parse(levelName.Replace("Level ", ""));
+        }
     }
 
     void Update()
@@ -32,9 +38,9 @@ public class FinishLevel : MonoBehaviour
                 playerEntered = true;
                 return;
             }
-
-            if(SceneManager.GetActiveScene().buildIndex - 2 == gameManager.levelsCompleted)
-                gameManager.levelsCompleted++;
+           
+            if(currentScene >= gameManager.levelsCompleted)
+                gameManager.levelsCompleted = currentScene + 1;
 
             if(levelCompleteUI != null)
                 levelCompleteUI.SetActive(true);
