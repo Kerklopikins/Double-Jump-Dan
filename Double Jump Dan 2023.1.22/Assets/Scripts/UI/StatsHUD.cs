@@ -33,7 +33,6 @@ public class StatsHUD : MonoBehaviour
     [Header("Other")]
     [SerializeField] Material uiFlashMaterial;
 
-    public int gems { get; set; }
     Camera _camera;
     int gemsCounterIndex; 
     int gemsImageIndex;
@@ -43,7 +42,8 @@ public class StatsHUD : MonoBehaviour
     bool canAnimateHurtUI = true;
     bool canAnimatedGemUI = true;
     bool canAnimatedAmmoUI = true;
-    
+    LevelManager levelManager;
+
     void Awake()
     {
         Instance = this;
@@ -52,6 +52,7 @@ public class StatsHUD : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        levelManager = LevelManager.Instance;
         _camera = Camera.main;
 
         GunInfo.OnAmmoChanged += UpdateAmmoInfo;
@@ -101,12 +102,8 @@ public class StatsHUD : MonoBehaviour
         ammoBarPivot.transform.localScale = new Vector3(ammoPercent, 1, 1);
     }
 
-    public void AddGems(int gemsToGive)
+    public void UpdateGemsCounter(int gems)
     {
-        gems += gemsToGive;
-        GameManager.Instance.gems += gemsToGive;
-        GameManager.Instance.totalGemsCollected += gemsToGive;
-
         if(canAnimatedGemUI)
             StartCoroutine(GemCollectAnimation());
 
@@ -205,7 +202,6 @@ public class StatsHUD : MonoBehaviour
         else
             smallGemsCounter.sprite = smallGemsImages[0];
     }
-    
     public void PlayerHurt()
     {
         ScreenEffectsManager.Instance.TriggerHurtEffect();

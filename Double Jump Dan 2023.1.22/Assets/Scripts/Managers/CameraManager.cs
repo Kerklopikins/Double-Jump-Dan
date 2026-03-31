@@ -65,7 +65,7 @@ public class CameraManager : MonoBehaviour
 
     public void SnapToPlayerSpawnPoint()
     {
-        SnapCamera(player.spawnPoint.position);
+        SnapCamera(LevelManager.Instance.currentSpawnPoint);
     }
 
     public void SnapToPlayerPosition()

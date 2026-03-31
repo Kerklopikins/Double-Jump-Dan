@@ -290,7 +290,7 @@ public class Health : MonoBehaviour
             yield return null;
         }
 
-        StatsHUD.Instance.AddGems(1);
+        LevelManager.Instance.AddGems(1);
         gem.SetActive(false);
         gemSprite.color = new Color(gemSprite.color.r, gemSprite.color.g, gemSprite.color.b, 1);
     }

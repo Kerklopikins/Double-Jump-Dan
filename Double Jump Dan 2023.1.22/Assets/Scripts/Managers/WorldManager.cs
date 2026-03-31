@@ -34,11 +34,11 @@ public class WorldManager : MonoBehaviour
     ParticleSystemRenderer cloudParticleSystemRenderer;
     LocalWorldManager localWorldManager;
     bool testingMode;
-
+    
     void Awake()
     {
         Instance = this;
-        localWorldManager = GameObject.FindWithTag("Local World Manager").GetComponent<LocalWorldManager>();
+        localWorldManager = GameObject.FindWithTag("Level Managers").GetComponent<LocalWorldManager>();
     }
 
     void OnGUI()
@@ -152,35 +152,51 @@ public class WorldManager : MonoBehaviour
 
             cloudParticleSystem.Stop();
             cloudParticleSystem.Play();
-
-            if(snowing)
-            {
-                snow.gameObject.SetActive(true);
-                sun.SetActive(false);
-                clouds.gameObject.SetActive(false);
-
-                for(int i = 0; i < snow.childCount; i++)
-                {
-                    snow.GetChild(i).gameObject.SetActive(true);
-                }
-
-                float cameraSize = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);
-                snow.GetChild(0).transform.localScale = new Vector2(cameraSize * 2, GetComponent<Camera>().orthographicSize * 2);
-                snow.GetChild(1).transform.localScale = new Vector2(cameraSize * 2, GetComponent<Camera>().orthographicSize * 2);
-
-                snow.GetChild(2).GetComponent<ParticleSystem>().Stop();
-                snow.GetChild(2).transform.position = new Vector2(cameraSize - cameraSize, GetComponent<Camera>().orthographicSize * 2);
-                snow.GetChild(2).GetComponent<ParticleSystem>().Play();
-            }
-
-            if(dusting)
-                dust.SetActive(true);
+    
+            ToggleWeatherEffects(GameManager.Instance.weatherEffects);
         }
         else
         {
+            sky.gameObject.SetActive(false);
+            sunPivot.SetActive(false);
+            clouds.gameObject.SetActive(false);
+            
             mainMaterial.color = new Color(1, 1, 1, mainMaterial.color.a);
             mainMaterialStencil.color = mainMaterial.color;
         }
+    }
+
+    public void ToggleWeatherEffects(bool isOn)
+    {
+        if(!isOn)
+        {
+            snow.gameObject.SetActive(false);
+            dust.SetActive(false);
+            return;
+        }
+
+        if(snowing)
+        {
+            snow.gameObject.SetActive(true);
+            sun.SetActive(false);
+            clouds.gameObject.SetActive(false);
+
+            for(int i = 0; i < snow.childCount; i++)
+            {
+                snow.GetChild(i).gameObject.SetActive(true);
+            }
+
+            float cameraSize = GetComponent<Camera>().orthographicSize * ((float)Screen.width / Screen.height);
+            snow.GetChild(0).transform.localScale = new Vector2(cameraSize * 2, GetComponent<Camera>().orthographicSize * 2);
+            snow.GetChild(1).transform.localScale = new Vector2(cameraSize * 2, GetComponent<Camera>().orthographicSize * 2);
+
+            snow.GetChild(2).GetComponent<ParticleSystem>().Stop();
+            snow.GetChild(2).transform.position = new Vector2(cameraSize - cameraSize, GetComponent<Camera>().orthographicSize * 2);
+            snow.GetChild(2).GetComponent<ParticleSystem>().Play();
+        }
+
+        if(dusting)
+            dust.SetActive(true);
     }
 
     void SetDay()
@@ -250,6 +266,14 @@ public class WorldManager : MonoBehaviour
             mainMaterial.color = new Color(0.3f, 0.3f, 0.3f, mainMaterial.color.a);
             mainMaterialStencil.color = mainMaterial.color;
         }
+    }
+
+    public bool UseWeatherEffects()
+    {
+        if(GameManager.Instance.weatherEffects)
+            return true;
+        else
+            return false;
     }
 
     void SetSunrise()

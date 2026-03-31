@@ -16,32 +16,33 @@ public class GameManager : MonoBehaviour
     public Material mainMaterialStencil;
 
     //Game Data
-    public List<int> users = new List<int>();
-    public List<string> userNames = new List<string>();
-    public List<int> userColorIndexes = new List<int>();
-    public int currentUser;
-    public string currentUserName;
-    public float sfxVolume = 1;
-    public float musicVolume = 1;
-	public int screenResolution = -1;
-    
+    [HideInInspector] public List<int> users = new List<int>();
+    [HideInInspector] public List<string> userNames = new List<string>();
+    [HideInInspector] public List<int> userColorIndexes = new List<int>();
+    [HideInInspector] public int currentUser;
+    [HideInInspector] public string currentUserName;
+    [HideInInspector] public float sfxVolume = 1;
+    [HideInInspector] public float musicVolume = 1;
+	[HideInInspector] public int screenResolution = -1;
+    public bool postProcessing = true;
+    public bool weatherEffects = true;
+
     //User Data
-    public int gems;
-    public List<int> ownedHats = new List<int>();
-    public List<int> ownedGuns = new List<int>();
-	public List<int> ownedSkins = new List<int>();
-    public int hatID;
-    public int gunID;
-	public int skinID;
-	public int levelsCompleted;
-    public int totalEnemiesKilled;
-    public int totalDeaths;
-    public int totalGemsCollected;
-    public double totalPlaytime;
+    [HideInInspector] public int gems;
+    [HideInInspector] public List<int> ownedHats = new List<int>();
+    [HideInInspector] public List<int> ownedGuns = new List<int>();
+	[HideInInspector] public List<int> ownedSkins = new List<int>();
+    [HideInInspector] public int hatID;
+    [HideInInspector] public int gunID;
+	[HideInInspector] public int skinID;
+	[HideInInspector] public int levelsCompleted;
+    [HideInInspector] public int totalEnemiesKilled;
+    [HideInInspector] public int totalDeaths;
+    [HideInInspector] public int totalGemsCollected;
+    [HideInInspector] public double totalPlaytime;
 	
     string folderPath;
     public SpriteRenderer centralizedGem { get; set; }
-    LocalWorldManager localWorldManager;
     public static bool died;
     bool inMainMenu;
     MainMenuManager mainMenuManager;
@@ -56,6 +57,10 @@ public class GameManager : MonoBehaviour
             inMainMenu = true;
             mainMenuManager = GameObject.FindWithTag("Main Menu").GetComponent<MainMenuManager>();
         }
+        else
+        {
+            centralizedGem = transform.Find("Centralized Gem").GetComponent<SpriteRenderer>();  
+        }
         
         if(!File.Exists(folderPath + "/GameData.json"))
         {
@@ -66,11 +71,6 @@ public class GameManager : MonoBehaviour
             LoadData();
             LoadUserData();
         }        
-        
-        localWorldManager = GameObject.FindWithTag("Local World Manager").GetComponent<LocalWorldManager>();
-
-        if(localWorldManager.world != LocalWorldManager.World.MainMenu)
-            centralizedGem = transform.Find("Centralized Gem").GetComponent<SpriteRenderer>();     
     }
 
     void Update()
@@ -136,6 +136,8 @@ public class GameManager : MonoBehaviour
         gameData.sfxVolume = sfxVolume;
         gameData.musicVolume = musicVolume;
 		gameData.screenResolution = screenResolution;
+        gameData.postProcessing = postProcessing;
+        gameData.weatherEffects = weatherEffects;
 
         string json = JsonUtility.ToJson(gameData);
         string encrypted = Encrypt(json, "5a82be8ec0fdafa41013f6ac33b109");
@@ -159,6 +161,8 @@ public class GameManager : MonoBehaviour
             sfxVolume = gameData.sfxVolume;
             musicVolume = gameData.musicVolume;
 			screenResolution = gameData.screenResolution;
+            postProcessing = gameData.postProcessing;
+            weatherEffects = gameData.weatherEffects;
         }
     }
     #endregion
@@ -330,6 +334,8 @@ public class GameData
     public float sfxVolume;
     public float musicVolume;
 	public int screenResolution;
+    public bool postProcessing;
+    public bool weatherEffects;
 }
 
 [System.Serializable]

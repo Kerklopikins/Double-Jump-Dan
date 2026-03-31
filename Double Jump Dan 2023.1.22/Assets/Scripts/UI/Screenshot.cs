@@ -28,8 +28,8 @@ public class Screenshot : MonoBehaviour
             startDelay -= Time.deltaTime;
             return;
         }
-
-        if(player.dead || !LevelLoadingManager.Instance.done || player.finishedLevel || gameHUD.paused)
+        
+        if(player.dead || !LevelLoadingManager.Instance.done || LevelManager.Instance.FinishedLevel() || gameHUD.paused)
             return;
 
         if(Input.GetKeyDown(KeyCode.C))

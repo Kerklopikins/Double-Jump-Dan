@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ScreenEffectsManager : MonoBehaviour
 {
@@ -9,9 +10,15 @@ public class ScreenEffectsManager : MonoBehaviour
     public SpriteRenderer whiteFadeSprite;
     [SerializeField] SpriteRenderer greenCircleSprite;
     [SerializeField] Material grayscaleMaterial;
+    [SerializeField] Material colorTemperatureMaterial;
+
+    [Header("Color Temperature")]
+    [SerializeField] bool useColorTemperature;
+    [Range(0f, 3f)]
+    [SerializeField] float exposure = 1f;
+    [SerializeField] Color tintColor = Color.white;
     
     public bool canAnimateWhiteFade { get; private set; }
-
     float grayscaleAmount;
     float cameraSize;
     Camera _camera;
@@ -19,7 +26,10 @@ public class ScreenEffectsManager : MonoBehaviour
     bool canAnimateHealth = true;
     bool canAnimateGrayScale = true;
     Player player;
-    
+    bool inMainMenu;
+    GameManager gameManager;
+    bool usePostProcessing;
+
     void Awake()
     {
         Instance = this;
@@ -28,6 +38,14 @@ public class ScreenEffectsManager : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<Camera>();
+        gameManager = GameManager.Instance;
+
+        if(SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            inMainMenu = true;
+            return;
+        }
+
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         canAnimateWhiteFade = true;
         player.OnPlayerHealthChange += AnimateHealthCollect;
@@ -36,7 +54,9 @@ public class ScreenEffectsManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt))
+        usePostProcessing = gameManager.postProcessing;
+
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt) && !inMainMenu)
         {
             print("Screen Effects Resized");
             ResizeScreenEffects();
@@ -187,16 +207,65 @@ public class ScreenEffectsManager : MonoBehaviour
         grayscaleAmount = amount;
     }
 
-    private void OnRenderImage(RenderTexture src, RenderTexture dest)
+    public void UpdatePostProcessing()
     {
+        if(gameManager == null)
+            return;
+
+        usePostProcessing = gameManager.postProcessing;
+    }
+
+    void OnRenderImage(RenderTexture src, RenderTexture dest)
+    {
+        if(!usePostProcessing)
+        {
+            Graphics.Blit(src, dest);
+            return;
+        }
+
+        if(!useColorTemperature)
+        {
+            if(grayscaleMaterial != null)
+            {
+                grayscaleMaterial.SetFloat("_Amount", grayscaleAmount);
+                Graphics.Blit(src, dest, grayscaleMaterial);
+            }
+            else
+            {
+                Graphics.Blit(src, dest);
+            }
+
+            return;
+        }
+    
+        RenderTexture temp = RenderTexture.GetTemporary(src.width, src.height);
+        RenderTexture currentSource = src;
+
         if(grayscaleMaterial != null)
         {
             grayscaleMaterial.SetFloat("_Amount", grayscaleAmount);
-            Graphics.Blit(src, dest, grayscaleMaterial);
+            Graphics.Blit(currentSource, temp, grayscaleMaterial);
+
+            currentSource = temp;
         }
         else
         {
             Graphics.Blit(src, dest);
         }
+        
+        if(colorTemperatureMaterial != null)
+        {
+            //colorTemperatureMaterial.SetFloat("_Temperature", colorTemperature);
+            colorTemperatureMaterial.SetFloat("_Exposure", exposure);
+            colorTemperatureMaterial.SetColor("_TintColor", tintColor);
+
+            Graphics.Blit(currentSource, dest, colorTemperatureMaterial);
+        }
+        else
+        {
+            Graphics.Blit(currentSource, dest);
+        }
+
+        RenderTexture.ReleaseTemporary(temp);
     }
 }

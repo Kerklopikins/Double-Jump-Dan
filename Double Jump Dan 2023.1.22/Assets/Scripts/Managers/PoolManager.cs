@@ -55,35 +55,6 @@ public class PoolManager: MonoBehaviour
         }
     }
 
-    public void CreatePool(string poolID, GameObject prefab, int poolSize, Transform poolParent)
-    {        
-        if(!poolDictionary.ContainsKey(poolID))
-        {
-            poolDictionary.Add(poolID, new LinkedList<ObjectInstance>());
-
-            GameObject poolHolder = new GameObject(poolID + " Pool");
-            poolHolder.transform.parent = poolParent;
-            poolHolder.transform.localScale = Vector3.one;
-            poolHolder.transform.localPosition = Vector3.zero;
-            
-            for(int i = 0; i < poolSize; i++)
-            {
-                ObjectInstance newObject = new ObjectInstance(Instantiate(prefab, poolHolder.transform));
-                poolDictionary[poolID].AddLast(newObject);
-            }
-        }
-        else
-        {
-            GameObject poolHolder = gameObject.transform.Find(poolID + " Pool").gameObject;
-
-            for(int i = 0; i < poolSize; i++)
-            {
-                ObjectInstance newObject = new ObjectInstance(Instantiate(prefab, poolHolder.transform));
-                poolDictionary[poolID].AddLast(newObject);
-            }
-        }
-    }
-
     public GameObject ReuseObject(string poolID, object data)
     {
         if(poolDictionary.ContainsKey(poolID))
@@ -94,37 +65,6 @@ public class PoolManager: MonoBehaviour
 
             objectToReuse.ReuseObject(data);
             return objectToReuse.gameObject;
-        }
-        else
-        {
-            Debug.LogError("Pool ID : (" + poolID + ") doesn't exist.");
-        }
-
-        return null;
-    }
-
-    public GameObject ReuseObject(string poolID, object data, int direction)
-    {
-        if(poolDictionary.ContainsKey(poolID))
-        {
-            if(direction == 1)
-            {
-                ObjectInstance objectToReuse = poolDictionary[poolID].First.Value;
-                poolDictionary[poolID].RemoveFirst();
-                poolDictionary[poolID].AddLast(objectToReuse);
-
-                objectToReuse.ReuseObject(data);
-                return objectToReuse.gameObject;
-            }
-            else if(direction == -1)
-            {
-                ObjectInstance objectToReuse = poolDictionary[poolID].Last.Value;
-                poolDictionary[poolID].RemoveLast();
-                poolDictionary[poolID].AddFirst(objectToReuse);
-
-                objectToReuse.ReuseObject(data);
-                return objectToReuse.gameObject;
-            }
         }
         else
         {

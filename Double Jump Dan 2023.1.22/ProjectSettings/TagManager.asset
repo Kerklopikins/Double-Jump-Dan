@@ -10,9 +10,9 @@ TagManager:
   - Main Menu
   - Enemy Projectile
   - Bounds
-  - Local World Manager
   - Stats HUD
   - Managers
+  - Level Managers
   layers:
   - Default
   - TransparentFX
@@ -31,7 +31,7 @@ TagManager:
   - Background
   - Effects
   - Enemy Projectiles
-  - 
+  - Post Process
   - 
   - 
   - 

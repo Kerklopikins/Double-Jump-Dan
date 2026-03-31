@@ -42,10 +42,10 @@ public class ConfirmPurchase : MonoBehaviour
 		if(shopItem.item.itemType == Item.ItemType.Skin)
 			gameManager.ownedSkins.Add(shopItem.item.itemID);
 		
-        MainMenuManager.Instance.RefreshGemsText();
+        ShopManager.Instance.RefreshGemsText();
 
 		gameManager.SaveUserData();
 
-        MainMenuManager.Instance.EquipItem(shopItem);
+        ShopManager.Instance.EquipItem(shopItem);
 	}
 }

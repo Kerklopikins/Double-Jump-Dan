@@ -26,6 +26,7 @@ public class LevelLoadingManager : MonoBehaviour
     LocalWorldManager localWorldManager;
     Player player;
     GameObject levelLoadingGameObject;
+
     void Awake()
     {
         Instance = this;
@@ -55,7 +56,7 @@ public class LevelLoadingManager : MonoBehaviour
 	{
 		ResizeFadeBackground();
 
-        localWorldManager = GameObject.FindWithTag("Local World Manager").GetComponent<LocalWorldManager>();
+        localWorldManager = GameObject.FindWithTag("Level Managers").GetComponent<LocalWorldManager>();
 
         if(IsNormalLevel())
         {
@@ -191,7 +192,9 @@ public class LevelLoadingManager : MonoBehaviour
         fadingIn = true;
         loading = true;
 
-        GameManager.Instance.SaveUserData();
+        if(localWorldManager.world != LocalWorldManager.World.SplashScreen)
+            GameManager.Instance.SaveUserData();
+
         ResizeFadeBackground();		
         StartCoroutine(LoadSceneSlowly(sceneToLoad));
     }
@@ -201,7 +204,9 @@ public class LevelLoadingManager : MonoBehaviour
         fadingIn = true;
         loading = true;
 
-        GameManager.Instance.SaveUserData();
+        if(localWorldManager.world != LocalWorldManager.World.SplashScreen)
+            GameManager.Instance.SaveUserData();
+            
         ResizeFadeBackground();		
         StartCoroutine(LoadSceneSlowly(sceneToLoad));
     }

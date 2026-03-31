@@ -17,7 +17,6 @@ public class Player: MonoBehaviour
     [SerializeField] LayerMask collisionMask;
     [SerializeField] Vector2 groundCheckSize = new Vector2(0, 0.125f);
     [SerializeField] Vector3 groundCheckOffset;
-    [SerializeField] Transform levelStart;
     [SerializeField] Transform armTwo;
     public Transform aimPoint;
 
@@ -41,9 +40,7 @@ public class Player: MonoBehaviour
     public bool canFollow { get; set; }
     public bool grounded { get; private set; }
     public bool dead { get; private set; }
-    public Transform spawnPoint { get; set; }
     public int _health { get; private set; }
-    public bool finishedLevel { get; set; }
     public bool handleInput { get; set; }
     public bool canFall { get; set; }
     public bool respawned { get; set; }
@@ -51,7 +48,6 @@ public class Player: MonoBehaviour
     public int lives { get; set; }
     public bool gameHUDPaused { get; set; }
     public bool gameHUDFrozen { get; set; }
-
     bool doubleJump;
     Rigidbody2D rb2D;
     Animator animator;
@@ -75,13 +71,13 @@ public class Player: MonoBehaviour
     int direction = 1;
     bool wasGroundedLastFrame;
     float previousVelocityY;
+    float finishLevelInTime;
+    float finalPositionX;
+    bool firstFinishJump;
 
     void Awake()
     {
         lives = 3;
-
-        if(levelStart != null)
-            spawnPoint = levelStart;
 	}
 
     void Start()
@@ -90,14 +86,12 @@ public class Player: MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         _collider2D = GetComponent<Collider2D>();
+
         canFollow = true;
         parts = transform.Find("Legs").gameObject;
         _camera = Camera.main;
         _coyoteTime = coyoteTime;       
         doubleJumpTimer = 0.15f;
-
-        if(spawnPoint != null)
-            transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y - 0.125f, 0);
 
         shadowDanTracer = GetComponent<ShadowDanTracer>();
         shadowDanTracer.enabled = false;
@@ -122,7 +116,7 @@ public class Player: MonoBehaviour
             _coyoteTime = Mathf.Clamp(_coyoteTime, 0, coyoteTime);
         }
         
-        if(!dead && !gameHUDPaused && !gameHUDFrozen && !finishedLevel && _InputDelayTimer <= 0)
+        if(!dead && !gameHUDPaused && !gameHUDFrozen && !LevelManager.Instance.FinishedLevel() && _InputDelayTimer <= 0)
         {
             handleInput = true;
             HandleInput();
@@ -147,26 +141,55 @@ public class Player: MonoBehaviour
             handleInput = false;
         }
 
-        if(finishedLevel)
+        if(LevelManager.Instance.FinishedLevel())
         {
             invincible = true;
             canFollow = false;
+            
+            ParticleSystem.EmissionModule emission = walkParticles.emission;
+            emission.rateOverTime = 0;
 
             animator.SetBool("Grounded", grounded);
             animator.SetFloat("Speed", 0);
+            
+            float duration = 0.75f;
 
-            rb2D.velocity = new Vector2(Mathf.SmoothDamp(rb2D.velocity.x, 0, ref velocityXSmoothing, (grounded) ? accelerationTimeGrounded : accelerationTimeInAir), rb2D.velocity.y);
+            if(finishLevelInTime < duration)
+            {
+                finishLevelInTime += Time.unscaledDeltaTime;
+                
+                float t = finishLevelInTime / duration;
+                float smoothT = Mathf.SmoothStep(0, 1, finishLevelInTime / duration);
+
+                float velocityX = Mathf.Lerp(rb2D.velocity.x, 0, smoothT);
+
+                rb2D.velocity = new Vector2(velocityX, rb2D.velocity.y);
+                
+                float angle = Mathf.Lerp(armTwo.localEulerAngles.z, 150, smoothT);
+                armTwo.localEulerAngles = new Vector3(0, 0, angle);
+
+                finalPositionX = transform.position.x;
+            }
+            else
+            {
+                rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+                transform.position = new Vector2(finalPositionX, transform.position.y);
+            }
 
             if(grounded)
             {
                 finishLevelJumpTimer -= Time.deltaTime;
 
-                if(finishLevelJumpTimer <= -0)
+                if(finishLevelJumpTimer <= 0)
+                {
                     rb2D.velocity = new Vector2(rb2D.velocity.x, jumpHeight);
-            }
-            else
-            {
-                finishLevelJumpTimer = 0.5f;
+
+                    if(firstFinishJump)
+                        transform.localScale = new Vector2(-transform.localScale.x, 1);
+
+                    finishLevelJumpTimer = 0.25f;
+                    firstFinishJump = true;
+                }
             }
         }
     }
@@ -491,8 +514,8 @@ public class Player: MonoBehaviour
         walkParticles.Play();
 
         _health = health;
-
-        transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y - 0.125f, 0);
+        
+        LevelManager.Instance.Respawn();
 
         OnPlayerRespawn?.Invoke();
     }

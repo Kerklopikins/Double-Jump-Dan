@@ -230,15 +230,16 @@ public class Gun : MonoBehaviour
                     RaycastHit2D hit;
                     Ray2D ray = new Ray2D(spawnPosition, direction);
                     hit = Physics2D.Raycast(ray.origin, ray.direction, shotDistance, collisionMask);
-                    
-                    StartCoroutine(DeactivateBullet());
+                    ///////////////////////////////////////////////WHY IS IT NOT ACTIVATING AT START
+                    /// FIX SHOTGUN RAYS
                     bullets[i].transform.position = spawnPosition;
 
                     if(hit)
                     {
                         shotDistance = hit.distance;
                         bullets[i].localScale = new Vector3(hit.distance * 0.5f, 1, 1);
-                
+                        print(bullets[i].transform.localScale.x);
+
                         if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Enemies"))
                         {                            
                             Health health = hit.collider.GetComponent<Health>();
@@ -259,6 +260,8 @@ public class Gun : MonoBehaviour
                     {
                         bullets[i].localScale = new Vector3(50, 1, 1);
                     }
+
+                    StartCoroutine(DeactivateBullet());
                 }
                 else if(projectileType == ProjectileType.GameObjectBased)
                 {

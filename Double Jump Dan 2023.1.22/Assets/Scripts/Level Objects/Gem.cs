@@ -41,7 +41,7 @@ public class Gem : MonoBehaviour
             }
             else
             {
-                StatsHUD.Instance.AddGems(gemsToGivePlayer);
+                LevelManager.Instance.AddGems(gemsToGivePlayer);
                 Destroy(gameObject);
             }
         }

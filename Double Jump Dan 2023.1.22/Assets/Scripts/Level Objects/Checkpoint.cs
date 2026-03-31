@@ -11,14 +11,15 @@ public class Checkpoint : MonoBehaviour
 
     [SerializeField] float flashSpeed;
     [SerializeField] float maxDetectionHeight;
-
+    public float poop;
+    
     float beaconStartSize;
     Player player;
     bool playerEntered;
     bool raycasted;
     float maxBeaconHeight;
     float xDistance = 1.5f;
-
+    
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -36,7 +37,7 @@ public class Checkpoint : MonoBehaviour
         
         if(playerEntered)
         {
-            if(beaconSprite.size.y >= maxBeaconHeight)
+            if(beaconSprite.size.y >= maxBeaconHeight + 1)
                 return;
 
             if(!raycasted)
@@ -53,7 +54,7 @@ public class Checkpoint : MonoBehaviour
             
             beaconSprite.color = new Color(activeColor.r, activeColor.g, activeColor.b, beaconSprite.color.a);            
             beaconSprite.size += new Vector2(0, beaconGrowSpeed * Time.deltaTime);
-            beaconSprite.size = new Vector2(beaconSprite.size.x, Mathf.Clamp(beaconSprite.size.y, beaconStartSize, maxBeaconHeight + 1.5f));
+            beaconSprite.size = new Vector2(beaconSprite.size.x, Mathf.Clamp(beaconSprite.size.y, beaconStartSize, maxBeaconHeight + 1));
         }
         else
         {
@@ -66,7 +67,7 @@ public class Checkpoint : MonoBehaviour
                 if(player.transform.position.y > transform.position.y - 1 + maxDetectionHeight)
                     return;
 
-                player.spawnPoint = transform;
+                LevelManager.Instance.UpdateSpawnPoint(transform.position);
                 AudioManager.Instance.PlaySound2D(checkpointSound);
                 playerEntered = true;
             }

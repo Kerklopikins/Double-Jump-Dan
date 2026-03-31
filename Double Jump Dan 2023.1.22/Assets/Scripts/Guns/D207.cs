@@ -29,7 +29,7 @@ public class D207: MonoBehaviour
 
 	void Start()
 	{
-        laserParent = GameObject.FindWithTag("Local World Manager").transform;
+        laserParent = GameObject.FindWithTag("Level Managers").transform;
 
         laser.transform.parent = laserParent;
         laserHitEffect.transform.parent = laserParent;

@@ -6,11 +6,19 @@ public class UIArea : MonoBehaviour
     [SerializeField] Animator animator;
     
     bool open;
+    bool initialized;
 
     void Start()
     {
-        if(firstAreaOpen)
+        if(firstAreaOpen && !initialized)
+        {
             OpenArea(true);
+            animator.SetBool("Initially Open", true);
+            initialized = true;
+        }
+
+        if(initialized)
+            animator.SetBool("Initially Open", false);
     }
 
     public void OpenArea(bool _open)
@@ -21,8 +29,16 @@ public class UIArea : MonoBehaviour
 
     public void OnEnable()
     {
-        if(open)
-            animator.SetBool("Open", true);
+        if(firstAreaOpen)
+        {
+            if(open && initialized)
+                animator.SetBool("Open", true);
+        }
+        else
+        {
+            if(open)
+                animator.SetBool("Open", true);
+        }
     }
 
     void Update()

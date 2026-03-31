@@ -58,7 +58,7 @@ public class GunInfo: MonoBehaviour
                 break;
         }
     }
-
+    
     public void Initialize()
     {
         maxAmmo = startingAmmo;

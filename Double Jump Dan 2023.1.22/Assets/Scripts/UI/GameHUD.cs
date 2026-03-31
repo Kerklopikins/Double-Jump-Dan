@@ -11,11 +11,11 @@ public class GameHUD: MonoBehaviour
     public static GameHUD Instance;
     
     [Header("Pause Menu")]
-    [SerializeField] PauseMenuButton pauseButton;
+    [SerializeField] Button pauseButton;
     [SerializeField] Animator pauseAnimator;
     [SerializeField] AudioClip pauseSound;
     [SerializeField] Text pausedText;
-    [SerializeField] PauseMenuButton[] pauseMenuButtons;
+    [SerializeField] Button[] pauseMenuButtons;
 
     [Header("Game Over")]
     [SerializeField] Animator gameOverAnimator;
@@ -23,16 +23,24 @@ public class GameHUD: MonoBehaviour
 
     [Header("Finish Level")]
     [SerializeField] Text levelNameText;
+    [SerializeField] GameObject levelCompleteUI;
 
     [Header("Screenshot")]
     [SerializeField] Screenshot screenshotScript;
+
+    [Header("Settings")]
+    [SerializeField] GameObject settings;
 
     public bool paused { get; protected set; }
     public bool canPause { get; set; }
     public static float referenceTime;
     float startDelay = 1;
     Player player;
-
+    LocalWorldManager localWorldManager;
+    RectTransform pauseButtonRect;
+    bool inSettings;
+    bool canToggleSettings;
+    
     void Awake()
     {
         Instance = this;
@@ -44,17 +52,19 @@ public class GameHUD: MonoBehaviour
         canPause = true;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         levelNameText.text = SceneManager.GetActiveScene().name + " Completed";
+        pauseButtonRect = pauseButton.GetComponent<RectTransform>();
 
         player.OnPlayerKilled += PlayerKilled;
         player.OnPlayerRespawn += PlayerRespawn;
 
         Time.timeScale = 1;
         pausedText.text = "Paused\n<size=25>" + SceneManager.GetActiveScene().name + "</size>";
+        localWorldManager = GameObject.FindWithTag("Level Managers").GetComponent<LocalWorldManager>();
     }
 
     bool CanPause()
     {
-        if(player.dead || !LevelLoadingManager.Instance.done || player.finishedLevel || screenshotScript.frozen)
+        if(player.dead || !LevelLoadingManager.Instance.done || LevelManager.Instance.FinishedLevel() || screenshotScript.frozen || inSettings)
             return false;
         else
             return true;
@@ -62,7 +72,8 @@ public class GameHUD: MonoBehaviour
 
     void Update()
     {
-        GunInfo.CanShoot(!pauseButton.IsCursorOverButton());
+        if(!LevelManager.Instance.FinishedLevel())
+            GunInfo.CanShoot(!IsCursorOverPauseButton());
 
         player.gameHUDPaused = paused;
         player.gameHUDFrozen = screenshotScript.frozen;
@@ -70,18 +81,26 @@ public class GameHUD: MonoBehaviour
         if(startDelay > 0)
         {
             startDelay -= Time.deltaTime;
-            pauseButton.SetInteractable(false);
+            pauseButton.interactable = false;
             return;
         }
 
         if(!CanPause() || paused)
-            pauseButton.SetInteractable(false);
+            pauseButton.interactable = false;
         else
-            pauseButton.SetInteractable(true);
+            pauseButton.interactable = true;
 
         if(CanPause())
             if(Input.GetButtonDown("Pause"))
                 TogglePause();
+
+        if(Input.GetButtonDown("Pause"))
+            ToggleSettings(false);
+    }
+
+    public bool IsCursorOverPauseButton()
+    {
+        return RectTransformUtility.RectangleContainsScreenPoint(pauseButtonRect, Input.mousePosition, Camera.main);
     }
 
     IEnumerator DelayPauseCo()
@@ -92,7 +111,7 @@ public class GameHUD: MonoBehaviour
         Time.timeScale = 0;
         
         for(int i = 0; i < pauseMenuButtons.Length; i++)
-            pauseMenuButtons[i].SetInteractable(false);
+            pauseMenuButtons[i].interactable = false;
 
         AudioManager.Instance.PlaySound2D(pauseSound);
         ScreenEffectsManager.Instance.FadeGrayScale(0, 1, 0.35f);
@@ -101,16 +120,18 @@ public class GameHUD: MonoBehaviour
         yield return new WaitForSecondsRealtime(0.45f);
         
         for(int i = 0; i < pauseMenuButtons.Length; i++)
-            pauseMenuButtons[i].SetInteractable(true);
+            pauseMenuButtons[i].interactable = true;
 
         canPause = true;
+        canToggleSettings = true;
     }
     IEnumerator DelayResumeCo()
     {
         canPause = false;
-        
+        canToggleSettings = false;
+
         for(int i = 0; i < pauseMenuButtons.Length; i++)
-            pauseMenuButtons[i].SetInteractable(false);
+            pauseMenuButtons[i].interactable = false;
 
         AudioManager.Instance.PlaySound2D(pauseSound);
         ScreenEffectsManager.Instance.FadeGrayScale(1, 0, 0.35f);
@@ -122,6 +143,7 @@ public class GameHUD: MonoBehaviour
         paused = false;
         canPause = true;
     }
+
     public void TogglePause()
     {
         if(startDelay > 0)
@@ -131,11 +153,19 @@ public class GameHUD: MonoBehaviour
         {
             if(!paused)
                 StartCoroutine(DelayPauseCo());
-            else
+            else if(paused && !inSettings)
                 StartCoroutine(DelayResumeCo());
         }
     }  
-  
+
+    public void FinishLevel()
+    {
+        if(localWorldManager.world != LocalWorldManager.World.Tutorial)
+            levelCompleteUI.SetActive(true);
+        else
+            LoadMainMenu();
+    }
+
     public void LoadScene(string sceneToLoad)
     {
         if(canPause)
@@ -170,6 +200,52 @@ public class GameHUD: MonoBehaviour
     {
         if(canPause)
             LevelLoadingManager.Instance.LoadScene("Main Menu");
+    }
+
+    public void ToggleSettings(bool open)
+    {
+        if(open && !inSettings)
+        {
+            if(canToggleSettings)
+                StartCoroutine(DelaySettingsOpen());
+        }
+        else if(!open && inSettings)
+        {
+            if(canToggleSettings)
+                StartCoroutine(DelaySettingsClose());
+        }
+    }
+    IEnumerator DelaySettingsOpen()
+    {
+        canToggleSettings = false;
+        canPause = false;
+        settings.SetActive(true);
+        pauseAnimator.SetBool("Settings", true);
+        inSettings = true;
+        AudioManager.Instance.PlaySound2D(pauseSound);
+
+        for(int i = 0; i < pauseMenuButtons.Length; i++)
+            pauseMenuButtons[i].interactable = false;   
+
+        yield return new WaitForSecondsRealtime(0.45f);
+        canToggleSettings = true;
+    }
+
+    IEnumerator DelaySettingsClose()
+    {
+        canToggleSettings = false;
+        pauseAnimator.SetBool("Settings", false);
+        AudioManager.Instance.PlaySound2D(pauseSound);
+
+        yield return new WaitForSecondsRealtime(0.45f);
+
+        settings.SetActive(false);
+        inSettings = false;
+        canPause = true;
+        canToggleSettings = true;
+
+        for(int i = 0; i < pauseMenuButtons.Length; i++)
+            pauseMenuButtons[i].interactable = true;
     }
 
     public void PlayerKilled()

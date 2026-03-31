@@ -13,6 +13,6 @@ public class GemsTextFlashTrigger : MonoBehaviour, IPointerClickHandler
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		if(!button.interactable)
-			MainMenuManager.Instance.FlashGemsText();
+			ShopManager.Instance.FlashGemsText();
 	}
 }

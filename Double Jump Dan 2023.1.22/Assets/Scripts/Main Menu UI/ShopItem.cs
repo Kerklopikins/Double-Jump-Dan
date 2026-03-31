@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class ShopItem : MonoBehaviour 
 {
 	public Item item;
 	[SerializeField] Sprite normalItemBackground;
 	[SerializeField] Sprite premiumItemBackground;
-    [SerializeField] MainMenuManager mainMenuManager;
+    [SerializeField] ShopManager shopManager;
 	[SerializeField] Sprite[] fireRateSprites;
 	[SerializeField] AudioClip equippedSound;
-
+	
 	Button equipButton;
 	Text equipButtonText;
 	GameManager gameManager;
@@ -28,8 +29,7 @@ public class ShopItem : MonoBehaviour
 	ConfirmPurchase confirmPurchase;
     Text priceText;
     Animator confirmPurchaseAnimator;
-	bool refreshed;
-	bool checkedVisibility;
+	bool checkedVisibilityAfterScaling;
 	List<GameObject> children = new List<GameObject>();
 	float lastStep;
 	RectTransform contentHolder;
@@ -38,7 +38,7 @@ public class ShopItem : MonoBehaviour
 	void Awake()
 	{
 		gameManager = GameManager.Instance;
-		itemManager = mainMenuManager.itemManager;
+		itemManager = shopManager.itemManager;
 		equipButton = GetComponentInChildren<Button>();
 		equipButtonText = equipButton.GetComponentInChildren<Text>();
 		rectTransform = GetComponent<RectTransform>();
@@ -46,8 +46,9 @@ public class ShopItem : MonoBehaviour
 		contentHolder = transform.parent.GetComponent<RectTransform>();
 		rect = GetComponent<RectTransform>();
 		equipButton.onClick.AddListener(OnEquipButtonClicked);
-		MainMenuManager.Instance.OnShopItemsChanged += Refresh;
-		
+		shopManager.OnShopItemsChanged += Refresh;
+		shopManager.OnShopTabsChanged += UpdateVisibility;
+
 		for(int i = 0; i < transform.childCount; i++)
 			children.Add(transform.GetChild(i).gameObject);
 
@@ -55,7 +56,7 @@ public class ShopItem : MonoBehaviour
 		{
 			buyButton = equipButton.transform.Find("Buy Button").GetComponent<Button>();
 
-			confirmPurchase = mainMenuManager.confirmPurchase;
+			confirmPurchase = shopManager.confirmPurchase;
 			priceText = buyButton.GetComponentInChildren<Text>();
 			confirmPurchaseAnimator = confirmPurchase.GetComponent<Animator>();
 
@@ -134,19 +135,19 @@ public class ShopItem : MonoBehaviour
 
 		if(descriptionText != null)
 			descriptionText.text = item.description;
-
-		Refresh();
+		
 		UpdateVisibility();
+		Refresh();
 	}
 
-	public void Refresh()
+    public void Refresh()
 	{
 		if(item.itemType == Item.ItemType.Hat)
 		{
             if(gameManager.hatID == item.itemID)
 			{
 				equipButton.interactable = false;
-				MainMenuManager.Instance.currentHatRect = rect;
+				shopManager.currentHatRect = rect;
 			}
             else if(gameManager.hatID != item.itemID)
 				equipButton.interactable = true;
@@ -161,11 +162,11 @@ public class ShopItem : MonoBehaviour
 		}
 
 		if(item.itemType == Item.ItemType.Gun)
-		{
+		{		
             if(gameManager.gunID == item.itemID)
 			{
 				equipButton.interactable = false;
-				MainMenuManager.Instance.currentGunRect = rect;
+				shopManager.currentGunRect = rect;
 			}
             else if(gameManager.gunID != item.itemID)
 				equipButton.interactable = true;
@@ -184,7 +185,7 @@ public class ShopItem : MonoBehaviour
 			if(gameManager.skinID == item.itemID)
 			{
 				equipButton.interactable = false;
-				MainMenuManager.Instance.currentSkinRect = rect;
+				shopManager.currentSkinRect = rect;
 			}
 			else if(gameManager.skinID != item.itemID)
 				equipButton.interactable = true;
@@ -237,15 +238,15 @@ public class ShopItem : MonoBehaviour
 	public void OnEquipButtonClicked()
 	{
 		if(item.itemType == Item.ItemType.Gun)
-            MainMenuManager.Instance.currentGunRect = rect;
+            shopManager.currentGunRect = rect;
 
 		if(item.itemType == Item.ItemType.Hat)
-            MainMenuManager.Instance.currentHatRect = rect;
+            shopManager.currentHatRect = rect;
 
 		if(item.itemType == Item.ItemType.Skin)
-			MainMenuManager.Instance.currentSkinRect = rect;
+			shopManager.currentSkinRect = rect;
 
-		MainMenuManager.Instance.EquipItem(this);
+		shopManager.EquipItem(this);
 		AudioManager.Instance.PlaySound2D(equippedSound);
 	}
 
@@ -267,7 +268,7 @@ public class ShopItem : MonoBehaviour
 
 	void Update()
 	{
-		int currentStep = Mathf.FloorToInt(contentHolder.anchoredPosition.x / 70);
+		int currentStep = Mathf.FloorToInt(contentHolder.anchoredPosition.x / 50);
 
 		if(currentStep != lastStep)
 		{
@@ -275,38 +276,24 @@ public class ShopItem : MonoBehaviour
 			UpdateVisibility();
 		}
 	}
-
-	void UpdateVisibility()
+	
+	public void UpdateVisibility()
 	{
-		if(rectTransform.position.x < -100 || rectTransform.position.x > 100)
-		{
-			if(!checkedVisibility)
-			{
-				//print("Checked Vis " + gameObject.name);
-				foreach(var child in children)
-					child.SetActive(false);
+		bool inRange;
 
-				image.enabled = false;
-				checkedVisibility = true;
-			}
-			
-			refreshed = false;
-		}
+		if(rectTransform.position.x < shopManager.minMaxVisibilityDistance.x || rectTransform.position.x > shopManager.minMaxVisibilityDistance.y)
+			inRange = false;
 		else
-		{
-			if(!refreshed)
-			{
-				//print("Refreshed Vis " + gameObject.name);
-				foreach(var child in children)
-					child.SetActive(true);
+			inRange = true;
+		
+		bool wasVisible = image.enabled;
 
-				image.enabled = true;
+		foreach(var child in children)
+			child.SetActive(inRange);
 
-				Refresh();
-				refreshed = true;
-			}
-			
-			checkedVisibility = false;
-		}
+		image.enabled = inRange;
+
+		if(inRange && !wasVisible)
+			Refresh();
 	}
 }
