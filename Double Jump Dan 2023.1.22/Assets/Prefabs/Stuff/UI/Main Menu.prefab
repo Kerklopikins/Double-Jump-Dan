@@ -43328,7 +43328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f32547d0d7448419723ba9f25387a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClick: {fileID: 8300000, guid: ac4173569b265894084d96f2d97f7354, type: 3}
+  buttonClick: {fileID: 0}
   textStartingColor: {r: 0, g: 0, b: 0, a: 1}
   disabledColor: {r: 0, g: 0, b: 0, a: 1}
   dontChangeText: 0
@@ -46637,6 +46637,8 @@ MonoBehaviour:
   screenResolutionText: {fileID: 6056306192430039231}
   fullscreenToggle: {fileID: 8870290347831084710}
   dust: {fileID: 0}
+  settingsAnimator: {fileID: 0}
+  settingsMenu: {fileID: 0}
 --- !u!114 &8187008134954830071
 MonoBehaviour:
   m_ObjectHideFlags: 0

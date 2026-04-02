@@ -21,8 +21,9 @@ public class SettingsManager : MonoBehaviour
     [Header("Pause Menu Only")]
     [SerializeField] Animator settingsAnimator;
     [SerializeField] GameObject settingsMenu;
-
+    
     List<Vector2> screenResolutions = new List<Vector2>();
+    List<Vector2> validResolutions = new List<Vector2>();
     GameManager gameManager;
     MainMenuManager mainMenuManager;
     bool inMainMenu;
@@ -30,7 +31,7 @@ public class SettingsManager : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.Instance;
-        
+
         if(GetComponent<MainMenuManager>() != null)
         {
             mainMenuManager = GetComponent<MainMenuManager>();
@@ -40,29 +41,35 @@ public class SettingsManager : MonoBehaviour
         volumeSliders[0].value = gameManager.sfxVolume;
         volumeSliders[1].value = gameManager.musicVolume;
         
+        ///Beautiful Pixel Perfect Resolutions
+        screenResolutions.Add(new Vector2(640, 360));
+        screenResolutions.Add(new Vector2(960, 540));
+        screenResolutions.Add(new Vector2(1280, 720));
+        screenResolutions.Add(new Vector2(1600, 900));
+        screenResolutions.Add(new Vector2(1920, 1080));
+        screenResolutions.Add(new Vector2(2560, 1440));
+        screenResolutions.Add(new Vector2(3840, 2160));
+
         if(inMainMenu)
         {
-            for(int i = 0; i < Screen.resolutions.Length; i++)
-            {
-                if(Screen.resolutions[i].width >= 512)
-                    if(!screenResolutions.Contains(new Vector2(Screen.resolutions[i].width, Screen.resolutions[i].height)))
-                        screenResolutions.Add(new Vector2(Screen.resolutions[i].width, Screen.resolutions[i].height));
-            }
-
+            foreach(var resolution in screenResolutions)
+                if(resolution.x <= Screen.resolutions[Screen.resolutions.Length - 1].width && resolution.y <= Screen.resolutions[Screen.resolutions.Length - 1].height)
+                    validResolutions.Add(resolution);
+            
             if(gameManager.screenResolution == -1)
             {
-                Screen.SetResolution(Screen.resolutions[Screen.resolutions.Length - 1].width, Screen.resolutions[Screen.resolutions.Length - 1].height, true);
+                Screen.SetResolution((int)validResolutions[validResolutions.Count - 1].x, (int)validResolutions[validResolutions.Count - 1].y, true);
                 LevelLoadingManager.Instance.ResizeFadeBackground();
-                gameManager.screenResolution = screenResolutions.Count;
+                gameManager.screenResolution = validResolutions.Count - 1;
                 gameManager.SaveData();
             }
-            else if(gameManager.screenResolution > screenResolutions.Count)
+            else if(gameManager.screenResolution > validResolutions.Count - 1)
             {
-                gameManager.screenResolution = screenResolutions.Count;
+                gameManager.screenResolution = validResolutions.Count - 1;
                 gameManager.SaveData();
             }
 
-            screenResolutionSlider.maxValue = screenResolutions.Count - 1;
+            screenResolutionSlider.maxValue = validResolutions.Count - 1;
             screenResolutionSlider.value = gameManager.screenResolution;
 
             fullscreenToggle.isOn = Screen.fullScreen;
@@ -77,13 +84,13 @@ public class SettingsManager : MonoBehaviour
     public void UpdateScreenResolution()
     {
         gameManager.screenResolution = (int)screenResolutionSlider.value;
-        Screen.SetResolution((int)screenResolutions[gameManager.screenResolution].x, (int)screenResolutions[gameManager.screenResolution].y, Screen.fullScreen);
+        Screen.SetResolution((int)validResolutions[gameManager.screenResolution].x, (int)validResolutions[gameManager.screenResolution].y, Screen.fullScreen);
         gameManager.SaveData();
     }
 
     public void UpdateScreenResolutionText()
     {
-        screenResolutionText.text = screenResolutions[(int)screenResolutionSlider.value].x.ToString() + "x" + screenResolutions[(int)screenResolutionSlider.value].y.ToString();
+        screenResolutionText.text = validResolutions[(int)screenResolutionSlider.value].x.ToString() + "x" + validResolutions[(int)screenResolutionSlider.value].y.ToString();
     }
     public void SaveSettings()
     {

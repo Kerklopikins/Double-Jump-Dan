@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float sfxVolume = 1;
     [HideInInspector] public float musicVolume = 1;
 	[HideInInspector] public int screenResolution = -1;
-    public bool postProcessing = true;
-    public bool weatherEffects = true;
+    [HideInInspector] public bool postProcessing = true;
+    [HideInInspector] public bool weatherEffects = true;
 
     //User Data
     [HideInInspector] public int gems;

@@ -81,12 +81,6 @@ public class LevelLoadingManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt))
-        {
-            print("Level Loading Background Resized");
-            ResizeFadeBackground();
-        }
-
         if(loading || loaded)
             loadingCircle.transform.Rotate(Vector3.forward, -200 * Time.unscaledDeltaTime);
 

@@ -40,7 +40,8 @@ public class GameHUD: MonoBehaviour
     RectTransform pauseButtonRect;
     bool inSettings;
     bool canToggleSettings;
-    
+    GunInfo gunInfo;
+
     void Awake()
     {
         Instance = this;
@@ -61,7 +62,11 @@ public class GameHUD: MonoBehaviour
         pausedText.text = "Paused\n<size=25>" + SceneManager.GetActiveScene().name + "</size>";
         localWorldManager = GameObject.FindWithTag("Level Managers").GetComponent<LocalWorldManager>();
     }
-
+    public void SubscribeToGun(GunInfo _gunInfo)
+    {
+        gunInfo = _gunInfo;
+    }
+    
     bool CanPause()
     {
         if(player.dead || !LevelLoadingManager.Instance.done || LevelManager.Instance.FinishedLevel() || screenshotScript.frozen || inSettings)
@@ -73,7 +78,7 @@ public class GameHUD: MonoBehaviour
     void Update()
     {
         if(!LevelManager.Instance.FinishedLevel())
-            GunInfo.CanShoot(!IsCursorOverPauseButton());
+            gunInfo.CanShoot(!IsCursorOverPauseButton());
 
         player.gameHUDPaused = paused;
         player.gameHUDFrozen = screenshotScript.frozen;

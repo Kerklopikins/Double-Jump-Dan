@@ -28,7 +28,7 @@ public class Parallax : MonoBehaviour
         }
     }
 
-    void OffsetBackground()
+    public void OffsetBackground()
     {
         if(!onlyAffectXAxis)
         {
@@ -44,12 +44,6 @@ public class Parallax : MonoBehaviour
 
 	void LateUpdate() 
 	{
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt))
-        {
-            print("Paralax Offset");
-            OffsetBackground();
-        }
-
         if(!onlyAffectXAxis)
             transform.localPosition = new Vector3(cameraHolder.transform.localPosition.x * amplification, cameraHolder.transform.localPosition.y * amplification, 0);
         else

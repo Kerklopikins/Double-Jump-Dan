@@ -19,14 +19,14 @@ public class GunInfo: MonoBehaviour
     public enum FireRate { ExtremelySlow, VerySlow, Slow, Normal, Fast, VeryFast, ExtremelyFast };
     public float startReloadTimer { get; set; }
     public float reloadTimer { get; set; }
-    public static float currentAmmo { get; set; }
-    public static float maxAmmo { get; set; }
+    public float currentAmmo { get; private set; }
+    public float maxAmmo { get; private set; }
     public float _burstCoolDownTimer { get; set; }
     public int burstShotCounter { get; set; }
     public bool initiatedBurst { get; set; }
-    public static event Action<float> OnAmmoChanged;
+    public event Action<float> OnAmmoChanged;
     public event Action OnShoot;
-    public static bool canShoot;
+    public bool canShoot { get; private set; }
     
     void Awake()
     {
@@ -86,9 +86,9 @@ public class GunInfo: MonoBehaviour
         OnAmmoChanged?.Invoke(maxAmmo);
     }
 
-    public static bool CanShoot(bool _canShoot)
+    public bool CanShoot(bool _canShoot)
     {
-        GunInfo.canShoot = _canShoot;
+        canShoot = _canShoot;
         return _canShoot;
     }
 }

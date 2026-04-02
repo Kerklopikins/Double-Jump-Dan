@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 139159419725554057}
   - component: {fileID: 7572623741210936183}
   - component: {fileID: 2498369454818293885}
+  - component: {fileID: 6010613833754310447}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Managers
@@ -61,11 +62,14 @@ MonoBehaviour:
   mainMaterialStencil: {fileID: 2100000, guid: b6ef40862de0d27449b68980d08a532a, type: 2}
   users: 
   userNames: []
+  userColorIndexes: 
   currentUser: 0
   currentUserName: 
   sfxVolume: 1
   musicVolume: 1
   screenResolution: -1
+  postProcessing: 1
+  weatherEffects: 1
   gems: 0
   ownedHats: 
   ownedGuns: 
@@ -74,6 +78,10 @@ MonoBehaviour:
   gunID: 0
   skinID: 0
   levelsCompleted: 0
+  totalEnemiesKilled: 0
+  totalDeaths: 0
+  totalGemsCollected: 0
+  totalPlaytime: 0
 --- !u!114 &139159419725554057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +175,19 @@ MonoBehaviour:
   tutorialMusic: {fileID: 8300000, guid: 2db4528fa34d6aa498e3d3cacd81fe26, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: 2db4528fa34d6aa498e3d3cacd81fe26, type: 3}
   desertMusic: {fileID: 8300000, guid: 2db4528fa34d6aa498e3d3cacd81fe26, type: 3}
+--- !u!114 &6010613833754310447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548478019400128017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbb1c5cff26ad94785e424e11a92120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTestingMode: 1
 --- !u!1 &607026113194731271
 GameObject:
   m_ObjectHideFlags: 0

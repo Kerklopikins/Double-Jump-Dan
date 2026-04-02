@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class Gun : MonoBehaviour
 {
     public float reloadTime;
@@ -90,6 +89,11 @@ public class Gun : MonoBehaviour
             else
                 PoolManager.instance.CreatePool(shell.name, shell.gameObject, (int)gunInfo.startingAmmo * 2);
         }
+        
+        Transform bulletsParent = GameObject.FindWithTag("Level Managers").transform;
+
+        for(int i = 0; i < bullets.Length; i++)
+            bullets[i].parent = bulletsParent;
     }
 
     void Update()
@@ -102,7 +106,7 @@ public class Gun : MonoBehaviour
             gunInfo.reloadTimer -= Time.deltaTime;
 
         ////////////////////////////////////ADDED
-        if(GunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
+        if(gunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
             StartCoroutine(AnimateReload());
 
         _fireRate -= Time.deltaTime;
@@ -122,7 +126,7 @@ public class Gun : MonoBehaviour
         }
 
         if(showTrajectory)
-            projectileTrajectory.EnableTrajectoryLine(projectileFirePoints[0].position, speed, 1);
+            projectileTrajectory.EnableTrajectoryLine((Vector2)projectileFirePoints[0].position + (Vector2)GunDirection(0) * barrelLength, speed, 1);
 
         if(reloading)
         {
@@ -132,12 +136,22 @@ public class Gun : MonoBehaviour
         }
     }
 
+    Vector3 GunDirection(int firePointIndex)
+    {
+        if(transform.lossyScale.x < 0)
+            return -projectileFirePoints[firePointIndex].right;
+        else if(transform.lossyScale.x > 0)
+            return projectileFirePoints[firePointIndex].right;
+        else
+            return Vector3.zero;
+    }
+
     void HandleInput()
     {
-        if(GunInfo.canShoot)
+        if(gunInfo.canShoot)
         {
             if(showTrajectory && !reloading)
-                projectileTrajectory.EnableTrajectoryLine(projectileFirePoints[0].position, speed, 1);
+                projectileTrajectory.EnableTrajectoryLine((Vector2)projectileFirePoints[0].position + (Vector2)GunDirection(0) * barrelLength, speed, 1);
 
             if(gunInfo.fireMode == GunInfo.FireMode.Single)
                 if(Input.GetButtonDown("Shoot"))
@@ -174,7 +188,7 @@ public class Gun : MonoBehaviour
         }
 
 		if(Input.GetButtonDown("Reload") && !reloading)
-            if(GunInfo.currentAmmo < GunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
+            if(gunInfo.currentAmmo < gunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
                 StartCoroutine(AnimateReload());
     }
 
@@ -182,20 +196,13 @@ public class Gun : MonoBehaviour
     {
         bool canFireProjectile = true;
 
-        Vector3 gunDirection = new Vector3();
-        
-        if(transform.lossyScale.x < 0)
-            gunDirection = -projectileFirePoints[0].right;
-        else if(transform.lossyScale.x > 0)
-            gunDirection = projectileFirePoints[0].right;
-
         RaycastHit2D wallHit;
-        Ray2D wallRay = new Ray2D((Vector2)projectileFirePoints[0].position, gunDirection);
+        Ray2D wallRay = new Ray2D((Vector2)projectileFirePoints[0].position, GunDirection(0));
         wallHit = Physics2D.Raycast(wallRay.origin, wallRay.direction, barrelLength, collisionMask);
 
-        Vector2 spawnPosition = wallHit ? wallHit.point : (Vector2)projectileFirePoints[0].position + (Vector2)(gunDirection * barrelLength);
+        Vector2 spawnPosition = wallHit ? wallHit.point : (Vector2)projectileFirePoints[0].position + (Vector2)(GunDirection(0) * barrelLength);
 
-        if(GunInfo.currentAmmo <= 0 || reloading)
+        if(gunInfo.currentAmmo <= 0 || reloading)
             canFireProjectile = false;
 
         if(canFireProjectile && _fireRate <= 0)
@@ -217,28 +224,23 @@ public class Gun : MonoBehaviour
             
             for(int i = 0; i < projectileFirePoints.Length; i++)
             {
-                Vector3 direction = new Vector3();
-
-                if(transform.lossyScale.x < 0)
-                    direction = -projectileFirePoints[i].right;
-                else if(transform.lossyScale.x > 0)
-                    direction = projectileFirePoints[i].right;
-
                 if(projectileType == ProjectileType.RaycastBased)
                 {
                     float shotDistance = 50;
                     RaycastHit2D hit;
-                    Ray2D ray = new Ray2D(spawnPosition, direction);
+                    Ray2D ray = new Ray2D(spawnPosition, GunDirection(i));
                     hit = Physics2D.Raycast(ray.origin, ray.direction, shotDistance, collisionMask);
                     ///////////////////////////////////////////////WHY IS IT NOT ACTIVATING AT START
                     /// FIX SHOTGUN RAYS
+                    Vector3 fixedRotation = new Vector3(0, 0, transform.lossyScale.x > 0 ? 0 : 180);
+
                     bullets[i].transform.position = spawnPosition;
+                    bullets[i].transform.eulerAngles = new Vector3(0, 0, projectileFirePoints[i].transform.eulerAngles.z + fixedRotation.z);
 
                     if(hit)
                     {
                         shotDistance = hit.distance;
                         bullets[i].localScale = new Vector3(hit.distance * 0.5f, 1, 1);
-                        print(bullets[i].transform.localScale.x);
 
                         if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Enemies"))
                         {                            
@@ -260,7 +262,7 @@ public class Gun : MonoBehaviour
                     {
                         bullets[i].localScale = new Vector3(50, 1, 1);
                     }
-
+                    
                     StartCoroutine(DeactivateBullet());
                 }
                 else if(projectileType == ProjectileType.GameObjectBased)
@@ -285,14 +287,14 @@ public class Gun : MonoBehaviour
                             float shotDistance = 200;
 
                             RaycastHit2D hit;
-                            Ray2D ray = new Ray2D(spawnPosition, direction);
+                            Ray2D ray = new Ray2D(spawnPosition, GunDirection(i));
                             hit = Physics2D.Raycast(ray.origin, ray.direction, shotDistance, 1 << LayerMask.NameToLayer("Collisions"));
                             Vector2 targetPoint;
 
                             if(hit)
                                 targetPoint = hit.point;
                             else
-                                targetPoint = ray.direction * shotDistance;
+                                targetPoint = ray.origin + ray.direction * shotDistance;
 
                             projectileProperties.targetPoint = targetPoint;
                             projectileProperties.direction = ray.direction;
@@ -317,7 +319,7 @@ public class Gun : MonoBehaviour
                         float shotDistance = 200;
 
                         RaycastHit2D hit;
-                        Ray2D ray = new Ray2D(spawnPosition, direction);
+                        Ray2D ray = new Ray2D(spawnPosition, GunDirection(i));
                         hit = Physics2D.Raycast(ray.origin, ray.direction, shotDistance, 1 << LayerMask.NameToLayer("Collisions"));
 
                         ricochetProperties.direction = ray.direction;
@@ -389,11 +391,11 @@ public class Gun : MonoBehaviour
             {
                 if(shell || shellEjectionPoint != null)
                 {
-                    if(GunInfo.currentAmmo <= 0)
-                        for(int i = 0; i < GunInfo.maxAmmo; i++)
+                    if(gunInfo.currentAmmo <= 0)
+                        for(int i = 0; i < gunInfo.maxAmmo; i++)
                             EjectShell();
                     else
-                        for(int i = 0; i < GunInfo.maxAmmo - GunInfo.currentAmmo; i++)
+                        for(int i = 0; i < gunInfo.maxAmmo - gunInfo.currentAmmo; i++)
                             EjectShell();
                 }
             }

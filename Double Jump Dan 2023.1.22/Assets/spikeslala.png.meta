@@ -200,7 +200,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spikeslala_0: -2948481710196253772
+      spikeslala_1: -6639244938612489941
+      spikeslala_2: 5727476186758360866
+      spikeslala_3: 4995059956677361274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

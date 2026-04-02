@@ -5970,6 +5970,7 @@ GameObject:
   - component: {fileID: 6610295730798599397}
   - component: {fileID: 2401183972487348870}
   - component: {fileID: 6925399933680529758}
+  - component: {fileID: 6379746931938945730}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6008,7 +6009,7 @@ Camera:
   m_GameObject: {fileID: 5242579398687461492}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.5058824, g: 0.6392157, b: 0.7372549, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -6034,7 +6035,7 @@ Camera:
   far clip plane: 1000
   field of view: 62
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 11.25
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -6098,7 +6099,7 @@ MonoBehaviour:
   grayscaleMaterial: {fileID: 2100000, guid: f50dbae2f6b952f46b8a05657940d91c, type: 2}
   colorTemperatureMaterial: {fileID: 2100000, guid: 7c5e85dcc5f88ea47840aa5eb4ee2ecf,
     type: 2}
-  useColorTemperature: 0
+  useColorTemperature: 1
   exposure: 0.32
   tintColor: {r: 1, g: 0.7875625, b: 0.41037738, a: 1}
 --- !u!114 &6925399933680529758
@@ -6116,6 +6117,7 @@ MonoBehaviour:
   mainMaterial: {fileID: 2100000, guid: 575b6b33d095f2246af73bb393810685, type: 2}
   mainMaterialStencil: {fileID: 2100000, guid: b6ef40862de0d27449b68980d08a532a, type: 2}
   sky: {fileID: 2966690400463126853}
+  sunGlow: {fileID: 8788531166266934278}
   sunPivot: {fileID: 2923527250016839307}
   sun: {fileID: 3627417962509470804}
   moon: {fileID: 6307704939325909361}
@@ -6126,9 +6128,28 @@ MonoBehaviour:
   skySunrise: {fileID: 21300000, guid: 8d3b960ee4553d3458874a0ce7467f84, type: 3}
   skyOvercast: {fileID: 21300000, guid: 0168923cc1659c54aa3b1881806ec606, type: 3}
   clouds: {fileID: 4230857684837678962}
-  sunGlow: {fileID: 8788531166266934278}
   dust: {fileID: 4636571377484222037}
   snow: {fileID: 4676672630913542964}
+--- !u!114 &6379746931938945730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242579398687461492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 8
+  m_RefResolutionX: 320
+  m_RefResolutionY: 180
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &6088713130616130193
 GameObject:
   m_ObjectHideFlags: 0
@@ -11557,7 +11578,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 11.25
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2

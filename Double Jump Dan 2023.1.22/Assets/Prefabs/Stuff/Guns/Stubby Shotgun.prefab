@@ -247,7 +247,6 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 89da7eb3bec9c304aad99ddfec087099, type: 3}
   reloadSound: {fileID: 8300000, guid: 7607ddd6141df5f4a91abcccb47f5ade, type: 3}
   gunAnimator: {fileID: 0}
-  shootWhenTouchingGround: 0
   projectileType: 1
   projectile: {fileID: 0}
   projectileFirePoints:
@@ -276,6 +275,8 @@ MonoBehaviour:
   shell: {fileID: 438902, guid: f496011088b09b94cbb05c30980ee930, type: 3}
   onlyEjectShellsWhenReloading: 1
   shellEjectionPoint: {fileID: 4467626567427394}
+  hasGlow: 0
+  glowSprite: {fileID: 0}
   properties:
     angle: 0
     strength: 0.125
@@ -328,13 +329,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696746281898881358}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08715578, w: 0.9961947}
   m_LocalPosition: {x: -0.625, y: 0.4375, z: 0}
   m_LocalScale: {x: 0, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4898749148628162}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
 --- !u!212 &8189646627011794188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -580,13 +581,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4962996527851190670}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.08715578, w: 0.9961947}
   m_LocalPosition: {x: -0.625, y: 0.4375, z: 0}
   m_LocalScale: {x: 0, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4898749148628162}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10}
 --- !u!212 &5793629376477890035
 SpriteRenderer:
   m_ObjectHideFlags: 0

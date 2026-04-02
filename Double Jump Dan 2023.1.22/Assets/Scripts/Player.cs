@@ -19,6 +19,13 @@ public class Player: MonoBehaviour
     [SerializeField] Vector3 groundCheckOffset;
     [SerializeField] Transform armTwo;
     public Transform aimPoint;
+    public Transform pupilsParent;
+    public Vector2 maxPupilsOffset;
+    public float horizontalSensitivity;
+    public float verticalSensitivity;
+    public Vector2 thresholdXY;
+    public float smoothSpeed;
+    public Transform eyeBrow;
 
     [Header("Effects")]
     [SerializeField] GameObject destroyedEffect;
@@ -74,7 +81,10 @@ public class Player: MonoBehaviour
     float finishLevelInTime;
     float finalPositionX;
     bool firstFinishJump;
-
+    Vector3 pupilsParentStartPosition;
+    Vector3 eyeBrowStartPosition;
+    float targetX;
+    float targetY;
     void Awake()
     {
         lives = 3;
@@ -95,6 +105,9 @@ public class Player: MonoBehaviour
 
         shadowDanTracer = GetComponent<ShadowDanTracer>();
         shadowDanTracer.enabled = false;
+
+        pupilsParentStartPosition = pupilsParent.localPosition;
+        eyeBrowStartPosition = eyeBrow.localPosition;
     }
 
     void Update()
@@ -120,7 +133,7 @@ public class Player: MonoBehaviour
         {
             handleInput = true;
             HandleInput();
-
+//////////////////////////////////////////////////STRETCH!!!!!!!!!!!!!!!!!!!!!
             float velocityXAbs = Mathf.Abs(rb2D.velocity.x);
             bool isWalkingOnGround = grounded && velocityXAbs > 0.5f;
 
@@ -322,13 +335,42 @@ public class Player: MonoBehaviour
             doubleJump = true;
         }
     }
-
+    
     void RotateArm(bool slerp)
     {
         Vector3 realMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         float mouseDistance = Vector2.Distance(transform.position, realMousePosition);
         Vector3 difference;
 
+        realMousePosition.z = pupilsParent.position.z;
+        Vector3 direction = realMousePosition - transform.position;
+        
+        direction = new Vector3(direction.x * transform.localScale.x, direction.y, 0);
+
+        float scaledX = direction.x * horizontalSensitivity;
+        float scaledY = direction.y * verticalSensitivity;
+        
+        float thresholdX = maxPupilsOffset.x + thresholdXY.x;
+        float thresholdY = maxPupilsOffset.y + thresholdXY.y;
+        
+        if(scaledX > thresholdX)
+            targetX = maxPupilsOffset.x;
+        else if(scaledX < -thresholdX)
+            targetX = -maxPupilsOffset.x;
+
+        if(scaledY > thresholdY)
+            targetY = maxPupilsOffset.y;
+        else if(scaledY < -thresholdY)
+            targetY = -maxPupilsOffset.y;
+
+        Vector3 targetPosition = pupilsParentStartPosition + new Vector3(targetX, targetY, 0);
+        Vector3 eyebrowTargetPosition = eyeBrowStartPosition + new Vector3(0, targetY, 0);
+        
+        pupilsParent.localPosition = Vector3.Lerp(pupilsParent.localPosition, targetPosition, Time.deltaTime * smoothSpeed);
+        
+        if(eyeBrow.gameObject.activeSelf)
+            eyeBrow.localPosition = Vector3.Lerp(eyeBrow.localPosition, eyebrowTargetPosition, Time.deltaTime * smoothSpeed);
+        
         if(mouseDistance > 2)
         {
             difference = realMousePosition - aimPoint.position;

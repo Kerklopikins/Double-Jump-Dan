@@ -38,15 +38,15 @@ public class LavaGun : MonoBehaviour
         if(gunInfo.reloadTimer > 0)
             gunInfo.reloadTimer -= Time.deltaTime;
 
-        if(GunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
+        if(gunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
             StartCoroutine(AnimateReload());
 
         if(!player.handleInput)
             return;
 
-        if(GunInfo.canShoot)
+        if(gunInfo.canShoot)
         {
-            if(Input.GetButton("Shoot") && GunInfo.currentAmmo > 0 && !reloading)
+            if(Input.GetButton("Shoot") && gunInfo.currentAmmo > 0 && !reloading)
             {
                 Vector3 gunDirection = new Vector3();
         
@@ -78,7 +78,7 @@ public class LavaGun : MonoBehaviour
         
 
         if(Input.GetButtonDown("Reload") && !reloading)
-            if(GunInfo.currentAmmo < GunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
+            if(gunInfo.currentAmmo < gunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
                 StartCoroutine(AnimateReload());
     }
     public void ForceReload()

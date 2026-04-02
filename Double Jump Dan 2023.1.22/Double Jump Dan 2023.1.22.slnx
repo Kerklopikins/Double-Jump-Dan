@@ -1,5 +1,7 @@
 ﻿<Solution>
+  <Project Path="SuperTiled2Unity.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="SuperTiled2UnityEditor.csproj" />
   <Project Path="BF_Tools.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

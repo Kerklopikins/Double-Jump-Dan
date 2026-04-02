@@ -1,0 +1,437 @@
+fileFormatVersion: 2
+guid: 6f7470c9e3133b04f99a33ecf1505c74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3705467729609550857
+    second: Desert Wood Tileset Backup_0
+  - first:
+      213: 1866893564128939526
+    second: Desert Wood Tileset Backup_1
+  - first:
+      213: -2328901340761559215
+    second: Desert Wood Tileset Backup_2
+  - first:
+      213: -6635554291542294586
+    second: Desert Wood Tileset Backup_3
+  - first:
+      213: 674900947871652447
+    second: Desert Wood Tileset Backup_4
+  - first:
+      213: -3243060434974596248
+    second: Desert Wood Tileset Backup_5
+  - first:
+      213: 4764244845025669362
+    second: Desert Wood Tileset Backup_6
+  - first:
+      213: 7387216452482192783
+    second: Desert Wood Tileset Backup_7
+  - first:
+      213: 3479831311886825463
+    second: Desert Wood Tileset Backup_8
+  - first:
+      213: 4009344327587373
+    second: Desert Wood Tileset Backup_9
+  - first:
+      213: 258040553398320914
+    second: Desert Wood Tileset Backup_10
+  - first:
+      213: -5735822389600269794
+    second: Desert Wood Tileset Backup_11
+  - first:
+      213: 4118634097028185756
+    second: Desert Wood Tileset Backup_12
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 143
+        width: 217
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90cec0684477c6330800000000000000
+      internalID: 3705467729609550857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 226
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e4e5b2ec988e910800000000000000
+      internalID: 1866893564128939526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 210
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15fe9f2d1941eafd0800000000000000
+      internalID: -2328901340761559215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 226
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf7dcc4786c9e3a0800000000000000
+      internalID: -6635554291542294586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_4
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 226
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5ad67816dabd5900800000000000000
+      internalID: 674900947871652447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_5
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 210
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863273487b55ef2d0800000000000000
+      internalID: -3243060434974596248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_6
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 175
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0bdbac17ffd1240800000000000000
+      internalID: 4764244845025669362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_7
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 133
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f855f11793aa48660800000000000000
+      internalID: 7387216452482192783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_8
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 95
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7bb472428da4030800000000000000
+      internalID: 3479831311886825463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 91
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d269d683a7e3e0000800000000000000
+      internalID: 4009344327587373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_10
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 74
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21fb3f2248eb49300800000000000000
+      internalID: 258040553398320914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_11
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 51
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ac4252de34660b0800000000000000
+      internalID: -5735822389600269794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desert Wood Tileset Backup_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 67
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e3d29c3e3582930800000000000000
+      internalID: 4118634097028185756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Desert Wood Tileset Backup_0: 3705467729609550857
+      Desert Wood Tileset Backup_1: 1866893564128939526
+      Desert Wood Tileset Backup_10: 258040553398320914
+      Desert Wood Tileset Backup_11: -5735822389600269794
+      Desert Wood Tileset Backup_12: 4118634097028185756
+      Desert Wood Tileset Backup_2: -2328901340761559215
+      Desert Wood Tileset Backup_3: -6635554291542294586
+      Desert Wood Tileset Backup_4: 674900947871652447
+      Desert Wood Tileset Backup_5: -3243060434974596248
+      Desert Wood Tileset Backup_6: 4764244845025669362
+      Desert Wood Tileset Backup_7: 7387216452482192783
+      Desert Wood Tileset Backup_8: 3479831311886825463
+      Desert Wood Tileset Backup_9: 4009344327587373
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

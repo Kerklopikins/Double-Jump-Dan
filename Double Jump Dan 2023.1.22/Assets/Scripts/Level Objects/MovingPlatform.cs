@@ -170,7 +170,8 @@ public class MovingPlatform : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D other)
     {
-        other.transform.parent = null;
+		if(other.transform.CompareTag("Player"))
+        	other.transform.parent = null;
     }
 
 	void OnValidate()

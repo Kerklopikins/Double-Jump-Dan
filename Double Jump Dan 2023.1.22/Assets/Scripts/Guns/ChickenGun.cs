@@ -58,7 +58,7 @@ public class ChickenGun : MonoBehaviour
         if(gunInfo.reloadTimer > 0)
             gunInfo.reloadTimer -= Time.deltaTime;
 
-        if(GunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
+        if(gunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
             StartCoroutine(AnimateReload());
 
         if(!player.handleInput)
@@ -77,9 +77,9 @@ public class ChickenGun : MonoBehaviour
 
         Vector2 spawnPosition = wallHit ? wallHit.point : (Vector2)eggFirePoint.position + (Vector2)(direction * barrelLength);
 
-        if(GunInfo.canShoot)
+        if(gunInfo.canShoot)
         {
-            if(Input.GetButton("Shoot") && _fireRate <= 0 && GunInfo.currentAmmo > 0 && !reloading)
+            if(Input.GetButton("Shoot") && _fireRate <= 0 && gunInfo.currentAmmo > 0 && !reloading)
             {
                 if(!wallHit)
                     shotEffect.Play();
@@ -121,7 +121,7 @@ public class ChickenGun : MonoBehaviour
         }
 
         if(Input.GetButtonDown("Reload") && !reloading)
-            if(GunInfo.currentAmmo < GunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
+            if(gunInfo.currentAmmo < gunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
                 StartCoroutine(AnimateReload());
     }
 

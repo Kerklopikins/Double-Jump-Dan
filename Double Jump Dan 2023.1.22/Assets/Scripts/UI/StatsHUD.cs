@@ -43,6 +43,7 @@ public class StatsHUD : MonoBehaviour
     bool canAnimatedGemUI = true;
     bool canAnimatedAmmoUI = true;
     LevelManager levelManager;
+    GunInfo gunInfo;
 
     void Awake()
     {
@@ -52,10 +53,9 @@ public class StatsHUD : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        
         levelManager = LevelManager.Instance;
         _camera = Camera.main;
-
-        GunInfo.OnAmmoChanged += UpdateAmmoInfo;
 
         player.OnPlayerHurt += PlayerHurt;
         player.OnPlayerKilled += PlayerKilled;
@@ -69,17 +69,14 @@ public class StatsHUD : MonoBehaviour
         uiFlashMaterial.SetFloat("_FlashAmount", 0);
         PositionUI();
     }
-    
-    void Update()
-    {   
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt))
-        {
-            print("Stats UI Positioned");
-            PositionUI();
-        }
+
+    public void SubscribeToGun(GunInfo _gunInfo)
+    {
+        gunInfo = _gunInfo;
+        gunInfo.OnAmmoChanged += UpdateAmmoInfo;
     }
 
-    void PositionUI()
+    public void PositionUI()
     {
         float cameraHalfWidth = _camera.orthographicSize * ((float)Screen.width / Screen.height);
 
@@ -93,11 +90,11 @@ public class StatsHUD : MonoBehaviour
         if(ammoBarPivot == null)
             return;
 
-        if(currentAmmo < GunInfo.maxAmmo)
+        if(currentAmmo < gunInfo.maxAmmo)
             if(canAnimatedAmmoUI)
                 StartCoroutine(AmmoBarUIAnimation());
 
-        float startingAmmo = GunInfo.maxAmmo;
+        float startingAmmo = gunInfo.maxAmmo;
         var ammoPercent = currentAmmo / startingAmmo;
         ammoBarPivot.transform.localScale = new Vector3(ammoPercent, 1, 1);
     }

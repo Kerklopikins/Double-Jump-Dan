@@ -112,10 +112,9 @@ public class SpikeODeath : MonoBehaviour
         }
 
         float t = rawT * rawT * (3 - 2 * rawT);
-        float positionY = Mathf.Lerp(localStartPosition.y, length + localStartPosition.y, t);
+        Vector3 offset = transform.up * Mathf.Lerp(0, length, t);
 
-
-        transform.localPosition = new Vector3(transform.localPosition.x, positionY, transform.localPosition.z);
+        transform.localPosition = localStartPosition + offset;
 
     }
 
@@ -126,14 +125,14 @@ public class SpikeODeath : MonoBehaviour
         if(Application.isPlaying)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(globalStartPosition, Vector3.one * 2);
             Gizmos.matrix = Matrix4x4.TRS(globalStartPosition, transform.rotation, Vector3.one);
+            Gizmos.DrawWireCube(Vector3.zero, Vector3.one * 2);
         }
         else
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(transform.position, Vector3.one * 2);
             Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
+            Gizmos.DrawWireCube(Vector3.zero, Vector3.one * 2);
         }
 
         Gizmos.color = new Color(1, 0, 0, 0.5f);

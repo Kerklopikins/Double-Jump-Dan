@@ -54,7 +54,7 @@ public class D207: MonoBehaviour
         if(gunInfo.reloadTimer > 0)
             gunInfo.reloadTimer -= Time.deltaTime;
 
-        if(GunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
+        if(gunInfo.currentAmmo <= 0 && gunInfo.reloadTimer <= 0 && !reloading)
             StartCoroutine(AnimateReload());
 
         if(percent < 1)
@@ -84,9 +84,9 @@ public class D207: MonoBehaviour
 
         Vector2 spawnPosition = wallHit ? wallHit.point : (Vector2)firePoint.position + (Vector2)(direction * barrelLength);
 
-        if(GunInfo.canShoot)
+        if(gunInfo.canShoot)
         {
-            if(Input.GetButtonDown("Shoot") && _fireRate <= 0 && GunInfo.currentAmmo > 0 && !reloading)
+            if(Input.GetButtonDown("Shoot") && _fireRate <= 0 && gunInfo.currentAmmo > 0 && !reloading)
             {
                 gunInfo.reloadTimer = gunInfo.startReloadTimer;
 
@@ -132,7 +132,7 @@ public class D207: MonoBehaviour
         }
         
 		if(Input.GetButtonDown("Reload") && !reloading)
-            if(GunInfo.currentAmmo < GunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
+            if(gunInfo.currentAmmo < gunInfo.maxAmmo && gunInfo.reloadTimer <= 0)
                 StartCoroutine(AnimateReload());
 	}
     public void ForceReload()

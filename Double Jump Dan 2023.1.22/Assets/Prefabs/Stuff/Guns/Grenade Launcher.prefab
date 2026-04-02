@@ -213,7 +213,7 @@ MonoBehaviour:
   shotForce: {fileID: 1947854882740666}
   shotForceFillPivot: {fileID: 8150246788128220712}
   grenadeFirePoint: {fileID: 4626840216763912}
-  barrelLength: 4
+  barrelLength: 4.25
   grenadeDestroyedEffect: {fileID: 1680065718586648, guid: f004f73b0543e144fbf72dad4826d3d3,
     type: 3}
   shootSound: {fileID: 8300000, guid: 98d843a3470d1294880f0242cd290619, type: 3}

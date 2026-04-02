@@ -5938,6 +5938,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Pupils
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 206
+        width: 8
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa0b31326fe7fe40830d52df6519fae
+      internalID: 748127935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eye Brow
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 203
+        width: 12
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd36aec459e00a94dbaee209bc9ece20
+      internalID: 13926108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pupil
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 200
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e018d026940b43242b735eeb363fc48d
+      internalID: 1635251758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow Dan Pupils
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 197
+        width: 8
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45afca405d5b6874181b1d063fe796c0
+      internalID: -1392294817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Randy Pupils
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 192
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa7057d33857b54d86d2b91a897e8f3
+      internalID: 343497580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -6046,6 +6151,7 @@ TextureImporter:
       Enemy Walk 3: 21300628
       Engine: 1200315246
       Engine Small: -510349390
+      Eye Brow: 13926108
       Falling Robo Spike 1: 28267803
       Falling Robo Spike 2: -2003904764
       Feather: -685749273
@@ -6117,6 +6223,8 @@ TextureImporter:
       Portal: 21300346
       Portal Glow: 21300746
       Portal White: 21300748
+      Pupil: 1635251758
+      Pupils: 748127935
       Rainbow Gun: 21300702
       Rainbow Gun Glow: -1117488336
       Randy Arm 1: 82847855
@@ -6126,6 +6234,7 @@ TextureImporter:
       Randy Legs 2: 2002509159
       Randy Legs 3: -544682229
       Randy Legs Jump: -14743228
+      Randy Pupils: 343497580
       Randy Walk 1: 267940721
       Randy Walk 2: 2051252053
       Red Laser: -734467599
@@ -6156,6 +6265,7 @@ TextureImporter:
       Shadow Dan Legs 2: 538071221
       Shadow Dan Legs 3: -750457609
       Shadow Dan Legs Jump: 12648820
+      Shadow Dan Pupils: -1392294817
       Shadow Dan Walk 1: 21300836
       Shadow Dan Walk 2: 21300838
       Shotgun: 21300256
