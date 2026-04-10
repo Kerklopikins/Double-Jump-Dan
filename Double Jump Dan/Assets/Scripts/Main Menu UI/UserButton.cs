@@ -1,0 +1,212 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
+
+public class UserButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler
+{
+    [SerializeField] Text fileSizeText;
+    public Text usernameText;
+    [SerializeField] Shadow[] dropShadows;
+    [SerializeField] AudioClip buttonClick;
+    [SerializeField] Sprite normalSprite;
+    [SerializeField] Sprite highlightedSprite;
+    [SerializeField] Sprite disabledSprite;
+    public User user { get; set; }
+    public string userName { get; set; }
+    public int colorIndex { get; set; }
+    GameManager gameManager;
+    UserMenu userMenu;
+    Button button;
+    bool isPointerOver;
+    bool isPointerDown;
+    Image buttonImage;
+    
+	void Start() 
+	{
+        gameManager = GameManager.Instance;
+        userMenu = GameObject.FindWithTag("Main Menu").GetComponent<UserMenu>();
+        button = GetComponent<Button>();
+        buttonImage = GetComponent<Image>();
+
+        int transformIndex = transform.GetSiblingIndex();
+
+        user = gameManager.users[transformIndex];
+        userName = user.userName;
+        colorIndex = user.userColorIndex;
+
+        buttonImage.color = userMenu.userColors[colorIndex];
+
+        SetTextColorAndShadow();
+
+        usernameText.text = userName;
+        gameObject.name = userName;
+        
+        Refresh();
+
+        userMenu.OnUserByteSizeRefresh += RefreshUserByteSize;
+        RefreshUserByteSize();
+
+        userMenu.OnUserButtonsRefresh += Refresh;
+        userMenu.OnButtonsDisabled += ButtonDisable;
+	}
+    
+    public void Remove()
+    {
+        userMenu.OnUserByteSizeRefresh -= RefreshUserByteSize;
+
+        userMenu.OnUserButtonsRefresh -= Refresh;
+        userMenu.OnButtonsDisabled -= ButtonDisable;
+        Destroy(gameObject);
+    }
+    public void RefreshUserByteSize()
+    {
+        int userFileSize = gameManager.LoadUserFileSize(user.userID) - 217;
+        userFileSize = Mathf.Clamp(userFileSize, 0, 200000);
+		fileSizeText.text = userFileSize.ToString() + " Bytes";
+    }
+    public void Refresh()
+    {        
+        if(gameManager.currentUser.userID == user.userID)
+        {
+            userMenu.currentUserButton = this;
+            userMenu.previousUserColorIndex = colorIndex;
+            userMenu.colorSelectionIndex = colorIndex;
+            
+            fileSizeText.fontSize = 30;
+            usernameText.fontSize = 30;
+
+            button.interactable = false;
+        }
+        else
+        {
+            fileSizeText.fontSize = 25;
+            usernameText.fontSize = 25;
+
+            button.interactable = true;
+        }
+    }
+
+    public void ButtonDisable(bool interactable)
+    {
+        if(gameManager.currentUser.userID != user.userID)
+            button.interactable = interactable;
+    }
+    
+	public void SelectUser() 
+	{
+        gameManager.SaveUserData();
+        gameManager.currentUser = user;
+        gameManager.LoadUserData();
+        gameManager.SaveData();
+        userMenu.RefreshUsers();
+	}
+
+    public void ChangeColor(int _colorIndex)
+    {
+        colorIndex = _colorIndex;
+        buttonImage.color = userMenu.userColors[colorIndex];
+
+        SetTextColorAndShadow();
+    }
+
+    void SetTextColorAndShadow()
+    {
+        if(colorIndex == 0)
+            for(int i = 0; i < dropShadows.Length; i++)
+                dropShadows[i].enabled = false;
+        else
+            for(int i = 0; i < dropShadows.Length; i++)
+                dropShadows[i].enabled = true;
+
+        fileSizeText.color = TextColor();
+        usernameText.color = TextColor();
+    }
+    void Update()
+    {
+        if(!button.interactable)
+        {
+            SetDisabled();
+            return;
+        }
+
+        if(isPointerDown && isPointerOver)
+            SetPressed();
+        else if(isPointerOver)
+            SetHighlighted();
+        else if(!isPointerOver && isPointerDown)
+            SetPressed();
+        else
+            SetNormal();
+    }
+
+    Color TextColor()
+    {
+        if(colorIndex == 0)
+            return Color.black;
+        else
+            return Color.white;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(buttonClick != null && button.interactable)
+            AudioManager.Instance.PlaySound2D(buttonClick);
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isPointerOver = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isPointerOver = false;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {       
+        isPointerDown = false;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        isPointerDown = true;
+    }
+
+    void SetNormal()
+    {
+        buttonImage.sprite = normalSprite;
+        usernameText.color = TextColor();
+        fileSizeText.color = TextColor();
+    }
+
+    void SetHighlighted()
+    {
+        buttonImage.sprite = highlightedSprite;
+        usernameText.color = Color.white;
+        fileSizeText.color = Color.white;
+    }
+
+    void SetPressed()
+    {
+        buttonImage.sprite = highlightedSprite;
+        usernameText.color = Color.white;
+        fileSizeText.color = Color.white;
+    }
+
+    void SetDisabled()
+    {
+        if(gameManager.currentUser.userID == user.userID)
+        {
+            buttonImage.sprite = highlightedSprite;
+            usernameText.color = Color.white;
+            fileSizeText.color = Color.white;
+        }
+        else
+        {
+            buttonImage.sprite = disabledSprite;
+            usernameText.color = TextColor();
+            fileSizeText.color = TextColor();
+        }
+    }
+}

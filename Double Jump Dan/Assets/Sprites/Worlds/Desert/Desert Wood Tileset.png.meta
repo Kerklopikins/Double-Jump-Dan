@@ -1,0 +1,255 @@
+fileFormatVersion: 2
+guid: f137e5323544ee5438a6116277ff33ae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8423704282814481681
+    second: Desert Wood Tileset_0
+  - first:
+      213: -8900636318077098376
+    second: Desert Wood Tileset_1
+  - first:
+      213: 92733048926133699
+    second: Desert Wood Tileset_2
+  - first:
+      213: -2123809675482542436
+    second: Desert Wood Tileset_3
+  - first:
+      213: -9017772674833019368
+    second: Desert Wood Tileset_4
+  - first:
+      213: -3852798498197301945
+    second: Desert Wood Tileset_5
+  - first:
+      213: 7881179351344201397
+    second: Desert Wood Tileset_6
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 2
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: One Way Platform End R
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 508
+        width: 32
+        height: 4
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 16, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6878ddfee4b17548b2b5a6c5f7183b3
+      internalID: -1288213035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: One Way Platform End L
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 503
+        width: 32
+        height: 4
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 16, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab3630d7495a9a4f98ac798d754c9bc
+      internalID: -545950319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: One Way Platform R
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 490
+        width: 11
+        height: 11
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b14a3e2dbeae0348bee8df7f629a442
+      internalID: -2039562198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: One Way Platform L
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 490
+        width: 11
+        height: 11
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6183cdcaa255884418bbb0b2bda64c5d
+      internalID: -203568356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e6567818247cc6143a7fa3f94dcc5f77
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BG Steel Column Bottom: -908778903
+      BG Steel Column Middle: -2042902769
+      BG Steel Wood Left: 808357688
+      BG Steel Wood Middle: 931676908
+      BG Steel Wood Right: 1145411749
+      BG Steel Wood Single: -1161609569
+      Big Truss Top: 149684317
+      Big Truss Top Left: -1646296024
+      Big Truss Top Middle: -1069002279
+      Big Truss Top Right: -1482921607
+      Desert Vertical Truss: 8423704282814481681
+      Desert Vertical Truss Top: -8900636318077098376
+      Desert Wood Tileset_0: -1972845620
+      Desert Wood Tileset_1: 34505710
+      Desert Wood Tileset_2: -310103839
+      Desert Wood Tileset_3: 2065379793
+      Desert Wood Tileset_4: 135490129
+      One Way Platform End L: -545950319
+      One Way Platform End R: -1288213035
+      One Way Platform L: -203568356
+      One Way Platform R: -2039562198
+      Steel Column Bottom: -463916138
+      Steel Column Middle: -1116418738
+      Steel Column Top: -638862482
+      Steel Wood Left: 1634936742
+      Steel Wood Middle: 1315114693
+      Steel Wood Right: 950183940
+      Steel Wood Single: 1753823815
+      Truss Planks 1: 1141748485
+      Truss Planks 2: -527778994
+      Truss Platform: -3852798498197301945
+      Truss Platform Lef: 437401911
+      Truss Platform Left: -2123809675482542436
+      Truss Platform Righ: -1991609587
+      Truss Platform Right: 2115197539
+      Truss Top: -9017772674833019368
+      Truss Top Left: 92733048926133699
+      Truss Top Right: 7881179351344201397
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
