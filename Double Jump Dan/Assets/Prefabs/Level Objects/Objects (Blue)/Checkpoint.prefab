@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 633032158347340902}
   - component: {fileID: 4853634765424155221}
   - component: {fileID: 3551964861123642731}
-  - component: {fileID: 2507218617645439372}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -94,7 +93,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1619543595
   m_SortingLayer: -3
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 610368297, guid: a84efda117f28ec47ace744a727c2bed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,24 +105,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2507218617645439372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960924378650185876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17e4dda072e9024e966b0b5ffda04d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentsToCheck:
-  - {fileID: 4853634765424155221}
-  - {fileID: 3551964861123642731}
-  gameObjectsToCheck:
-  - {fileID: 5092830161509310974}
-  onlyCheckChild: 0
 --- !u!1 &5092830161509310974
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1619543595
   m_SortingLayer: -3
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 775253274, guid: a84efda117f28ec47ace744a727c2bed, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0

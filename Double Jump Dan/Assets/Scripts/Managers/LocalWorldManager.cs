@@ -27,7 +27,7 @@ public class LocalWorldManager : MonoBehaviour
     public Color snowingTintColor;
     
     public enum DistortionType { None, HeatWave }
-	public enum TimeOfDay { Day, Sunset, Night, Sunrise, Overcast }
+	public enum TimeOfDay { Day, Sunset, Night, Sunrise, Overcast, Random }
     public enum World { SplashScreen, Tutorial, MainMenu, Archipelago, City, Desert, Forest, Jungle, Tundra }
     public enum WeatherType { None, Dusting, Snowing, Raining }
 }

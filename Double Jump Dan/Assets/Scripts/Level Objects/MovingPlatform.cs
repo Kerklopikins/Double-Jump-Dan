@@ -257,7 +257,9 @@ public class MovingPlatform : MonoBehaviour
     void OnDrawGizmos()
     {
 #if UNITY_EDITOR
-		
+		Gizmos.color = Color.cyan;
+		Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y - 0.25f, 0), Vector3.one * 2);
+
 		for(int i = 0; i < points.Count; i++)
 		{
 			Gizmos.color = new Color(0, 1, 1, 0.5f);
@@ -279,10 +281,10 @@ public class MovingPlatform : MonoBehaviour
         }
 
         for(int i = 0; i < points.Count - 1; i++)
-			Gizmos.DrawLine(new Vector3(points[i].x, points[i].y + verticalPointOffset, 0), new Vector3(points[i + 1].x, points[i + 1].y + verticalPointOffset, 0));
+			Gizmos.DrawLine(new Vector3(points[i].x, points[i].y - 0.25f, 0), new Vector3(points[i + 1].x, points[i + 1].y - 0.25f, 0));
 		
 		if(loop && points.Count > 0)
-            Gizmos.DrawLine(new Vector3(points[points.Count - 1].x, points[points.Count - 1].y + verticalPointOffset, 0), new Vector3(points[0].x, points[0].y + verticalPointOffset, 0));
+            Gizmos.DrawLine(new Vector3(points[points.Count - 1].x, points[points.Count - 1].y - 0.25f, 0), new Vector3(points[0].x, points[0].y - 0.25f, 0));
 #endif
 
     }

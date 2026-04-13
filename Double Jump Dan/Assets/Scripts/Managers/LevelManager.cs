@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-
-
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -20,6 +18,11 @@ public class LevelManager : MonoBehaviour
     [Header("Finish Level")]
     [SerializeField] float maxDetectionHeight;
 
+    [Header("Object Zones")]
+    [SerializeField] float checkFrequency;
+    [SerializeField] float extraZoneBuffer;
+    [SerializeField] List<ObjectZone> objectZones = new List<ObjectZone>();
+
     [Header("Random Object Placement")]
     [SerializeField] List<SpawnType> spawnTypes = new List<SpawnType>();
 
@@ -33,6 +36,8 @@ public class LevelManager : MonoBehaviour
     LocalWorldManager localWorldManager;
     int objectSpawnProbability;
     int randomObjectIndex;
+    Camera _camera;
+    float _checkTimer;
 
     void Awake()
     {
@@ -44,6 +49,8 @@ public class LevelManager : MonoBehaviour
             currentSpawnPoint = player.transform.position;
 
         localWorldManager = GetComponent<LocalWorldManager>();
+        _camera = Camera.main;
+
         Respawn();
     }
 
@@ -77,10 +84,22 @@ public class LevelManager : MonoBehaviour
                         Instantiate(spawnType.objects[randomObjectIndex].prefab, (Vector2)spawnType.objectSpawnPoints[i].position + spawnType.objects[randomObjectIndex].spawnOffset, Quaternion.identity, spawnType.objectsParent);
                 }
             }
-        }  
+        }
+
+        player.OnPlayerRespawn += Refresh;
+        player.OnPlayerTeleported += Refresh;
     }
+
     void Update()
     {
+        if(objectZones.Count > 0)
+        {
+            if(_checkTimer > 0)
+                _checkTimer -= Time.deltaTime;
+            else
+                Refresh();
+        }
+        
         float playerXPositionAbs = Mathf.Abs(levelFinish.position.x - player.transform.position.x);
 
         if(playerXPositionAbs < xDistance && player.transform.position.y > levelFinish.position.y - 1 && !playerEntered)
@@ -102,6 +121,46 @@ public class LevelManager : MonoBehaviour
             playerEntered = true;
         }
     }
+
+    void Refresh()
+    {
+        foreach(var objectZone in objectZones)
+        {
+            if(CameraInZone(objectZone.position, objectZone.size))
+            {
+                if(objectZone.objectsToToggle[0].activeSelf == false)
+                    for(int i = 0; i < objectZone.objectsToToggle.Count; i++)
+                        objectZone.objectsToToggle[i].SetActive(true);
+            }
+            else
+            {
+                if(objectZone.objectsToToggle[0].activeSelf == true)
+                    for(int i = 0; i < objectZone.objectsToToggle.Count; i++)
+                        objectZone.objectsToToggle[i].SetActive(false);
+            }
+        }
+
+        _checkTimer = checkFrequency;
+    }
+
+    bool CameraInZone(Vector2 position, Vector2 zoneSize)
+    {
+        if(Mathf.Abs(_camera.transform.position.x - position.x) <= (CameraWidth() / 2 + zoneSize.x / 2 + extraZoneBuffer) && Mathf.Abs(_camera.transform.position.y - position.y) <= (CameraHeight() / 2 + zoneSize.y / 2 + extraZoneBuffer))
+            return true;
+        else
+            return false;
+    }
+
+    float CameraHeight()
+    {
+        return _camera.orthographicSize * 2;
+    }
+
+    float CameraWidth()
+    {
+        return CameraHeight() * _camera.aspect;
+    }
+
     public void AddGems(int gemsToGive)
     {
         gems += gemsToGive;
@@ -124,6 +183,24 @@ public class LevelManager : MonoBehaviour
     {
         currentSpawnPoint = position;
     }
+    
+    void OnValidate()
+	{
+#if UNITY_EDITOR
+		if(objectZones.Count == 0)
+			return;
+			
+		for(int i = 0; i < objectZones.Count; i++)
+		{
+			objectZones[i].position = SnapVector(objectZones[i].position);
+			objectZones[i].size = SnapVector(objectZones[i].size);	
+        }
+#endif
+    }
+	private Vector2 SnapVector(Vector2 v)
+	{
+		return new Vector2(Mathf.Round(v.x), Mathf.Round(v.y));
+	}
 
     void OnDrawGizmos()
     {
@@ -163,8 +240,36 @@ public class LevelManager : MonoBehaviour
                     }
                 }
             }
-        }  
+        }
 
+        if(objectZones.Count > 0)
+        {
+            for(int i = 0; i < objectZones.Count; i++)
+            {   
+                GUIStyle largeStyle = new GUIStyle();
+                largeStyle.normal.textColor = Color.white;
+                largeStyle.fontSize = 20;
+                largeStyle.alignment = TextAnchor.MiddleCenter;
+                largeStyle.fontStyle = FontStyle.Bold;
+                Handles.Label(new Vector3(objectZones[i].position.x, objectZones[i].position.y + objectZones[i].size.y / 2 + 5, 0), "Zone " + (i + 1).ToString(), largeStyle);
+                
+                if(_camera != null && CameraInZone(objectZones[i].position, objectZones[i].size))
+                    Gizmos.color = Color.green;
+                else
+                    Gizmos.color = Color.cyan;
+                
+                //Left
+                Gizmos.DrawLine(new Vector3(objectZones[i].position.x - objectZones[i].size.x / 2, objectZones[i].position.y), new Vector3(objectZones[i].position.x - objectZones[i].size.x / 2 - extraZoneBuffer, objectZones[i].position.y));
+                //Right
+                Gizmos.DrawLine(new Vector3(objectZones[i].position.x + objectZones[i].size.x / 2, objectZones[i].position.y), new Vector3(objectZones[i].position.x + objectZones[i].size.x / 2 + extraZoneBuffer, objectZones[i].position.y));
+                //Up
+                Gizmos.DrawLine(new Vector3(objectZones[i].position.x, objectZones[i].position.y + objectZones[i].size.y / 2), new Vector3(objectZones[i].position.x, objectZones[i].position.y + objectZones[i].size.y / 2 + extraZoneBuffer));
+                //Down
+                Gizmos.DrawLine(new Vector3(objectZones[i].position.x, objectZones[i].position.y - objectZones[i].size.y / 2), new Vector3(objectZones[i].position.x, objectZones[i].position.y - objectZones[i].size.y / 2 - extraZoneBuffer));
+                
+                Gizmos.DrawWireCube(objectZones[i].position, objectZones[i].size);
+            }
+        }
         //Gizmos.DrawSphere(new Vector3(transform.position.x - xDistance, transform.position.y, 0), 0.1f);
     #endif
     }
@@ -184,5 +289,13 @@ public class LevelManager : MonoBehaviour
         public int placementProbability;
         public GameObject prefab;
         public Vector2 spawnOffset;
+    }
+
+    [Serializable]
+    public class ObjectZone
+    {
+        public Vector2 position;
+        public Vector2 size;
+        public List<GameObject> objectsToToggle = new List<GameObject>();
     }
 }

@@ -42,21 +42,13 @@ public class SettingsToggle : MonoBehaviour, IPointerClickHandler
     void ToggleDistortionEffects()
     {
         gameManager.distortionEffects = !gameManager.distortionEffects;
-
-        if(settingsManager.mainMenuManager == null)
-            WorldManager.Instance.UpdateDistortionEffects(gameManager.distortionEffects);
-        else
-            settingsManager.mainMenuManager.UpdateHeatWave(gameManager.distortionEffects);
+        WorldManager.Instance.UpdateDistortionEffects(gameManager.distortionEffects);
     }
     
     void ToggleWeatherEffects()
     {
         gameManager.weatherEffects = !gameManager.weatherEffects;
-
-        if(settingsManager.mainMenuManager == null)
-            WorldManager.Instance.UpdateWeatherEffects(gameManager.weatherEffects);
-        else
-            settingsManager.mainMenuManager.UpdateDust(gameManager.weatherEffects);
+        WorldManager.Instance.UpdateWeatherEffects(gameManager.weatherEffects);
     }
 
     void ToggleFullscreen()

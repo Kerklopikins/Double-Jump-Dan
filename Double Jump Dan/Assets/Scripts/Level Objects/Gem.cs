@@ -3,7 +3,7 @@
 public class Gem : MonoBehaviour
 {
     [SerializeField] int gemsToGivePlayer;
-    [SerializeField] GameObject effect;
+    [SerializeField] GameObject collectEffect;
     [SerializeField] AudioClip collectSound;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] SpriteRenderer gemShine;
@@ -52,7 +52,7 @@ public class Gem : MonoBehaviour
         if(other.tag == "Player" && !collected)
         {   
             AudioManager.Instance.PlayRandomSound2D(collectSound, 0.985f, 1, 0);
-            Instantiate(effect, transform.position, Quaternion.identity);
+            collectEffect.SetActive(true);
             collected = true;
         }
     }

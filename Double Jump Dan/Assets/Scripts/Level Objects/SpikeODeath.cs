@@ -106,7 +106,6 @@ public class SpikeODeath : MonoBehaviour
         Vector3 offset = transform.up * Mathf.Lerp(0, length, t);
 
         transform.localPosition = localStartPosition + offset;
-
     }
 
     void OnDrawGizmos()

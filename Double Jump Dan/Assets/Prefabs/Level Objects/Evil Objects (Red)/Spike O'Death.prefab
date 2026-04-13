@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3463718745961054633}
   - component: {fileID: 114685360028524224}
   - component: {fileID: 5108123078139291095}
-  - component: {fileID: 2242689711386545414}
   m_Layer: 0
   m_Name: Spike O'Death
   m_TagString: Untagged
@@ -178,25 +177,6 @@ MonoBehaviour:
   yKnockBack: 15
   xKnockBackOffset: 15
   offsetAdjustmentMode: 0
---- !u!114 &2242689711386545414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397454863367840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17e4dda072e9024e966b0b5ffda04d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentsToCheck:
-  - {fileID: 363014303163871235}
-  - {fileID: 3463718745961054633}
-  - {fileID: 5108123078139291095}
-  gameObjectsToCheck:
-  - {fileID: 1807122064247580403}
-  onlyCheckChild: 0
 --- !u!1 &1807122064247580403
 GameObject:
   m_ObjectHideFlags: 0

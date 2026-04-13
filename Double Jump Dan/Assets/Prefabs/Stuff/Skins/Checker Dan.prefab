@@ -70,6 +70,6 @@ MonoBehaviour:
   itemType: 2
   itemID: 8302
   price: 100
-  description: Somehow made from a literal checkers board
+  description: Somehow made from a literal checkers board.
   picture: {fileID: 1658762095, guid: fd62903050e1ca349bba8b53f64cbbda, type: 3}
   premiumItem: 0

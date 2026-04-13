@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class WorldManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class WorldManager : MonoBehaviour
 
     [Header("Weather")]
     public Transform clouds;
+    [SerializeField] Color sunsetCloudTint;
+    [SerializeField] Color sunriseCloudTint;
     public GameObject dust;
     [SerializeField] MeshRenderer[] dustMeshes;
     public Transform snow;
@@ -28,6 +31,7 @@ public class WorldManager : MonoBehaviour
     [Header("Distortion Effects")]
     [SerializeField] GameObject heatWave;
 
+    public event Action OnTimeOfDayChanged;
     float cloudEmissionOverTime;
     Camera _camera;
     ParticleSystem cloudParticleSystem;
@@ -35,11 +39,15 @@ public class WorldManager : MonoBehaviour
     LocalWorldManager localWorldManager;
     ScreenEffectsManager screenEffectsManager;
     MeshRenderer heatWaveMesh;
+    bool inMainMenu;
 
     void Awake()
     {
         Instance = this;
         localWorldManager = GameObject.FindWithTag("Level Managers").GetComponent<LocalWorldManager>();
+
+        if(localWorldManager.world == LocalWorldManager.World.MainMenu)
+            inMainMenu = true;
     }
 
     void Start()
@@ -47,7 +55,7 @@ public class WorldManager : MonoBehaviour
         _camera = Camera.main;
         screenEffectsManager = GetComponent<ScreenEffectsManager>();
 
-        if(localWorldManager.world != LocalWorldManager.World.Tutorial && localWorldManager.world != LocalWorldManager.World.MainMenu)
+        if(localWorldManager.world != LocalWorldManager.World.Tutorial)
         {
             cloudEmissionOverTime = localWorldManager.cloudEmissionOverTime;
             
@@ -68,21 +76,28 @@ public class WorldManager : MonoBehaviour
                 case LocalWorldManager.TimeOfDay.Overcast:
                     SetOvercast();
                     break;
+                case LocalWorldManager.TimeOfDay.Random:
+                    SetRandomTimeOfDay();
+                    break;
+            }
+
+            if(inMainMenu)
+            {
+                if(localWorldManager.timeOfDay == LocalWorldManager.TimeOfDay.Day)
+                {
+                    localWorldManager.weatherType = LocalWorldManager.WeatherType.Dusting;    
+                    localWorldManager.distortionType = LocalWorldManager.DistortionType.HeatWave;
+                }
+                else
+                {
+                    localWorldManager.weatherType = LocalWorldManager.WeatherType.None;    
+                    localWorldManager.distortionType = LocalWorldManager.DistortionType.None;
+                }
+
+                OnTimeOfDayChanged?.Invoke();
             }
 
             ReloadSky();
-
-            cloudParticleSystem = clouds.GetComponent<ParticleSystem>();
-            clouds.localPosition = new Vector3(-CameraWidth(), clouds.localPosition.y, clouds.localPosition.z);
-
-            ParticleSystem.EmissionModule emission = cloudParticleSystem.emission;
-            emission.rateOverTime = cloudEmissionOverTime;
-
-            cloudParticleSystemRenderer = clouds.GetComponent<ParticleSystemRenderer>();
-            cloudParticleSystemRenderer.material.color = new Color(mainMaterial.color.r, mainMaterial.color.g, mainMaterial.color.b, cloudParticleSystemRenderer.material.color.a);
-
-            cloudParticleSystem.Stop();
-            cloudParticleSystem.Play();
     
             UpdateWeatherEffects(GameManager.Instance.weatherEffects);
             UpdateDistortionEffects(GameManager.Instance.distortionEffects);
@@ -106,9 +121,42 @@ public class WorldManager : MonoBehaviour
     {
         if(!isOn)
         {
-            snow.gameObject.SetActive(false);
-            dust.SetActive(false);
+            if(snow != null)
+                snow.gameObject.SetActive(false);
+
+            if(dust != null)  
+                dust.SetActive(false);
+
+            if(clouds != null)
+                clouds.gameObject.SetActive(false);
+
             return;
+        }
+
+        if(cloudEmissionOverTime > 0)
+        {
+            clouds.gameObject.SetActive(true);
+
+            cloudParticleSystem = clouds.GetComponent<ParticleSystem>();
+            clouds.localPosition = new Vector3(-CameraWidth(), clouds.localPosition.y, clouds.localPosition.z);
+
+            ParticleSystem.EmissionModule emission = cloudParticleSystem.emission;
+            emission.rateOverTime = cloudEmissionOverTime;
+
+            cloudParticleSystemRenderer = clouds.GetComponent<ParticleSystemRenderer>();
+            cloudParticleSystemRenderer.material.color = new Color(mainMaterial.color.r, mainMaterial.color.g, mainMaterial.color.b, cloudParticleSystemRenderer.material.color.a);
+
+            cloudParticleSystem.Stop();
+            cloudParticleSystem.Play();
+            
+            if(localWorldManager.timeOfDay == LocalWorldManager.TimeOfDay.Sunset)
+                cloudParticleSystemRenderer.material.color = new Color(sunsetCloudTint.r, sunsetCloudTint.g, sunsetCloudTint.b, cloudParticleSystemRenderer.material.color.a);
+            else if(localWorldManager.timeOfDay == LocalWorldManager.TimeOfDay.Sunrise)
+                cloudParticleSystemRenderer.material.color = new Color(sunriseCloudTint.r, sunriseCloudTint.g, sunriseCloudTint.b, cloudParticleSystemRenderer.material.color.a);
+        }
+        else
+        {
+            clouds.gameObject.SetActive(false);
         }
 
         if(localWorldManager.weatherType == LocalWorldManager.WeatherType.Snowing)
@@ -129,11 +177,20 @@ public class WorldManager : MonoBehaviour
             snow.GetChild(1).transform.localPosition = new Vector3(-CameraWidth(), _camera.orthographicSize, 20);
             snowParticles.Play();
         }
+        else
+        {
+            if(snow != null)
+                snow.gameObject.SetActive(false);
+        }
 
         if(localWorldManager.weatherType == LocalWorldManager.WeatherType.Dusting)
         {
             dust.transform.localScale = BackgroundWeatherScale();
             dust.gameObject.SetActive(true);
+        }
+        else
+        {
+            dust.gameObject.SetActive(false);
         }
     }
 
@@ -148,9 +205,16 @@ public class WorldManager : MonoBehaviour
         if(localWorldManager.distortionType == LocalWorldManager.DistortionType.HeatWave)
         {
             heatWaveMesh = heatWave.GetComponent<MeshRenderer>();
-            heatWave.transform.localScale = new Vector3(CameraWidth() / 5 + 0.2f, 1, _camera.orthographicSize / 5 + 0.2f);
+
+            if(!inMainMenu)
+                heatWave.transform.localScale = new Vector3(CameraWidth() / 5 + 0.2f, 1, _camera.orthographicSize / 5 + 0.2f);
+            
             heatWave.SetActive(true);
             heatWaveMesh.material.SetFloat("Distortion", localWorldManager.heatWaveDistortionIntensity);
+        }
+        else
+        {
+            heatWave.SetActive(false);
         }
     }
 
@@ -185,6 +249,9 @@ public class WorldManager : MonoBehaviour
             screenEffectsManager.SetTintColor(localWorldManager.sunsetTintColor);
 
         SetSkyAndMaterialsColor(0.3f, 0.3f, 0.3f, 1);
+
+        if(inMainMenu)
+            sunPivot.transform.localPosition = new Vector3(sunPivot.transform.localPosition.x, 0, sunPivot.transform.localPosition.z);
     }
 
     public void SetNight()
@@ -221,6 +288,32 @@ public class WorldManager : MonoBehaviour
         SetSkyAndMaterialsColor(0.6f, 0.6f, 0.6f, 4);
     }
 
+    void SetRandomTimeOfDay()
+    {
+        int timeIndex = UnityEngine.Random.Range(0, 4);
+
+        if(timeIndex == 0)
+        {
+            localWorldManager.timeOfDay = LocalWorldManager.TimeOfDay.Day;
+            SetDay();
+        }
+        else if(timeIndex == 1)
+        {
+            localWorldManager.timeOfDay = LocalWorldManager.TimeOfDay.Sunset;
+            SetSunset();
+        }
+        else if(timeIndex == 2)
+        {
+            localWorldManager.timeOfDay = LocalWorldManager.TimeOfDay.Night;
+            SetNight();
+        }
+        else if(timeIndex == 3)
+        {
+            localWorldManager.timeOfDay = LocalWorldManager.TimeOfDay.Sunrise;
+            SetSunrise();
+        }
+    }
+
     void SetSkyAndMaterialsColor(float r, float g, float b, int skyIndex)
     {
         if(localWorldManager.weatherType == LocalWorldManager.WeatherType.Snowing || localWorldManager.timeOfDay == LocalWorldManager.TimeOfDay.Overcast)
@@ -252,8 +345,11 @@ public class WorldManager : MonoBehaviour
 
     public void ReloadSky()
     {
-        sky.transform.localScale = new Vector2(CameraWidth() + 0.2f, _camera.orthographicSize / 17.1875f + 0.01f);
-        stars.size = new Vector2(CameraWidth() * 2 + 0.5f, _camera.orthographicSize * 2 + 0.5f);
+        if(!inMainMenu)
+        {
+            sky.transform.localScale = new Vector2(CameraWidth() + 0.2f, _camera.orthographicSize / 17.1875f + 0.01f);
+            stars.size = new Vector2(CameraWidth() * 2 + 0.5f, _camera.orthographicSize * 2 + 0.5f);
+        }
     }
 
     public bool UseWeatherEffects()

@@ -17,10 +17,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] Image tamperedUserFileImage;
     [SerializeField] Text tamperedUserFileText;
 
-    [Header("Background Effects")]
-    [SerializeField] GameObject dust;
-    [SerializeField] GameObject heatWave;
-
     ShopManager shopManager;
     UserMenu userMenu;
     UserStatsMenu userStatsMenu;
@@ -47,19 +43,6 @@ public class MainMenuManager : MonoBehaviour
         userButton.onClick.AddListener(userMenu.RefreshUserByteSizes);
         statsButton.onClick.AddListener(userStatsMenu.RefreshUserStats);
         settingsButton.onClick.AddListener(settingsManager.RefreshFullscreenToggle);
-
-        UpdateDust(GameManager.Instance.weatherEffects);
-        UpdateHeatWave(GameManager.Instance.distortionEffects);
-    }
-
-    public void UpdateDust(bool isOn)
-    {
-        dust.SetActive(isOn);
-    }
-
-    public void UpdateHeatWave(bool isOn)
-    {
-        heatWave.SetActive(isOn);
     }
 
     void Update()

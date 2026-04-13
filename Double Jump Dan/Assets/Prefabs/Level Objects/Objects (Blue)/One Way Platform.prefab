@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1773589847768597620}
   - component: {fileID: 4558919056857963484}
   - component: {fileID: 8858876324392954617}
-  - component: {fileID: 4878988154781970855}
   m_Layer: 0
   m_Name: One Way Platform
   m_TagString: Untagged
@@ -77,23 +76,6 @@ MonoBehaviour:
   collisionDelay: 0.4
   offsetAdjustmentMode: 0
   centerPointOffset: 2
---- !u!114 &4878988154781970855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2254177541796781317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17e4dda072e9024e966b0b5ffda04d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  componentsToCheck:
-  - {fileID: 4558919056857963484}
-  - {fileID: 8858876324392954617}
-  gameObjectsToCheck: []
-  onlyCheckChild: 0
 --- !u!1 &3824188043105382198
 GameObject:
   m_ObjectHideFlags: 0

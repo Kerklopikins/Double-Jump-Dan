@@ -128,7 +128,6 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: c777f573816e8c14ba529c8193547e88, type: 3}
   reloadSound: {fileID: 8300000, guid: ab926e9df09bee04f8ab2a7d41f5cc7a, type: 3}
   gunAnimator: {fileID: 0}
-  shootWhenTouchingGround: 0
   projectileType: 1
   projectile: {fileID: 0}
   projectileFirePoints:
@@ -153,6 +152,8 @@ MonoBehaviour:
   shell: {fileID: 438902, guid: f496011088b09b94cbb05c30980ee930, type: 3}
   onlyEjectShellsWhenReloading: 0
   shellEjectionPoint: {fileID: 4191353191553938}
+  hasGlow: 0
+  glowSprite: {fileID: 0}
   properties:
     angle: 0
     strength: 0.1
@@ -177,7 +178,7 @@ MonoBehaviour:
   itemType: 1
   itemID: 5424
   price: 300
-  description: Not to fast, not to powerful, the pistol is a good gun for anything.
+  description: Not too fast, not too powerful, the pistol is a good gun for anything.
   picture: {fileID: 21300118, guid: a84efda117f28ec47ace744a727c2bed, type: 3}
   premiumItem: 0
 --- !u!1 &1197725347100112

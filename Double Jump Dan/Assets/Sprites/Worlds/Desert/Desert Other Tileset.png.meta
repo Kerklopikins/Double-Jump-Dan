@@ -90,7 +90,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -119,8 +119,8 @@ TextureImporter:
       name: One Way Platform End R
       rect:
         serializedVersion: 2
-        x: 224
-        y: 508
+        x: 240
+        y: 1020
         width: 32
         height: 4
       alignment: 4
@@ -140,8 +140,8 @@ TextureImporter:
       name: One Way Platform End L
       rect:
         serializedVersion: 2
-        x: 223
-        y: 503
+        x: 239
+        y: 1015
         width: 32
         height: 4
       alignment: 5
@@ -161,8 +161,8 @@ TextureImporter:
       name: One Way Platform R
       rect:
         serializedVersion: 2
-        x: 224
-        y: 490
+        x: 240
+        y: 1002
         width: 11
         height: 11
       alignment: 4
@@ -182,8 +182,8 @@ TextureImporter:
       name: One Way Platform L
       rect:
         serializedVersion: 2
-        x: 236
-        y: 490
+        x: 252
+        y: 1002
         width: 11
         height: 11
       alignment: 5

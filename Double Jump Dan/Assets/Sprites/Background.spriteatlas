@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Background
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 113b60b35a1316841861f0e9f6e5f487, type: 3}
+    - {fileID: 2800000, guid: 6de8ea4f0c914b149a6b59071bd6bdec, type: 3}
+    - {fileID: 2800000, guid: eceaba3738aab5541b042610f29bffcf, type: 3}
+    - {fileID: 2800000, guid: f25ad2a33303c564c8c203b78fd36dba, type: 3}
+    - {fileID: 2800000, guid: 0168923cc1659c54aa3b1881806ec606, type: 3}
+    - {fileID: 2800000, guid: 8d3b960ee4553d3458874a0ce7467f84, type: 3}
+    - {fileID: 2800000, guid: 088db59906b970a4ea488fe5378f9afc, type: 3}
+    - {fileID: 2800000, guid: 762dddd597400d9438fc59db7e88b335, type: 3}
+    - {fileID: 2800000, guid: 8e5fafd9e69b5aa46bb8e3e7ee5b8f25, type: 3}
+    - {fileID: 2800000, guid: 5f41e51a65b817b4d836008ecb8480e7, type: 3}
+    - {fileID: 2800000, guid: 43325f31cbce210449a978eac0caa41b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 43325f31cbce210449a978eac0caa41b: 21300000
+    - f25ad2a33303c564c8c203b78fd36dba: 21300000
+    - 113b60b35a1316841861f0e9f6e5f487: 21300000
+    - 762dddd597400d9438fc59db7e88b335: 21300000
+    - eceaba3738aab5541b042610f29bffcf: 21300000
+    - 088db59906b970a4ea488fe5378f9afc: 21300000
+    - 8e5fafd9e69b5aa46bb8e3e7ee5b8f25: 21300000
+    - 5f41e51a65b817b4d836008ecb8480e7: 21300000
+    - 0168923cc1659c54aa3b1881806ec606: 21300000
+    - 8d3b960ee4553d3458874a0ce7467f84: 21300000
+    - 6de8ea4f0c914b149a6b59071bd6bdec: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 43325f31cbce210449a978eac0caa41b, type: 3}
+  - {fileID: 21300000, guid: f25ad2a33303c564c8c203b78fd36dba, type: 3}
+  - {fileID: 21300000, guid: 113b60b35a1316841861f0e9f6e5f487, type: 3}
+  - {fileID: 21300000, guid: 762dddd597400d9438fc59db7e88b335, type: 3}
+  - {fileID: 21300000, guid: eceaba3738aab5541b042610f29bffcf, type: 3}
+  - {fileID: 21300000, guid: 088db59906b970a4ea488fe5378f9afc, type: 3}
+  - {fileID: 21300000, guid: 8e5fafd9e69b5aa46bb8e3e7ee5b8f25, type: 3}
+  - {fileID: 21300000, guid: 5f41e51a65b817b4d836008ecb8480e7, type: 3}
+  - {fileID: 21300000, guid: 0168923cc1659c54aa3b1881806ec606, type: 3}
+  - {fileID: 21300000, guid: 8d3b960ee4553d3458874a0ce7467f84, type: 3}
+  - {fileID: 21300000, guid: 6de8ea4f0c914b149a6b59071bd6bdec, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Mountains Desert
+  - Sky Night
+  - Clouds
+  - Stars
+  - Sky Day
+  - Sky Sunset
+  - Sun
+  - Sun Glow
+  - Sky Overcast
+  - Sky Sunrise
+  - Moon
+  m_RenderDataMap: {}
+  m_Tag: Background
+  m_IsVariant: 0

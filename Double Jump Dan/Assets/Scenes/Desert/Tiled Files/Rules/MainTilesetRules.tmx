@@ -4,7 +4,7 @@
  <tileset firstgid="6" source="../Desert Dirt Tileset.tsx"/>
  <tileset firstgid="231" source="../Desert Top Dirt Tileset.tsx"/>
  <tileset firstgid="239" source="../Generic Tile.tsx"/>
- <layer id="3" name="input_Top Dirt" width="31" height="36">
+ <layer id="3" name="input_Top Tiles" width="31" height="36">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -44,7 +44,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="4" name="output_Top Dirt" width="31" height="36">
+ <layer id="4" name="output_Top Tiles" width="31" height="36">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

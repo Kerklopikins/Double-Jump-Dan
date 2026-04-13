@@ -35,7 +35,7 @@ public class PoolManager: MonoBehaviour
             poolDictionary.Add(poolID, new LinkedList<ObjectInstance>());
 
             GameObject poolHolder = new GameObject(poolID + " Pool");
-            poolHolder.transform.parent = GameObject.FindWithTag("Level Objects").transform;
+            poolHolder.transform.parent = transform;
 
             for(int i = 0; i < poolSize; i++)
             {

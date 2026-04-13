@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Health : MonoBehaviour
 {
@@ -380,10 +379,7 @@ public class Health : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         
-        if(transform.parent != null)
-            Destroy(transform.parent.gameObject);
-        else
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
     #endregion
 }

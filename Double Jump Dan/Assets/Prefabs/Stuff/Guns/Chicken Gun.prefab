@@ -5079,7 +5079,7 @@ MonoBehaviour:
   itemID: 5203
   price: 300
   description: Created by somehow mixing a bazooka and a chicken, the chicken gun
-    fires explosive eggs!
+    fires ricochet eggs!
   picture: {fileID: 21300726, guid: a84efda117f28ec47ace744a727c2bed, type: 3}
   premiumItem: 0
 --- !u!1 &1753385433823668

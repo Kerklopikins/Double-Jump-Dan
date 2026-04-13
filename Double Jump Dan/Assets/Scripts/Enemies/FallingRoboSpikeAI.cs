@@ -67,7 +67,7 @@ public class FallingRoboSpikeAI : MonoBehaviour
         int layerMask = (1 << LayerMask.NameToLayer("Collisions")) | (1 << LayerMask.NameToLayer("Player"));
         hit = Physics2D.Raycast(startPosition, Vector3.down, 100, layerMask);
 
-        if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if(hit && hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
             hitPlayer = true;
 
         if(transform.position.y < hit.point.y)

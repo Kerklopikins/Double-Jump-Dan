@@ -19,7 +19,7 @@ public class ObjectOpitimizer : MonoBehaviour
     float _checkFrequency;
     float safetyTimer = 1;
     Vector2 difference;
-
+    
     void Awake()
     {
         toggleActions = new Dictionary<Type, Action<Component, bool>>()
@@ -104,6 +104,12 @@ public class ObjectOpitimizer : MonoBehaviour
         UnsubscribeFromPlayer();
     }
 
+    void OnDrawGizmos()
+    {
+        if(debugMode)
+            Gizmos.DrawWireSphere(transform.position, checkDistance);
+    }
+
     void Refresh()
     {
         if(onlyCheckChild && child == null)
@@ -153,14 +159,6 @@ public class ObjectOpitimizer : MonoBehaviour
                 foreach(var gmObject in gameObjectsToCheck)
                     gmObject.SetActive(false);
             }
-        }
-    }
-    void OnDrawGizmos()
-    {
-        if(debugMode)
-        {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(transform.position, checkDistance);
         }
     }
 }

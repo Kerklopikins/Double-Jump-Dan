@@ -121,7 +121,7 @@ public class Player: MonoBehaviour
         parts = transform.Find("Legs").gameObject;
         _coyoteTime = coyoteTime;       
         doubleJumpTimer = 0.15f;
-
+        _fallTimer = weeEffectFallThreshold;
         shadowDanTracer = GetComponent<ShadowDanTracer>();
         shadowDanTracer.enabled = false;
 
@@ -318,14 +318,15 @@ public class Player: MonoBehaviour
 
         animator.SetBool("Grounded", grounded);
         
+        if(weeSprite.gameObject.activeSelf)
+            weeSprite.sprite = weeSprites[transform.localScale.x > 0 ? 1 : 0];
+            
         if(!grounded)
         {
             if(_fallTimer > 0)
                 _fallTimer -= Time.deltaTime;
             else
             {
-                weeSprite.sprite = weeSprites[transform.localScale.x > 0 ? 1 : 0];
-
                 if(canAnimateWee && !animatedWee)
                 {
                     StartCoroutine(AnimateWeeEffect(1));
@@ -372,7 +373,7 @@ public class Player: MonoBehaviour
 
         while(inTime < duration)
         {
-            inTime += Time.unscaledDeltaTime;
+            inTime += Time.deltaTime;
             float t = inTime / duration;
             float smoothT = 1 - Mathf.Pow(1 - t, 4);
 
@@ -659,7 +660,7 @@ public class Player: MonoBehaviour
 
     public void Teleported(Vector3 transportPoint)
     {
-        transform.position = transportPoint;
+        transform.position = new Vector2(transportPoint.x, transportPoint.y - 0.125f);
 
         OnPlayerTeleported?.Invoke();
 

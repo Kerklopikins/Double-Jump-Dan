@@ -32,8 +32,8 @@ public class StatsHUD : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] Material uiFlashMaterial;
+    [SerializeField] Camera _camera;
 
-    Camera _camera;
     int gemsCounterIndex; 
     int gemsImageIndex;
     int smallGemsImageIndex;
@@ -42,7 +42,6 @@ public class StatsHUD : MonoBehaviour
     bool canAnimateHurtUI = true;
     bool canAnimatedGemUI = true;
     bool canAnimatedAmmoUI = true;
-    LevelManager levelManager;
     GunInfo gunInfo;
 
     void Awake()
@@ -54,9 +53,6 @@ public class StatsHUD : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         
-        levelManager = LevelManager.Instance;
-        _camera = Camera.main;
-
         player.OnPlayerHurt += PlayerHurt;
         player.OnPlayerKilled += PlayerKilled;
         player.OnPlayerRespawn += PlayerRespawn;

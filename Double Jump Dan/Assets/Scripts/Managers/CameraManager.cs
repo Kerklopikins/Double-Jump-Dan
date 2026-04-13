@@ -15,7 +15,6 @@ public class CameraManager : MonoBehaviour
     float cameraSize;
     Camera _camera;
     Vector3 position;
-    Transform statsHUD;
     const float maxAngle = 10f;
     IEnumerator currentShakeCoroutine;
     Transform parent;
@@ -27,7 +26,6 @@ public class CameraManager : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player.OnPlayerRespawn += LerpToPlayerSpawnPoint;
         _camera = GetComponent<Camera>();
-        statsHUD = GameObject.FindWithTag("Stats HUD").transform;
         bounds = GameObject.FindWithTag("Bounds").GetComponent<BoxCollider2D>();
         _min = bounds.bounds.min;
         _max = bounds.bounds.max;
@@ -97,7 +95,6 @@ public class CameraManager : MonoBehaviour
         position.y = Mathf.Clamp(position.y, _min.y + _camera.orthographicSize, _max.y - _camera.orthographicSize);
 
         parent.position = new Vector3(position.x, position.y, -20);
-        statsHUD.transform.position = new Vector3(position.x, position.y, 0);
     }
 
     public void Shake(Properties properties)

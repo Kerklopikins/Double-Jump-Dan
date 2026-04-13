@@ -3,7 +3,7 @@
 public class HealthPack : MonoBehaviour
 {
     [SerializeField] Transform healthPackSprite;
-    [SerializeField] GameObject effect;
+    [SerializeField] GameObject collectEffect;
     [SerializeField] AudioClip collectSound;
 
     Player player;
@@ -62,7 +62,7 @@ public class HealthPack : MonoBehaviour
                 return;
 
             AudioManager.Instance.PlaySound2D(collectSound);
-            Instantiate(effect, healthPackSprite.position, healthPackSprite.rotation);
+            collectEffect.SetActive(true);
             collected = true;
         }
     }

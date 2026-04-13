@@ -100,6 +100,9 @@ public class BuzzSaw : MonoBehaviour
                 currentPoint = points[pointIndex];
             }
 
+            if(Time.timeScale == 0)
+                return;
+            
             float t = rawT * rawT * (3 - 2 * rawT);
             transform.position = Vector3.Lerp(transform.position, currentPoint, t);
         }
