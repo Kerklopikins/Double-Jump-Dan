@@ -37,10 +37,12 @@ public class Health : MonoBehaviour
     int startingHealth;
     ObjectOpitimizer objectOpitimizer;
     bool dead;
+    Camera _camera;
 
     void Start()
     {
         startingHealth = health;
+        _camera = Camera.main;
 
         StartCoroutine(DelayStartCo());
 
@@ -360,7 +362,7 @@ public class Health : MonoBehaviour
 
         float gravity = -18;
         float fallElapsed = 0;
-        float fallDuration = 0.5f;
+        float fallDuration = 4f;
 
         Vector3 landedPosition = enemy.transform.position;
 
@@ -372,11 +374,14 @@ public class Health : MonoBehaviour
             
             enemy.transform.position = new Vector3(landedPosition.x + xOffset, landedPosition.y + yOffset, landedPosition.z);
             enemy.transform.Rotate(0, 0, direction * 500 * Time.deltaTime);
+
+            if(enemy.transform.position.y < _camera.transform.position.y - _camera.orthographicSize * 2)
+                fallDuration = 0;
+
             yield return null;
         }
-
+        
         transform.localScale = Vector3.zero;
-
         yield return new WaitForSeconds(3);
         
         Destroy(gameObject);

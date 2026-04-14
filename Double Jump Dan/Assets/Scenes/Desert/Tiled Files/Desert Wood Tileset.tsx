@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.12.0" name="Desert Other Tileset" tilewidth="16" tileheight="16" tilecount="1152" columns="17">
+<tileset version="1.10" tiledversion="1.12.0" name="Desert Other Tileset" tilewidth="16" tileheight="16" tilecount="1088" columns="17">
  <image source="../../../Sprites/Worlds/Desert/Desert Other Tileset.png" width="272" height="1024"/>
  <tile id="23">
   <objectgroup draworder="index" id="2">
@@ -157,6 +157,11 @@
   </objectgroup>
  </tile>
  <tile id="199">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="8" width="16" height="8"/>
+  </objectgroup>
+ </tile>
+ <tile id="245">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="8" width="16" height="8"/>
   </objectgroup>

@@ -4851,6 +4851,7 @@ GameObject:
   - component: {fileID: 5010195991073304572}
   - component: {fileID: 2292690260771317216}
   - component: {fileID: 6180196966018467474}
+  - component: {fileID: 1967242152512419721}
   m_Layer: 7
   m_Name: Moving Platform
   m_TagString: One Way Platform
@@ -5098,6 +5099,21 @@ MonoBehaviour:
   collisionDelay: 0.4
   offsetAdjustmentMode: 0
   centerPointOffset: 0
+--- !u!114 &1967242152512419721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201344294168114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78652430e9b23304096d990d88086212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistance: 10
+  maxDistance: 23
+  showDistance: 0
 --- !u!1 &4537430347734868825
 GameObject:
   m_ObjectHideFlags: 0

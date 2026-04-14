@@ -2664,6 +2664,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8912429833267856271, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8912429833267856271, guid: 04aa4811e671d5e49aba8f4f9e606635,
+        type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 575b6b33d095f2246af73bb393810685, type: 2}
@@ -2690,7 +2695,7 @@ PrefabInstance:
     - target: {fileID: -3845188963339824492, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3845188963339824492, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
@@ -2700,7 +2705,7 @@ PrefabInstance:
     - target: {fileID: -2532436356172425487, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2532436356172425487, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
@@ -2710,13 +2715,18 @@ PrefabInstance:
     - target: {fileID: -691805060705219430, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -691805060705219430, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 575b6b33d095f2246af73bb393810685, type: 2}
+    - target: {fileID: -615017516684787110, guid: 04aa4811e671d5e49aba8f4f9e606635,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2494286033138595370, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
       propertyPath: m_Layer
@@ -2819,22 +2829,22 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5443110677421297444, guid: 04aa4811e671d5e49aba8f4f9e606635,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1195885999}
+      addedObject: {fileID: 1253798423}
   m_SourcePrefab: {fileID: -2695619058785784247, guid: 04aa4811e671d5e49aba8f4f9e606635,
     type: 3}
---- !u!1 &1195885998 stripped
+--- !u!1 &1253798421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5443110677421297444, guid: 04aa4811e671d5e49aba8f4f9e606635,
     type: 3}
   m_PrefabInstance: {fileID: 1195885997}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1195885999
+--- !u!114 &1253798423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195885998}
+  m_GameObject: {fileID: 1253798421}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ca225dfee19085408cc8ea439dd59dc, type: 3}

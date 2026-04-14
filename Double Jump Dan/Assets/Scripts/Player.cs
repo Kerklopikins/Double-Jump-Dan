@@ -157,11 +157,17 @@ public class Player: MonoBehaviour
 
         if(LevelManager.Instance.FinishedLevel())
             FinishLevel();
+
+        if(teleporting)
+        {
+            animator.SetFloat("Speed", 0);
+            animator.SetBool("Grounded", true);
+        }
     }
 
     public bool CanHandleInput()
     {
-        if(!dead && !gameHUDPaused && !gameHUDFrozen && !LevelManager.Instance.FinishedLevel() && _knockBackInputDelayTimer <= 0)
+        if(!dead && !gameHUDPaused && !gameHUDFrozen && !LevelManager.Instance.FinishedLevel() && _knockBackInputDelayTimer <= 0 && !teleporting)
             return true;
         else
             return false;
@@ -429,7 +435,7 @@ public class Player: MonoBehaviour
             grounded = hit;
         }
 
-        if(isGrounded && !wasGroundedLastFrame)
+        if(grounded && !wasGroundedLastFrame)
         {
             float impactSpeed = Mathf.Abs(previousVelocityY);
             
@@ -438,7 +444,7 @@ public class Player: MonoBehaviour
         }
 
         previousVelocityY = rb2D.velocity.y;
-        wasGroundedLastFrame = isGrounded;
+        wasGroundedLastFrame = grounded;
     }
 
     public void SetGrounded(bool _grounded)
@@ -608,7 +614,6 @@ public class Player: MonoBehaviour
         {
             inTime += Time.unscaledDeltaTime;
 
-            ///////////////////MAKE EYES STRAIGHT
             armTwo.localRotation = Quaternion.Euler(0, 0, 90);
             animator.SetBool("Grounded", true);
             animator.SetFloat("Speed", 0);
@@ -683,6 +688,12 @@ public class Player: MonoBehaviour
 
         Vector3 targetPosition = new Vector3(pupilsParentStartPosition.x + maxPupilsOffset.x, pupilsParentStartPosition.y -maxPupilsOffset.y, 0);
         pupilsParent.localPosition = Vector3.Lerp(pupilsParent.localPosition, targetPosition, Time.deltaTime * smoothSpeed);
+
+        if(canAnimateWee)
+        {
+            StartCoroutine(AnimateWeeEffect(-1));
+            animatedWee = false;
+        }
 
         if(finishLevelInTime < duration)
         {

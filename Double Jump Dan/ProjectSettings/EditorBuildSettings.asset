@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Desert/Level 3.unity
     guid: c3afbcbe24bda7e4bbfc48352e91c373
+  - enabled: 1
+    path: Assets/Scenes/Desert/Level 4.unity
+    guid: edcce91678ace5b45bf86d1e70de506a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

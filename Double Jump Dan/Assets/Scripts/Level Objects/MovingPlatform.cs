@@ -43,17 +43,16 @@ public class MovingPlatform : MonoBehaviour
     Vector2 currentPoint;
     int pointIndex;
     int direction = 1;
-	AudioSource engine;
 	Player player;
 	bool canMove;
 	float _wobbleAmount;
 	bool isQuitting;
+	SpatialAudioController spatialAudioController;
 
     void Start()
     {
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        engine = GetComponent<AudioSource>();
-		engine.volume = GameManager.Instance.sfxVolume;
+		spatialAudioController = GetComponent<SpatialAudioController>();
         currentPoint = points[0];
 
 		player.OnPlayerRespawn += PlayerRespawn;
@@ -61,26 +60,18 @@ public class MovingPlatform : MonoBehaviour
 		SetSize();
     }
 
-	void Update()
-	{
-		if(Time.timeScale == 0)
-			engine.volume = 0;
-		else
-			engine.volume = AudioManager.Instance.sfxVolumePercent;
-	}
-
 	void FixedUpdate()
     {
 		if(canMove)
 		{
-			engine.pitch = enginePitch * Time.timeScale;
+			spatialAudioController.SetPitch(enginePitch);
 			transform.position = Vector2.MoveTowards(transform.position, currentPoint, speed * Time.deltaTime);
 
 			_wobbleAmount = wobbleAmount;
         }
 		else
 		{
-			engine.pitch = idleEnginePitch * Time.timeScale;
+			spatialAudioController.SetPitch(idleEnginePitch);
             _wobbleAmount = 0;
         }
 
@@ -96,11 +87,6 @@ public class MovingPlatform : MonoBehaviour
 			if(player.dead && startOnlyWhenSteppedOn || player.dead && stopWhenReachedEnd)
 				canMove = false;
 		}
-
-		if(platformSprite.isVisible && Time.timeScale > 0)
-			engine.enabled = true;
-		else if (!platformSprite.isVisible || Time.timeScale == 0)
-			engine.enabled = false;
 
 		if(startOnlyWhenSteppedOn)
 		{
@@ -195,12 +181,15 @@ public class MovingPlatform : MonoBehaviour
 
 	void PlayerRespawn()
 	{
-		if((Vector2)transform.position != points[points.Count - 1])
+		if(stopWhenReachedEnd || startOnlyWhenSteppedOn)
 		{
-			smoke.Clear();
-			smoke.Play();
-			transform.position = points[0];
-			canMove = false;
+			if((Vector2)transform.position != points[points.Count - 1])
+			{
+				smoke.Clear();
+				smoke.Play();
+				transform.position = points[0];
+				canMove = false;
+			}	
 		}
 	}
 	
@@ -248,6 +237,11 @@ public class MovingPlatform : MonoBehaviour
     {
 		isQuitting = true;
     }
+
+	void OnEnable()
+	{
+		isQuitting = false;
+	}
 
     void OnDisable()
     {
